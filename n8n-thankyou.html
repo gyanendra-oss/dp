@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - N8N Workflows</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-dark: #000000;
+            --bg-light: #050811;
+            --text-primary: #D4FF00;
+            --text-secondary: #00E575;
+            --text-body: #CBD5E1;
+            --accent-gold: #FFC837;
+            --accent-pink: #FF2E4D;
+            --cta-green: #D4FF00;
+            --cta-hover: #E4FF1A;
+            --glass-bg: rgba(8, 14, 26, 0.75);
+            --glass-border: rgba(16, 185, 129, 0.25);
+            --font-heading: 'Outfit', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-dark);
+            color: var(--text-body);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(233, 30, 140, 0.05), transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(212, 167, 69, 0.05), transparent 25%);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-heading);
+            color: var(--text-primary);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* HEADER */
+        header {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--glass-border);
+            background: rgba(5, 10, 24, 0.8);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-primary);
+        }
+
+        /* CONFETTI ANIMATION */
+        .confetti-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            overflow: hidden;
+            animation: hideConfetti 5s forwards;
+        }
+
+        @keyframes hideConfetti {
+            0% { opacity: 1; }
+            80% { opacity: 1; }
+            100% { opacity: 0; display: none; }
+        }
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: var(--text-primary);
+            top: -10%;
+            animation: confettiFall 3s linear infinite;
+        }
+
+        @keyframes confettiFall {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(110vh) rotate(360deg); }
+        }
+
+        /* Generate Confetti via CSS using nth-child rules will be verbose, so we'll use JS to populate them */
+
+        /* HERO CONFIRMATION */
+        .hero {
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+
+        .checkmark-wrapper {
+            margin: 0 auto 30px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: rgba(0, 200, 83, 0.1);
+            border: 3px solid var(--cta-green);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: scaleIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+
+        .checkmark {
+            width: 40px;
+            height: 20px;
+            border-bottom: 5px solid var(--cta-green);
+            border-left: 5px solid var(--cta-green);
+            transform: rotate(-45deg) translateY(-5px);
+            opacity: 0;
+            animation: drawCheck 0.5s 0.5s forwards;
+        }
+
+        @keyframes scaleIn {
+            0% { transform: scale(0); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes drawCheck {
+            0% { width: 0; height: 0; opacity: 1; }
+            50% { width: 0; height: 20px; opacity: 1; }
+            100% { width: 40px; height: 20px; opacity: 1; }
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, var(--text-primary), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero h2 {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            color: white;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #ccc;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* CARDS / GLASSMORPHISM */
+        .glass-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        .card-title {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: var(--text-secondary);
+        }
+
+        /* WHAT HAPPENS NEXT */
+        .steps-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .step {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            background: rgba(0,0,0,0.2);
+            border-radius: 12px;
+            border-left: 4px solid var(--accent-pink);
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .step:hover {
+            transform: translateX(10px);
+            background: rgba(233, 30, 140, 0.05);
+        }
+
+        .step-icon {
+            font-size: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 50px;
+        }
+
+        .step-content h3 {
+            color: white;
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+        }
+
+        .step-content p {
+            color: #aaa;
+            font-size: 0.95rem;
+        }
+
+        /* IMPORTANT RESOURCES */
+        .resource-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .resource-link {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px 20px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .resource-link:hover {
+            background: rgba(255,255,255,0.05);
+            border-color: var(--text-primary);
+            transform: translateY(-2px);
+        }
+
+        .resource-link .icon {
+            font-size: 1.5rem;
+        }
+
+        /* SHARE SECTION */
+        .share-section {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .share-section h2 {
+            margin-bottom: 15px;
+            font-size: 2rem;
+        }
+
+        .share-section p {
+            color: #aaa;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .share-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .share-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            color: white;
+            text-decoration: none;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-family: var(--font-body);
+            font-size: 1rem;
+        }
+
+        .share-btn:hover {
+            transform: translateY(-3px);
+            opacity: 0.9;
+        }
+
+        .btn-whatsapp { background-color: #25D366; }
+        .btn-twitter { background-color: #1DA1F2; }
+        .btn-linkedin { background-color: #0A66C2; }
+
+        /* BONUS TEASER */
+        .bonus-teaser {
+            border-color: rgba(233, 30, 140, 0.3);
+            background: linear-gradient(145deg, rgba(233, 30, 140, 0.05), rgba(0,0,0,0.2));
+            text-align: center;
+        }
+
+        .bonus-teaser h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .bonus-teaser p {
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+
+        .bonus-list {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+
+        .bonus-list li {
+            background: rgba(255,255,255,0.05);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+        }
+
+        .small-cta {
+            color: var(--cta-green);
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        .small-cta:hover {
+            text-decoration: underline;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid var(--glass-border);
+            margin-top: 50px;
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        .footer-heart {
+            margin-top: 10px;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .step {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+            .step-icon {
+                font-size: 2.5rem;
+            }
+            .share-buttons {
+                flex-direction: column;
+            }
+            .share-btn {
+                width: 100%;
+                justify-content: center;
+            }
+            .bonus-list {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Confetti Container -->
+    <div class="confetti-container" id="confetti-container"></div>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container header-content">
+            <a href="#" class="logo">⚡ <span>N8N</span> Workflows</a>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <!-- HERO CONFIRMATION -->
+        <section class="hero">
+            <div class="checkmark-wrapper">
+                <div class="checkmark"></div>
+            </div>
+            <h1>🎉 Payment Successful!</h1>
+            <h2>Thank You for Your Purchase!</h2>
+            <p>Your 5000+ Premium N8N Automation Workflows Bundle has been processed successfully. You will receive your download link shortly.</p>
+        </section>
+
+        <!-- WHAT HAPPENS NEXT -->
+        <section class="glass-card">
+            <h2 class="card-title">What Happens Next?</h2>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-icon">📧</div>
+                    <div class="step-content">
+                        <h3>Step 1: Check your email</h3>
+                        <p>Your download link and access details have been sent to your registered email. Check your inbox (and spam folder).</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-icon">📥</div>
+                    <div class="step-content">
+                        <h3>Step 2: Download your files</h3>
+                        <p>Click the download link to get your complete bundle of 5000+ N8N workflow JSON files.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-icon">⚡</div>
+                    <div class="step-content">
+                        <h3>Step 3: Start automating</h3>
+                        <p>Import JSON files into your N8N workspace and start automating immediately. Refer to the included step-by-step guide.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- IMPORTANT RESOURCES -->
+        <section class="glass-card">
+            <h2 class="card-title">📌 Important Links & Resources</h2>
+            <div class="resource-links">
+                <a href="#" class="resource-link">
+                    <span class="icon">📖</span>
+                    <div>
+                        <div style="font-weight: 600; font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 2px;">How to Import N8N Workflows</div>
+                        <div style="font-size: 0.9rem; color: #aaa;">Step-by-step setup guide</div>
+                    </div>
+                </a>
+                <a href="https://wa.me/919119745093?text=Hi%20I%20just%20purchased%20the%20N8N%20Workflows%20Bundle" target="_blank" rel="noopener noreferrer" class="resource-link">
+                    <span class="icon">💬</span>
+                    <div>
+                        <div style="font-weight: 600; font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 2px;">Need Help? WhatsApp Support</div>
+                        <div style="font-size: 0.9rem; color: #aaa;">Message us for quick assistance</div>
+                    </div>
+                </a>
+                <div class="resource-link" style="cursor: default;">
+                    <span class="icon">📂</span>
+                    <div>
+                        <div style="font-weight: 600; font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 2px;">Access Your Downloads</div>
+                        <div style="font-size: 0.9rem; color: #aaa;">Check your email for the secure download link</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SHARE & EARN -->
+        <section class="share-section">
+            <h2 style="color: var(--text-primary);">❤️ Love the Bundle? Share with Friends!</h2>
+            <p>Help fellow automation enthusiasts discover this bundle. Share on your social media and help others save 3000+ hours!</p>
+            
+            <div class="share-buttons">
+                <button class="share-btn btn-whatsapp" onclick="shareTo('whatsapp')">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm3.427-10.02c1.458 1.459 2.261 3.397 2.261 5.46 0 4.256-3.463 7.72-7.72 7.72-1.328 0-2.63-.346-3.771-1.002L2 19l2.42-6.331C3.766 11.53 3.42 10.229 3.42 8.902c0-4.256 3.463-7.72 7.72-7.72 2.064 0 4.002.803 5.46 2.261z"/>
+                    </svg>
+                    Share on WhatsApp
+                </button>
+                <button class="share-btn btn-twitter" onclick="shareTo('twitter')">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                    Share on X
+                </button>
+                <button class="share-btn btn-linkedin" onclick="shareTo('linkedin')">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                    Share on LinkedIn
+                </button>
+            </div>
+        </section>
+
+        <!-- BONUS TEASER -->
+        <section class="glass-card bonus-teaser">
+            <h3>🎁 Don't Forget Your Exclusive Bonuses!</h3>
+            <p>As a valued customer, you now have access to exclusive bonuses worth ₹11,500. Check your email for details.</p>
+            <ul class="bonus-list">
+                <li>🎯 Premium Planner Pack</li>
+                <li>🤖 AI Prompt Templates</li>
+                <li>📊 Business Growth Toolkit</li>
+            </ul>
+            <a href="#" class="small-cta" style="pointer-events: none;">Check Your Email for Bonus Access →</a>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 N8N Workflows. All rights reserved.</p>
+        <p class="footer-heart">Thank you for trusting us! 💛</p>
+    </footer>
+
+    <script>
+        // Generate Confetti
+        const colors = ['#FFD700', '#E91E8C', '#00C853', '#D4A745'];
+        const confettiContainer = document.getElementById('confetti-container');
+        
+        for (let i = 0; i < 60; i++) {
+            const confetti = document.createElement('div');
+            confetti.classList.add('confetti');
+            
+            // Random properties
+            const left = Math.random() * 100;
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            const animationDuration = Math.random() * 2 + 2; // 2s - 4s
+            const delay = Math.random() * 2;
+            
+            confetti.style.left = `${left}%`;
+            confetti.style.backgroundColor = color;
+            confetti.style.animationDuration = `${animationDuration}s`;
+            confetti.style.animationDelay = `${delay}s`;
+            
+            // Random shape (some square, some circular, some rectangular)
+            const type = Math.random();
+            if (type > 0.6) {
+                confetti.style.borderRadius = '50%';
+            } else if (type > 0.3) {
+                confetti.style.width = '15px';
+                confetti.style.height = '6px';
+            }
+            
+            confettiContainer.appendChild(confetti);
+        }
+
+        // Web Share API & Fallbacks
+        async function shareTo(platform) {
+            const shareText = "Just got 5000+ N8N automation workflows for ₹47! Check it out: https://superprofile.bio/vp/n8nworkflow";
+            const shareUrl = "https://superprofile.bio/vp/n8nworkflow";
+            
+            // Try Native Web Share API first if supported
+            if (navigator.share) {
+                try {
+                    await navigator.share({
+                        title: 'N8N Workflows Bundle',
+                        text: "Just got 5000+ N8N automation workflows for ₹47! Check it out:",
+                        url: shareUrl
+                    });
+                    return; // Stop here if native share succeeds
+                } catch (err) {
+                    console.log('Native share failed or user cancelled:', err);
+                    // Fallback to specific platform links
+                }
+            }
+            
+            // Fallbacks
+            let url = '';
+            if (platform === 'whatsapp') {
+                url = `https://wa.me/?text=${encodeURIComponent(shareText)}`;
+            } else if (platform === 'twitter') {
+                url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`;
+            } else if (platform === 'linkedin') {
+                url = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`;
+            }
+            
+            if (url) {
+                window.open(url, '_blank');
+            }
+        }
+    </script>
+</body>
+</html>

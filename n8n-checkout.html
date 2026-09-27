@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - 5000+ Premium N8N Workflows</title>
+    
+    <!-- Preconnect for Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Google Fonts: Outfit (headings) + Inter (body) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-dark: #000000;
+            --bg-light: #050811;
+            --text-primary: #D4FF00;
+            --text-secondary: #00E575;
+            --text-body: #CBD5E1;
+            --accent-gold: #FFC837;
+            --accent-pink: #FF2E4D;
+            --cta-green: #D4FF00;
+            --cta-hover: #E4FF1A;
+            --glass-bg: rgba(8, 14, 26, 0.75);
+            --glass-border: rgba(16, 185, 129, 0.25);
+            --font-heading: 'Outfit', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-dark);
+            color: var(--text-body);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+        }
+
+        /* 1. HEADER BAR */
+        .header {
+            position: sticky;
+            top: 0;
+            background: rgba(5, 10, 24, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--glass-border);
+            z-index: 100;
+            padding: 15px 0;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .secure-badge {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #00C853;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* 2. URGENCY BANNER */
+        .urgency-banner {
+            background: linear-gradient(180deg, rgba(160, 10, 30, 0.95) 0%, rgba(100, 5, 20, 0.95) 100%);
+            border-bottom: 1px solid rgba(255, 60, 80, 0.3);
+            text-align: center;
+            padding: 10px 20px;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: #FFFFFF;
+        }
+        
+        .timer-container {
+            display: inline-block;
+            margin-left: 10px;
+            color: var(--text-primary);
+            font-variant-numeric: tabular-nums;
+            font-weight: 800;
+        }
+
+        /* Main Content Container */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+
+        /* 3. PROGRESS BAR */
+        .progress-section {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .progress-text {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+        }
+
+        .progress-bar-container {
+            width: 100%;
+            max-width: 600px;
+            height: 12px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            margin: 0 auto 8px auto;
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
+            width: 90%;
+            height: 100%;
+            background: linear-gradient(90deg, var(--cta-green), #4CAF50);
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 200, 83, 0.5);
+        }
+
+        .progress-subtext {
+            font-size: 0.85rem;
+            color: #aaa;
+        }
+
+        /* Layout Grid */
+        .checkout-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: start;
+        }
+
+        @media (max-width: 768px) {
+            .checkout-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* 4. ORDER SUMMARY CARD */
+        .card {
+            background: var(--bg-light);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .summary-card {
+            position: sticky;
+            top: 90px;
+        }
+
+        .product-title {
+            font-size: 1.4rem;
+            color: var(--text-body);
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .price-display {
+            display: flex;
+            align-items: baseline;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .price-strike {
+            font-size: 1.2rem;
+            color: #888;
+            text-decoration: line-through;
+        }
+
+        .price-current {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--text-primary);
+        }
+
+        .included-list {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .included-list li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.95rem;
+        }
+
+        .micro-trust {
+            font-size: 0.85rem;
+            color: #aaa;
+            text-align: center;
+            background: rgba(255,255,255,0.05);
+            padding: 10px;
+            border-radius: 6px;
+        }
+
+        /* 5 & 6. BUMP OFFERS */
+        .bump-offers-col {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .bump-card {
+            background: var(--glass-bg);
+            border: 2px dashed;
+            border-radius: 12px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .bump-card:hover {
+            background: rgba(255,255,255,0.06);
+        }
+
+        .bump-card.checked {
+            background: rgba(255,255,255,0.08);
+            border-style: solid;
+        }
+
+        .bump-1 { border-color: var(--text-secondary); }
+        .bump-2 { border-color: var(--accent-pink); }
+        
+        .bump-1.checked { box-shadow: 0 0 15px rgba(245, 197, 24, 0.2); }
+        .bump-2.checked { box-shadow: 0 0 15px rgba(233, 30, 140, 0.2); }
+
+        .bump-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            font-family: var(--font-heading);
+            white-space: nowrap;
+        }
+
+        .bump-1 .bump-badge {
+            background: var(--text-secondary);
+            color: #000;
+        }
+
+        .bump-2 .bump-badge {
+            background: var(--accent-pink);
+            color: #fff;
+        }
+
+        .checkbox-row {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .custom-checkbox {
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border: 2px solid #888;
+            border-radius: 6px;
+            background: rgba(0,0,0,0.3);
+            cursor: pointer;
+            position: relative;
+            flex-shrink: 0;
+            transition: all 0.2s;
+        }
+
+        .custom-checkbox:checked {
+            background: var(--cta-green);
+            border-color: var(--cta-green);
+        }
+
+        .custom-checkbox:checked::after {
+            content: '✔';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 14px;
+        }
+
+        .checkbox-label {
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .bump-title {
+            font-family: var(--font-heading);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+        }
+
+        .bump-desc {
+            font-size: 0.9rem;
+            color: #ddd;
+            margin-bottom: 15px;
+        }
+
+        .bump-list {
+            list-style: none;
+            font-size: 0.85rem;
+            margin-bottom: 15px;
+            display: grid;
+            gap: 8px;
+        }
+
+        .bump-list-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .bump-warning {
+            font-size: 0.8rem;
+            background: rgba(255,0,0,0.1);
+            padding: 10px;
+            border-radius: 6px;
+            border-left: 3px solid #ff4444;
+            margin-bottom: 10px;
+        }
+
+        .bump-urgency {
+            font-size: 0.85rem;
+            color: #ff4444;
+            font-weight: 600;
+        }
+
+        /* 7. ORDER TOTAL SECTION */
+        .order-total-card {
+            background: var(--bg-light);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 25px;
+            margin-top: 20px;
+        }
+
+        .total-line {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+        
+        .total-line.hidden {
+            display: none;
+        }
+
+        .total-separator {
+            height: 1px;
+            background: rgba(255,255,255,0.1);
+            margin: 15px 0;
+        }
+
+        .final-total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 25px;
+        }
+
+        .cta-btn {
+            display: block;
+            width: 100%;
+            background: var(--cta-green);
+            color: #000;
+            text-align: center;
+            text-decoration: none;
+            padding: 18px 20px;
+            border-radius: 8px;
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 25px var(--cta-green);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .cta-btn:hover {
+            background: var(--cta-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 200, 83, 0.6);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 200, 83, 0.7); }
+            70% { transform: scale(1.02); box-shadow: 0 0 0 15px rgba(0, 200, 83, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 200, 83, 0); }
+        }
+
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+            font-size: 0.8rem;
+            color: #aaa;
+            flex-wrap: wrap;
+        }
+
+        /* 8. TRUST/GUARANTEE */
+        .trust-section {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+        
+        .trust-section p {
+            font-size: 0.9rem;
+            color: #888;
+            margin-bottom: 8px;
+        }
+        
+        .trust-section a {
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        /* 9. FOOTER */
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 0.85rem;
+            color: #666;
+            background: #030610;
+        }
+        
+        footer p {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. HEADER BAR -->
+    <header class="header">
+        <div class="header-content">
+            <a href="#" class="logo">⚡ N8N Workflows</a>
+            <div class="secure-badge">🔒 Secure Checkout</div>
+        </div>
+    </header>
+
+    <!-- 2. URGENCY BANNER -->
+    <div class="urgency-banner">
+        Complete your order to claim FREE Bonuses worth ₹11,500 <div class="timer-container" id="countdown-timer">14:59</div>
+    </div>
+
+    <div class="container">
+        <!-- 3. PROGRESS BAR -->
+        <div class="progress-section">
+            <div class="progress-text">Almost There! 90% Complete</div>
+            <div class="progress-bar-container">
+                <div class="progress-bar-fill"></div>
+            </div>
+            <div class="progress-subtext">Just one step left!</div>
+        </div>
+
+        <div class="checkout-grid">
+            
+            <!-- Left Column: Order Summary (on desktop) -->
+            <div>
+                <!-- 4. ORDER SUMMARY CARD -->
+                <div class="card summary-card">
+                    <h2 class="product-title">5000+ Premium N8N Automation Workflows Bundle</h2>
+                    
+                    <div class="price-display">
+                        <span class="price-strike">₹499</span>
+                        <span class="price-current">₹47</span>
+                    </div>
+
+                    <ul class="included-list">
+                        <li>✅ <strong>5000+ Pre-Built N8N Workflows</strong></li>
+                        <li>✅ <strong>Fully Editable JSON Files</strong></li>
+                        <li>✅ <strong>AI Automation Workflows</strong></li>
+                        <li>✅ <strong>Commercial License (PLR + MRR)</strong></li>
+                        <li>✅ <strong>Lifetime Access</strong></li>
+                        <li>✅ <strong>Instant Digital Download</strong></li>
+                    </ul>
+
+                    <div class="micro-trust">
+                        ⚡ Instant delivery • 💰 One-time payment • 🔒 Secure
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Bump Offers & Total -->
+            <div class="bump-offers-col">
+                
+                <!-- 5. BUMP OFFER 1 -->
+                <label class="bump-card bump-1" for="bump-1-check" id="bump-1-wrapper">
+                    <div class="bump-badge">LIMITED-TIME UPGRADE</div>
+                    
+                    <div class="checkbox-row">
+                        <input type="checkbox" id="bump-1-check" class="custom-checkbox bump-trigger" data-price="147" data-name="Premium Planner">
+                        <span class="checkbox-label">✅ YES! Add this to my order</span>
+                    </div>
+                    
+                    <h3 class="bump-title">Get My "Ready-to-Use Visionary Planners" for ₹147 + GST (<del style="color:#888;font-size:0.9em">₹450</del>)</h3>
+                    <p class="bump-desc">Stop spending weeks trying to structure your goals, routines, and vision boards from scratch. Get a complete Ready-to-Use Visionary Planner vault where you will get result-oriented systems that increase daily productivity, track your habits, and bring your biggest life goals to life.</p>
+                    
+                    <ul class="bump-list">
+                        <li>✅ Goal Planner Workbook</li>
+                        <li>✅ Productivity Planner</li>
+                        <li>✅ 75 Day Challenge</li>
+                        <li>✅ Vision Board Planner</li>
+                        <li>🎁 Bonus: Great Leaders Hidden Inspiring Videos</li>
+                    </ul>
+
+                    <div class="bump-warning">
+                        🚨 IMPORTANT – Developing professional and result-oriented planners through trial and error can cost ₹1,500–₹2,000+ and waste months of effort.
+                    </div>
+                    
+                    <div class="bump-urgency">
+                        🔴 Once you leave this page, this offer is gone.
+                    </div>
+                </label>
+
+                <!-- 6. BUMP OFFER 2 -->
+                <label class="bump-card bump-2" for="bump-2-check" id="bump-2-wrapper">
+                    <div class="bump-badge">EXCLUSIVE ADD-ON</div>
+                    
+                    <div class="checkbox-row">
+                        <input type="checkbox" id="bump-2-check" class="custom-checkbox bump-trigger" data-price="97" data-name="Claude Prompts Pack">
+                        <span class="checkbox-label">✅ YES! Add Claude Prompts Pack</span>
+                    </div>
+                    
+                    <h3 class="bump-title">Get 100+ Premium Claude AI Prompts for ₹97 (<del style="color:#888;font-size:0.9em">₹399</del>)</h3>
+                    <p class="bump-desc">Supercharge your business with 100+ expertly crafted Claude AI prompts covering every aspect of business growth.</p>
+                    
+                    <ul class="bump-list bump-list-grid">
+                        <li>✅ Business ROI Strategies</li>
+                        <li>✅ Customer Support Templates</li>
+                        <li>✅ Hiring & HR Prompts</li>
+                        <li>✅ Pinterest Content Making</li>
+                        <li>✅ Business Analysis</li>
+                        <li>✅ Email Marketing</li>
+                        <li>✅ On-page & Off-page SEO</li>
+                        <li>✅ Market Research & Trends</li>
+                        <li>✅ Content Marketing</li>
+                        <li>✅ Product Market Analysis</li>
+                    </ul>
+
+                    <div class="bump-urgency">
+                        🔴 This bundle is only available on this page.
+                    </div>
+                </label>
+
+                <!-- 7. ORDER TOTAL SECTION -->
+                <div class="order-total-card">
+                    <div class="total-line">
+                        <span>N8N Workflows Bundle</span>
+                        <span>₹47</span>
+                    </div>
+                    
+                    <div class="total-line hidden" id="bump-1-line">
+                        <span>+ Premium Planner</span>
+                        <span>₹147</span>
+                    </div>
+                    
+                    <div class="total-line hidden" id="bump-2-line">
+                        <span>+ Claude Prompts Pack</span>
+                        <span>₹97</span>
+                    </div>
+
+                    <div class="total-separator"></div>
+
+                    <div class="final-total">
+                        <span>Total:</span>
+                        <span id="final-price-display">₹47</span>
+                    </div>
+
+                    <a href="https://superprofile.bio/vp/n8nworkflow" class="cta-btn" id="checkout-btn">
+                        🔒 COMPLETE MY ORDER — ₹47
+                    </a>
+
+                    <div class="trust-badges">
+                        <span>🔒 256-bit SSL Encrypted</span>
+                        <span>✅ Instant Download</span>
+                        <span>💯 Lifetime Access</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 8. TRUST/GUARANTEE SECTION -->
+        <div class="trust-section">
+            <p>Your information is 100% secure</p>
+            <p>Instant download after payment</p>
+            <p>Questions? <a href="https://wa.me/919119745093" target="_blank">WhatsApp us</a></p>
+        </div>
+    </div>
+
+    <!-- 9. FOOTER -->
+    <footer>
+        <p>© 2026 N8N Workflows. All rights reserved.</p>
+        <p>Instant Download • Lifetime Access • Commercial License</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // -- Pricing Logic --
+            const basePrice = 47;
+            const bumpCheckboxes = document.querySelectorAll('.bump-trigger');
+            const finalPriceDisplay = document.getElementById('final-price-display');
+            const checkoutBtn = document.getElementById('checkout-btn');
+            
+            function calculateTotal() {
+                let total = basePrice;
+                
+                bumpCheckboxes.forEach((checkbox, index) => {
+                    const price = parseInt(checkbox.getAttribute('data-price'));
+                    const wrapper = document.getElementById(`bump-${index+1}-wrapper`);
+                    const line = document.getElementById(`bump-${index+1}-line`);
+                    
+                    if(checkbox.checked) {
+                        total += price;
+                        wrapper.classList.add('checked');
+                        line.classList.remove('hidden');
+                    } else {
+                        wrapper.classList.remove('checked');
+                        line.classList.add('hidden');
+                    }
+                });
+
+                finalPriceDisplay.textContent = `₹${total}`;
+                checkoutBtn.innerHTML = `🔒 COMPLETE MY ORDER — ₹${total}`;
+            }
+
+            bumpCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', calculateTotal);
+            });
+
+            // Init total
+            calculateTotal();
+
+            // -- Timer Logic --
+            const timerElement = document.getElementById('countdown-timer');
+            const offerEndKey = 'n8n_offer_end';
+            let endTime = localStorage.getItem(offerEndKey);
+
+            if (!endTime) {
+                // If not set by sales page, start a fresh 15 minute timer
+                endTime = Date.now() + 15 * 60 * 1000;
+                localStorage.setItem(offerEndKey, endTime);
+            }
+
+            function updateTimer() {
+                const now = Date.now();
+                const timeLeft = Math.max(0, endTime - now);
+
+                if (timeLeft === 0) {
+                    timerElement.textContent = "00:00:00";
+                    return;
+                }
+
+                const hours = Math.floor(timeLeft / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                let timeString = '';
+                if(hours > 0) {
+                    timeString += String(hours).padStart(2, '0') + ':';
+                }
+                timeString += String(minutes).padStart(2, '0') + ':' + String(seconds).padStart(2, '0');
+
+                timerElement.textContent = timeString;
+            }
+
+            setInterval(updateTimer, 1000);
+            updateTimer();
+        });
+    </script>
+</body>
+</html>
