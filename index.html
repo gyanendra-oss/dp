@@ -1,1951 +1,1947 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>5000+ Premium n8n Automation Workflows Bundle | Official Launch Offer</title>
-    <meta name="description" content="Get 5000+ Pre-Built n8n Automation Workflows + AI Faceless Video Generator. Save 8-10 hours daily. Instant download, lifetime access & full commercial license.">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:ital,wght@1,600;1,700&family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            /* Monetise Dark Theme Tokens */
-            --bg-black: #000000;
-            --bg-surface: #050811;
-            --bg-card: rgba(8, 14, 26, 0.75);
-            --bg-card-hover: rgba(12, 22, 40, 0.85);
-            
-            /* High-Impact Neon & Emerald Accents */
-            --neon-lime: #D4FF00;
-            --neon-lime-glow: rgba(212, 255, 0, 0.35);
-            --emerald: #00E575;
-            --emerald-glow: rgba(0, 229, 117, 0.25);
-            --emerald-subtle: rgba(16, 185, 129, 0.12);
-            --emerald-border: rgba(16, 185, 129, 0.28);
-            
-            /* Urgency & Alerts */
-            --alert-red: #FF2E4D;
-            --alert-red-bg: rgba(255, 46, 77, 0.12);
-            --alert-red-glow: rgba(255, 46, 77, 0.3);
-            --accent-pink: #E91E8C;
-            --accent-gold: #FFC837;
-            
-            /* Text Hierarchy */
-            --text-white: #FFFFFF;
-            --text-silver: #CBD5E1;
-            --text-muted: #94A3B8;
-            --text-dim: #64748B;
-            
-            /* Typography */
-            --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
-            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            --font-serif: 'Cinzel', serif, Georgia;
-            
-            /* Spacing & Borders */
-            --radius-sm: 8px;
-            --radius-md: 14px;
-            --radius-lg: 20px;
-            --radius-pill: 999px;
-            --container-max: 1200px;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            background-color: var(--bg-black);
-            color: var(--text-white);
-            font-family: var(--font-body);
-        }
-
-        body {
-            overflow-x: hidden;
-            line-height: 1.6;
-            background: 
-                radial-gradient(circle at 50% 0%, rgba(0, 229, 117, 0.12) 0%, transparent 50%),
-                radial-gradient(circle at 20% 30%, rgba(212, 255, 0, 0.04) 0%, transparent 40%),
-                radial-gradient(circle at 80% 65%, rgba(0, 229, 117, 0.06) 0%, transparent 45%),
-                var(--bg-black);
-            min-height: 100vh;
-        }
-
-        /* 3D Perspective Grid Background overlay */
-        .grid-bg-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 900px;
-            background-image: 
-                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-            background-size: 60px 60px;
-            mask-image: radial-gradient(ellipse 70% 60% at 50% 20%, #000 30%, transparent 80%);
-            -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 20%, #000 30%, transparent 80%);
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        /* Container */
-        .container {
-            width: 100%;
-            max-width: var(--container-max);
-            margin: 0 auto;
-            padding: 0 1.25rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        /* Typography Utilities */
-        h1, h2, h3, h4 {
-            font-family: var(--font-heading);
-            font-weight: 800;
-            letter-spacing: -0.02em;
-            line-height: 1.18;
-        }
-
-        .serif-italic {
-            font-family: var(--font-serif);
-            font-style: italic;
-            font-weight: 600;
-        }
-
-        .highlight-lime {
-            color: var(--neon-lime);
-            text-shadow: 0 0 25px rgba(212, 255, 0, 0.3);
-        }
-
-        .highlight-emerald {
-            color: var(--emerald);
-            text-shadow: 0 0 20px rgba(0, 229, 117, 0.35);
-        }
-
-        .highlight-pink {
-            color: var(--accent-pink);
-        }
-
-        /* 1. Top Fixed Urgency Banner (Monetise Red Bar) */
-        .top-urgency-bar {
-            position: sticky;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: linear-gradient(180deg, rgba(160, 10, 30, 0.95) 0%, rgba(100, 5, 20, 0.95) 100%);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 60, 80, 0.3);
-            box-shadow: 0 4px 25px rgba(255, 46, 77, 0.25);
-            padding: 0.65rem 1rem;
-            text-align: center;
-            z-index: 9999;
-            font-family: var(--font-heading);
-            font-size: 0.88rem;
-            font-weight: 800;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-        }
-
-        .top-urgency-content {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.6rem;
-            flex-wrap: wrap;
-        }
-
-        .pulse-dot-red {
-            width: 9px;
-            height: 9px;
-            background: #FF4757;
-            border-radius: 50%;
-            display: inline-block;
-            box-shadow: 0 0 0 0 rgba(255, 71, 87, 0.7);
-            animation: red-dot-pulse 1.8s infinite;
-        }
-
-        @keyframes red-dot-pulse {
-            0% { box-shadow: 0 0 0 0 rgba(255, 71, 87, 0.8); }
-            70% { box-shadow: 0 0 0 10px rgba(255, 71, 87, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(255, 71, 87, 0); }
-        }
-
-        .urgency-timer-text {
-            color: #FFFFFF;
-            font-variant-numeric: tabular-nums;
-        }
-
-        .urgency-timer-highlight {
-            color: var(--neon-lime);
-            margin-left: 0.25rem;
-        }
-
-        /* 2. Sleek Sticky Header */
-        header.site-header {
-            width: 100%;
-            padding: 1.1rem 0;
-            background: rgba(0, 0, 0, 0.4);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            position: relative;
-            z-index: 999;
-        }
-
-        .header-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .brand-logo {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            font-family: var(--font-heading);
-            font-weight: 900;
-            font-size: 1.35rem;
-            color: var(--text-white);
-            text-decoration: none;
-            letter-spacing: -0.02em;
-        }
-
-        .brand-logo .logo-icon {
-            color: var(--neon-lime);
-            font-size: 1.5rem;
-            filter: drop-shadow(0 0 10px var(--neon-lime-glow));
-        }
-
-        .header-cta-btn {
-            background: var(--neon-lime);
-            color: #000000;
-            font-family: var(--font-heading);
-            font-size: 0.85rem;
-            font-weight: 800;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-            padding: 0.6rem 1.4rem;
-            border-radius: var(--radius-pill);
-            text-decoration: none;
-            box-shadow: 0 0 20px var(--neon-lime-glow);
-            transition: all 0.25s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-
-        .header-cta-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 0 30px rgba(212, 255, 0, 0.6);
-            background: #E4FF1A;
-        }
-
-        @media (max-width: 600px) {
-            .header-cta-btn { display: none; }
-        }
-
-        /* 3. Hero Section */
-        section.hero-section {
-            padding: 2.2rem 0 1rem;
-            text-align: center;
-            position: relative;
-        }
-
-        .hero-badge-pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.45rem 1.25rem;
-            border-radius: var(--radius-pill);
-            background: rgba(16, 185, 129, 0.1);
-            border: 1px solid var(--emerald-border);
-            color: var(--emerald);
-            font-size: 0.82rem;
-            font-weight: 700;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 0 20px rgba(0, 229, 117, 0.15);
-        }
-
-        .hero-eyebrow {
-            color: var(--alert-red);
-            font-family: var(--font-heading);
-            font-size: 1.15rem;
-            font-weight: 800;
-            font-style: italic;
-            letter-spacing: 0.02em;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-        }
-
-        .hero-headline {
-            font-size: clamp(2.1rem, 5.2vw, 3.8rem);
-            max-width: 1080px;
-            margin: 0 auto 1.4rem;
-            color: var(--text-white);
-            line-height: 1.15;
-        }
-
-        .hero-subheadline {
-            font-size: clamp(1.05rem, 2vw, 1.35rem);
-            color: var(--text-silver);
-            max-width: 820px;
-            margin: 0 auto 1.2rem;
-            font-weight: 400;
-            line-height: 1.55;
-        }
-
-        /* Micro Trust Badges Row */
-        .micro-trust-row {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-            margin-bottom: 1.2rem;
-        }
-
-        .trust-pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.45rem;
-            font-size: 0.92rem;
-            color: var(--text-silver);
-            font-weight: 500;
-            background: rgba(255, 255, 255, 0.04);
-            padding: 0.4rem 1rem;
-            border-radius: var(--radius-pill);
-            border: 1px solid rgba(255, 255, 255, 0.07);
-        }
-
-        .trust-pill .pill-icon {
-            color: var(--emerald);
-        }
-
-        /* High-Voltage Primary CTA Button */
-        .cta-btn-main {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.8rem;
-            background: var(--neon-lime);
-            color: #000000;
-            font-family: var(--font-heading);
-            font-weight: 900;
-            font-size: clamp(1.15rem, 2.5vw, 1.45rem);
-            letter-spacing: 0.02em;
-            text-transform: uppercase;
-            padding: 1.15rem 3rem;
-            border-radius: var(--radius-pill);
-            text-decoration: none;
-            box-shadow: 0 0 35px var(--neon-lime-glow);
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative;
-            overflow: hidden;
-            border: none;
-            cursor: pointer;
-        }
-
-        .cta-btn-main:hover {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 0 55px rgba(212, 255, 0, 0.7);
-            background: #E4FF1A;
-        }
-
-        .cta-btn-main .arrow-icon {
-            font-size: 1.4rem;
-            transition: transform 0.25s ease;
-        }
-
-        .cta-btn-main:hover .arrow-icon {
-            transform: translateX(5px);
-        }
-
-        .cta-strikethrough {
-            text-decoration: line-through;
-            color: rgba(0, 0, 0, 0.5);
-            font-size: 0.95rem;
-            font-weight: 700;
-            margin-left: 0.3rem;
-        }
-
-        .cta-subtext {
-            display: block;
-            margin-top: 0.8rem;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            letter-spacing: 0.02em;
-        }
-
-        /* Video Showcase Container */
-        .video-showcase-frame {
-            max-width: 860px;
-            margin: 1.5rem auto 0;
-            background: linear-gradient(180deg, rgba(16, 185, 129, 0.08) 0%, rgba(5, 8, 17, 0.95) 100%);
-            border: 1px solid var(--emerald-border);
-            border-radius: var(--radius-lg);
-            padding: 1rem;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 229, 117, 0.15);
-            position: relative;
-        }
-
-        .video-inner-box {
-            width: 100%;
-            aspect-ratio: 16/9;
-            background: #020408;
-            border-radius: 12px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            cursor: pointer;
-        }
-
-        .video-play-orb {
-            width: 76px;
-            height: 76px;
-            border-radius: 50%;
-            background: rgba(0, 229, 117, 0.18);
-            border: 2px solid var(--emerald);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.2rem;
-            box-shadow: 0 0 30px var(--emerald-glow);
-            transition: all 0.3s ease;
-        }
-
-        .video-inner-box:hover .video-play-orb {
-            transform: scale(1.1);
-            background: var(--emerald);
-            box-shadow: 0 0 45px rgba(0, 229, 117, 0.6);
-        }
-
-        .video-inner-box:hover .video-play-orb svg {
-            fill: #000;
-        }
-
-        .video-inner-box p {
-            font-family: var(--font-heading);
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--text-white);
-            letter-spacing: -0.01em;
-        }
-
-        .video-inner-box span {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin-top: 0.3rem;
-        }
-
-        /* 4. Trust Statistics Bar */
-        section.stats-section {
-            padding: 1rem 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.06);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-            background: rgba(4, 7, 16, 0.8);
-            position: relative;
-        }
-
-        .stats-grid-container {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-            text-align: center;
-        }
-
-        @media (min-width: 768px) {
-            .stats-grid-container {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
-
-        .stat-card-item {
-            padding: 1.2rem;
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: var(--radius-md);
-            transition: transform 0.25s ease, border-color 0.25s ease;
-        }
-
-        .stat-card-item:hover {
-            border-color: var(--emerald-border);
-            transform: translateY(-2px);
-        }
-
-        .stat-card-item .stat-number {
-            font-family: var(--font-heading);
-            font-size: clamp(2rem, 3.5vw, 2.8rem);
-            font-weight: 900;
-            color: var(--neon-lime);
-            text-shadow: 0 0 20px var(--neon-lime-glow);
-            line-height: 1;
-            margin-bottom: 0.4rem;
-        }
-
-        .stat-card-item .stat-caption {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--text-silver);
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-        }
-
-        /* 5. Section Header Common Styles */
-        .section-header-block {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 1.2rem;
-        }
-
-        .section-badge-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            font-size: 0.8rem;
-            font-weight: 800;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: var(--emerald);
-            background: var(--emerald-subtle);
-            padding: 0.35rem 1rem;
-            border-radius: var(--radius-pill);
-            border: 1px solid var(--emerald-border);
-            margin-bottom: 1rem;
-        }
-
-        .section-main-title {
-            font-size: clamp(2rem, 4vw, 3rem);
-            color: var(--text-white);
-            margin-bottom: 1rem;
-        }
-
-        .section-description {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-        }
-
-        /* 6. Themed Vault / Module Cards (Monetise "Episode" Pattern) */
-        section.vaults-section {
-            padding: 1rem 0;
-            position: relative;
-        }
-
-        .vault-cards-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-        }
-
-        @media (min-width: 860px) {
-            .vault-cards-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        .vault-card {
-            background: linear-gradient(180deg, rgba(8, 16, 32, 0.9) 0%, rgba(3, 7, 16, 0.95) 100%);
-            border: 1px solid var(--emerald-border);
-            border-radius: var(--radius-lg);
-            padding: 2.2rem;
-            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.6);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .vault-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--emerald), transparent);
-            opacity: 0.6;
-        }
-
-        .vault-card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(0, 229, 117, 0.5);
-            box-shadow: 0 20px 60px rgba(0, 229, 117, 0.15);
-        }
-
-        .vault-card-header {
-            text-align: center;
-            margin-bottom: 1.8rem;
-            padding-bottom: 1.4rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-        }
-
-        .vault-card-episode {
-            font-size: 2.1rem;
-            color: var(--text-white);
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-
-        .vault-tag-pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            font-size: 0.8rem;
-            font-weight: 700;
-            color: var(--neon-lime);
-            background: rgba(212, 255, 0, 0.08);
-            border: 1px solid rgba(212, 255, 0, 0.25);
-            padding: 0.3rem 0.9rem;
-            border-radius: var(--radius-pill);
-        }
-
-        .vault-card-title {
-            font-size: 1.4rem;
-            color: var(--text-white);
-            margin: 1rem 0 0.5rem;
-            text-align: center;
-        }
-
-        .vault-features-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 0.85rem;
-            flex-grow: 1;
-        }
-
-        /* Inner Feature Pill Row (Monetise style) */
-        .feature-pill-row {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.85rem;
-            background: rgba(16, 185, 129, 0.07);
-            border: 1px solid rgba(16, 185, 129, 0.18);
-            padding: 0.85rem 1.1rem;
-            border-radius: 12px;
-            font-size: 0.92rem;
-            color: var(--text-silver);
-            line-height: 1.45;
-            transition: all 0.2s ease;
-        }
-
-        .feature-pill-row:hover {
-            background: rgba(16, 185, 129, 0.12);
-            border-color: rgba(16, 185, 129, 0.35);
-            color: var(--text-white);
-        }
-
-        .feature-pill-icon {
-            color: var(--emerald);
-            font-size: 1.1rem;
-            line-height: 1;
-            flex-shrink: 0;
-            margin-top: 2px;
-        }
-
-        /* 7. Transformation Story Timeline (The Reality Shift) */
-        section.timeline-section {
-            padding: 1rem 0;
-            background: rgba(3, 6, 14, 0.7);
-            position: relative;
-        }
-
-        .timeline-container {
-            max-width: 820px;
-            margin: 0 auto;
-            position: relative;
-            padding-left: 2.5rem;
-        }
-
-        /* Vertical Luminous Green Line */
-        .timeline-container::before {
-            content: '';
-            position: absolute;
-            top: 20px;
-            bottom: 20px;
-            left: 10px;
-            width: 2px;
-            background: linear-gradient(180deg, var(--emerald) 0%, rgba(0, 229, 117, 0.2) 90%, transparent 100%);
-            box-shadow: 0 0 15px var(--emerald-glow);
-        }
-
-        .timeline-node {
-            position: relative;
-            margin-bottom: 1.8rem;
-        }
-
-        .timeline-node:last-child {
-            margin-bottom: 0;
-        }
-
-        /* 4-point glowing star icon */
-        .timeline-star-icon {
-            position: absolute;
-            left: -2.5rem;
-            top: 0;
-            width: 22px;
-            height: 22px;
-            color: var(--emerald);
-            transform: translateX(-4px);
-            filter: drop-shadow(0 0 8px var(--emerald-glow));
-        }
-
-        .timeline-node-title {
-            font-size: 1.45rem;
-            color: var(--text-white);
-            margin-bottom: 0.8rem;
-            line-height: 1.3;
-        }
-
-        .timeline-node-desc {
-            font-size: 1.05rem;
-            color: var(--text-silver);
-            line-height: 1.65;
-        }
-
-        /* 8. Step-by-Step Import Architecture */
-        section.steps-section {
-            padding: 1rem 0;
-            position: relative;
-        }
-
-        .steps-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        @media (min-width: 768px) {
-            .steps-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        .step-module-card {
-            background: var(--bg-card);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: var(--radius-md);
-            padding: 1.8rem;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.25s ease;
-        }
-
-        .step-module-card:hover {
-            border-color: var(--emerald-border);
-            transform: translateY(-2px);
-            background: var(--bg-card-hover);
-        }
-
-        .step-badge-num {
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            background: rgba(0, 229, 117, 0.12);
-            border: 1px solid var(--emerald);
-            color: var(--emerald);
-            font-family: var(--font-heading);
-            font-weight: 800;
-            font-size: 1.1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.2rem;
-            box-shadow: 0 0 15px rgba(0, 229, 117, 0.2);
-        }
-
-        .step-module-title {
-            font-size: 1.15rem;
-            color: var(--text-white);
-            margin-bottom: 0.6rem;
-        }
-
-        .step-module-desc {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            line-height: 1.5;
-        }
-
-        /* 9. Before vs After Comparison Matrix */
-        section.comparison-section {
-            padding: 1rem 0;
-            position: relative;
-        }
-
-        .comparison-cards-split {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-            max-width: 1040px;
-            margin: 0 auto;
-        }
-
-        @media (min-width: 768px) {
-            .comparison-cards-split {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        .comp-column-card {
-            border-radius: var(--radius-lg);
-            padding: 2.2rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .comp-card-bad {
-            background: linear-gradient(180deg, rgba(35, 8, 15, 0.6) 0%, rgba(15, 4, 8, 0.8) 100%);
-            border: 1px solid rgba(255, 46, 77, 0.35);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
-        }
-
-        .comp-card-good {
-            background: linear-gradient(180deg, rgba(8, 30, 20, 0.7) 0%, rgba(4, 15, 10, 0.85) 100%);
-            border: 1px solid var(--emerald);
-            box-shadow: 0 15px 50px rgba(0, 229, 117, 0.18);
-        }
-
-        .comp-header-badge {
-            font-family: var(--font-heading);
-            font-size: 1.35rem;
-            font-weight: 800;
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            margin-bottom: 1.8rem;
-            padding-bottom: 1.2rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .comp-card-bad .comp-header-badge {
-            color: var(--alert-red);
-        }
-
-        .comp-card-good .comp-header-badge {
-            color: var(--emerald);
-        }
-
-        .comp-rows-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 1.1rem;
-        }
-
-        .comp-row-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.75rem;
-            font-size: 0.98rem;
-            line-height: 1.5;
-        }
-
-        .comp-card-bad .comp-row-item {
-            color: #E2E8F0;
-        }
-
-        .comp-card-good .comp-row-item {
-            color: #FFFFFF;
-            font-weight: 500;
-        }
-
-        .comp-row-icon {
-            font-size: 1.15rem;
-            line-height: 1;
-            flex-shrink: 0;
-            margin-top: 3px;
-        }
-
-        /* 10. Social Proof Testimonials */
-        section.testimonials-section {
-            padding: 1rem 0;
-            position: relative;
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.8rem;
-        }
-
-        @media (min-width: 768px) {
-            .testimonials-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        .testi-card-monetise {
-            background: var(--bg-card);
-            border: 1px solid rgba(255, 255, 255, 0.07);
-            border-radius: var(--radius-md);
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: all 0.25s ease;
-        }
-
-        .testi-card-monetise:hover {
-            border-color: var(--emerald-border);
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
-        }
-
-        .testi-stars-row {
-            color: var(--accent-gold);
-            font-size: 1.1rem;
-            letter-spacing: 2px;
-            margin-bottom: 1.2rem;
-        }
-
-        .testi-quote-body {
-            font-size: 1.02rem;
-            color: var(--text-silver);
-            line-height: 1.6;
-            margin-bottom: 1.8rem;
-            font-style: italic;
-            flex-grow: 1;
-        }
-
-        .testi-author-info {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            padding-top: 1rem;
-        }
-
-        .testi-avatar-placeholder {
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--emerald), var(--neon-lime));
-            color: #000;
-            font-weight: 800;
-            font-size: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .testi-author-name {
-            font-weight: 700;
-            font-size: 0.95rem;
-            color: var(--text-white);
-        }
-
-        .testi-author-role {
-            font-size: 0.82rem;
-            color: var(--text-muted);
-        }
-
-        /* 11. FAQ Accordion (Monetise style) */
-        section.faq-section {
-            padding: 1rem 0;
-            position: relative;
-        }
-
-        .faq-accordion-wrap {
-            max-width: 860px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .faq-card-item {
-            background: rgba(8, 14, 26, 0.8);
-            border: 1px solid rgba(255, 255, 255, 0.07);
-            border-radius: var(--radius-md);
-            overflow: hidden;
-            transition: border-color 0.25s ease, background 0.25s ease;
-        }
-
-        .faq-card-item:hover, .faq-card-item.active {
-            border-color: var(--emerald-border);
-            background: rgba(12, 22, 40, 0.9);
-        }
-
-        .faq-question-trigger {
-            padding: 1.3rem 1.6rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            user-select: none;
-            font-family: var(--font-heading);
-            font-size: 1.12rem;
-            font-weight: 700;
-            color: var(--text-white);
-        }
-
-        .faq-plus-icon {
-            font-size: 1.4rem;
-            color: var(--emerald);
-            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            line-height: 1;
-        }
-
-        .faq-card-item.active .faq-plus-icon {
-            transform: rotate(45deg);
-            color: var(--alert-red);
-        }
-
-        .faq-answer-collapse {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-            padding: 0 1.6rem;
-            color: var(--text-silver);
-            font-size: 1rem;
-            line-height: 1.65;
-        }
-
-        .faq-card-item.active .faq-answer-collapse {
-            max-height: 350px;
-            padding-bottom: 1.4rem;
-        }
-
-        /* 12. Final Urgency Offer Section */
-        section.final-urgency-section {
-            padding: 1.25rem 0;
-            text-align: center;
-            position: relative;
-            background: linear-gradient(180deg, rgba(30, 4, 10, 0.8) 0%, rgba(0, 0, 0, 0.95) 100%);
-            border-top: 2px solid var(--alert-red);
-            border-bottom: 2px solid var(--alert-red);
-            box-shadow: 0 0 60px rgba(255, 46, 77, 0.2);
-        }
-
-        .final-urgency-content {
-            max-width: 860px;
-            margin: 0 auto;
-        }
-
-        .final-warning-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--alert-red);
-            font-family: var(--font-heading);
-            font-size: 1.15rem;
-            font-weight: 800;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            margin-bottom: 1.2rem;
-        }
-
-        .final-hero-title {
-            font-size: clamp(2.2rem, 4.5vw, 3.4rem);
-            color: var(--text-white);
-            margin-bottom: 1.4rem;
-        }
-
-        .price-ladder-card {
-            background: rgba(255, 46, 77, 0.08);
-            border: 1px dashed rgba(255, 46, 77, 0.35);
-            border-radius: var(--radius-md);
-            padding: 1.4rem;
-            margin: 2rem auto;
-            max-width: 680px;
-            font-size: 1.08rem;
-            color: #FFFFFF;
-            line-height: 1.65;
-        }
-
-        .price-ladder-path {
-            font-weight: 800;
-            color: var(--neon-lime);
-            margin-top: 0.5rem;
-            display: block;
-            font-size: 1.18rem;
-            letter-spacing: 0.04em;
-        }
-
-        /* 13. Clean Dark Footer */
-        footer.site-footer {
-            padding: 1.5rem 0;
-            background: #010206;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            text-align: center;
-            color: var(--text-dim);
-            font-size: 0.88rem;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 1.2rem;
-            flex-wrap: wrap;
-        }
-
-        .footer-link-item {
-            color: var(--text-muted);
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-
-        .footer-link-item:hover {
-            color: var(--neon-lime);
-        }
-
-        /* 14. Floating Sticky Elements */
-        .wa-floating-trigger {
-            position: fixed;
-            bottom: 24px;
-            right: 24px;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: #25D366;
-            color: #FFFFFF;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
-            z-index: 995;
-            text-decoration: none;
-            transition: all 0.25s ease;
-            animation: wa-pulse 2s infinite;
-        }
-
-        .wa-floating-trigger:hover {
-            transform: scale(1.1);
-            box-shadow: 0 8px 35px rgba(37, 211, 102, 0.8);
-        }
-
-        @keyframes wa-pulse {
-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-            70% { box-shadow: 0 0 0 16px rgba(37, 211, 102, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-        }
-
-        /* Mobile Sticky Bottom CTA Bar */
-        .mobile-bottom-bar {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(4, 8, 18, 0.95);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-            border-top: 1px solid var(--emerald-border);
-            padding: 0.75rem 1rem;
-            z-index: 990;
-            display: none;
-            box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.8);
-        }
-
-        @media (max-width: 768px) {
-            .mobile-bottom-bar {
-                display: block;
-            }
-            body {
-                padding-bottom: 70px;
-            }
-        }
-
-        .mobile-bottom-bar .cta-btn-main {
-            width: 100%;
-            padding: 0.85rem;
-            font-size: 1.05rem;
-        }
-
-        /* 15. Exit Intent Modal */
-        .exit-modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            z-index: 10000;
-            padding: 1.25rem;
-        }
-
-        .exit-modal-box {
-            background: linear-gradient(180deg, #091224 0%, #03060f 100%);
-            border: 2px solid var(--neon-lime);
-            box-shadow: 0 0 50px rgba(212, 255, 0, 0.3);
-            border-radius: var(--radius-lg);
-            padding: 3rem 2.2rem;
-            max-width: 520px;
-            text-align: center;
-            position: relative;
-        }
-
-        .exit-modal-close {
-            position: absolute;
-            top: 16px;
-            right: 20px;
-            font-size: 1.8rem;
-            color: var(--text-muted);
-            cursor: pointer;
-            transition: color 0.2s;
-            line-height: 1;
-        }
-
-        .exit-modal-close:hover {
-            color: #FFFFFF;
-        }
-    </style>
-</head>
-<body>
-
-    <!-- 3D Perspective Grid Background overlay -->
-    <div class="grid-bg-overlay"></div>
-
-    <!-- 1. Top Urgency Countdown Bar (Monetise Red Bar) -->
-    <div class="top-urgency-bar">
-        <div class="top-urgency-content">
-            <span class="pulse-dot-red"></span>
-            <span>LAUNCH OFFER CLOSING IN:</span>
-            <span class="urgency-timer-text" id="header-timer">00 DAYS 08 HRS 47 MINS 24 SECS</span>
-            <span class="urgency-timer-highlight">â€¢ PRICE JUMPS TO â‚¹75 AFTER 20 SALES</span>
-        </div>
-    </div>
-
-    <!-- 2. Sticky Brand Header -->
-    <header class="site-header">
-        <div class="container header-inner">
-            <a href="#" class="brand-logo">
-                <span class="logo-icon">âš¡</span>
-                <span>N8N WORKFLOWS</span>
-            </a>
-            <a href="n8n-checkout.html" class="header-cta-btn">
-                <span>GET OFFER â€” â‚¹47</span>
-                <span>â†’</span>
-            </a>
-        </div>
-    </header>
-
-    <!-- 3. Hero Section -->
-    <section class="hero-section">
-        <div class="container">
-            
-            <div class="hero-badge-pill">
-                <span>âš¡</span>
-                <span>Instant Digital Download â€¢ Lifetime Access â€¢ Full Commercial License</span>
-            </div>
-
-            <p class="hero-eyebrow">
-                CLOSING SOON: "Kachha-Aam Candy costs more than a n8n automation workflow (â‚¹0.02 each!)"
-            </p>
-
-            <h1 class="hero-headline">
-                Complete Tasks in Just <span class="highlight-lime">5 Minutes</span> Using 5000+ Premium n8n Workflows &amp; Save <span class="highlight-emerald">8â€“10 Hours Daily.</span>
-            </h1>
-
-            <p class="hero-subheadline">
-                That is saving <strong>3,000â€“3,500 hours every year</strong>. Stop building automations from scratch. Plug pre-built JSON logic into your business, deliver for clients 10x faster, or launch your automated agency today.
-            </p>
-
-            <!-- Micro Trust Badges Row -->
-            <div class="micro-trust-row">
-                <div class="trust-pill">
-                    <span class="pill-icon">âœ•</span>
-                    <span>No paying per workflow</span>
-                </div>
-                <div class="trust-pill">
-                    <span class="pill-icon">âœ•</span>
-                    <span>No expensive freelancers</span>
-                </div>
-                <div class="trust-pill">
-                    <span class="pill-icon">âœ•</span>
-                    <span>No endless tutorials</span>
-                </div>
-            </div>
-
-            <!-- Primary High-Voltage CTA Button -->
-            <div style="margin-bottom: 2rem;">
-                <a href="n8n-checkout.html" class="cta-btn-main">
-                    <span>ðŸ‘‰ GET INSTANT ACCESS FOR â€” â‚¹47</span>
-                    <span class="cta-strikethrough">â‚¹499</span>
-                    <span class="arrow-icon">â†’</span>
-                </a>
-                <span class="cta-subtext">Instant digital download after payment â€¢ Works on any n8n instance (Cloud or Self-Hosted)</span>
-            </div>
-
-            <!-- Video Showcase Frame -->
-            <div class="video-showcase-frame">
-                <div class="video-inner-box">
-                    <div class="video-play-orb">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="#00E575">
-                            <polygon points="6,4 20,12 6,20"></polygon>
-                        </svg>
-                    </div>
-                    <p>Watch How It Works in 2 Minutes</p>
-                    <span>Click to see 5000+ workflows imported and customized live</span>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- 4. Trust Statistics Bar -->
-    <section class="stats-section">
-        <div class="container">
-            <div class="stats-grid-container">
-                <div class="stat-card-item">
-                    <div class="stat-number">5,000+</div>
-                    <div class="stat-caption">Ready-to-Deploy Workflows</div>
-                </div>
-                <div class="stat-card-item">
-                    <div class="stat-number">3,500+</div>
-                    <div class="stat-caption">Hours Saved Per Year</div>
-                </div>
-                <div class="stat-card-item">
-                    <div class="stat-number">100%</div>
-                    <div class="stat-caption">Editable JSON Files</div>
-                </div>
-                <div class="stat-card-item">
-                    <div class="stat-number">â‚¹0.009</div>
-                    <div class="stat-caption">Cost Per Workflow</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 5. What's Included: Themed Vault Cards (Monetise "Episode" Pattern) -->
-    <section class="vaults-section">
-        <div class="container">
-            
-            <div class="section-header-block">
-                <div class="section-badge-tag">
-                    <span>ðŸ“¦</span>
-                    <span>What's Inside The Toolkit</span>
-                </div>
-                <h2 class="section-main-title">
-                    Your Complete Automation <span class="serif-italic highlight-lime">Blueprint</span>
-                </h2>
-                <p class="section-description">
-                    Everything you need to automate your operations, client fulfillment, and AI content machines â€” divided into 4 battle-tested vault modules.
-                </p>
-            </div>
-
-            <div class="vault-cards-grid">
-                
-                <!-- Vault 01 -->
-                <div class="vault-card">
-                    <div class="vault-card-header">
-                        <span class="vault-card-episode serif-italic">Vault 01</span>
-                        <span class="vault-tag-pill">âš¡ Lead Generation &amp; Scraping Engine</span>
-                        <h3 class="vault-card-title">Client Acquisition on Autopilot</h3>
-                    </div>
-                    <ul class="vault-features-list">
-                        <li class="feature-pill-row">
-                            <span class="feature-pill-icon">ðŸš€</span>
-                            <span><strong>LinkedIn Leads Scraping Automation:</strong> Auto-extract verified leads, enrich emails, and sync to CRM.</span>
-                        </li>
-                        <li class="feature-pill-row">
-                            <span class="feature-pill-icon">ðŸ“Š</span>
-                            <span><strong>Google Sheet Real-Time Data Entry:</strong> Capture inbound webhooks and log entries without manual errors.</span>
-                        </li>
-                        <li class="feature-pill-row">
-                            <span class="feature-pill-icon">ðŸ“…</span>
-                            <span><strong>Automated Appointment Booking:</strong> Auto-calendar invite dispatch, reminder sequences &amp; no-show reduction.</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Vault 02 -->
-                <div class="vault-card">
-                    <div class="vault-card-header">
-                        <span class="vault-card-episode serif-italic">Vault 02</span>
-                        <span class="vault-tag-pill">ðŸŽ¬ AI Video &amp; Viral Content Machines</span>
-                        <h3 class="vault-card-title">Faceless Content &amp; Media Scale</h3>
-                    </div>
-                    <ul class="vault-features-list">
-                        <li class="feature-pill-row">
-                            <span class="feature-pill-icon">ðŸ¤–</span>
-                            <span><strong>AI Faceless Video Generator:</strong> Script-to-video workflow that crafts motion, visuals &amp; subtitles automatically.</span>
-                        </li>
-                        <li class="feature-pill-row">
-                            <span class="feature-pill-icon">ðŸ“±</span>
-                            <span><strong>Instagram Reels &amp; TikTok Auto-Poster:</strong> Schedule and push reels across multiple accounts seamlessly.</span>
-                        </li>
-                        <li class="feature-pill-row">
-                            <span class="feature-pill-icon">â–¶ï¸</span>
-                            <span><strong>YouTube Automated Video Publishing:</strong> Tag generation, thumbnail upload &amp; SEO description automation.</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Vault 03 -->
-                <div class="vault-card">
-                    <div class="vault-card-header">
-                        <span class="vault-card-episode serif-italic">Vault 03</span>
-                        <span class="vault-tag-pill">ðŸ’¬ WhatsApp &amp; Telegram Smart Bots</span>
-                        <h3 class="vault-card-title">24/7 Conversational AI Workflows</h3>
-                    </div>
-                    <ul class="vault-features-list">
-                        <li class="feature-pill-row">
-                            <span class="feature-pill-icon">ðŸŸ¢</span>
-                            <span><strong>WhatsApp Chat &amp; Broadcast Automation:</strong> Instant lead responses, order updates &amp; follow-up triggers.</span>
-                        </li>
-                        <li class="feature-pill-row">
-                            <span class="feature-pill-icon">âœˆï¸</span>
-                            <span><strong>Telegram Community Bots:</strong> Automated group moderation, payment verification &amp; content alerts.</span>
-                        </li>
-                        <li class="feature-pill-row">
-                            <span class="feature-pill-icon">ðŸ§ </span>
-                            <span><strong>Personal AI Chatbot Support:</strong> Trained on your business knowledge base for instant answers.</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Vault 04 -->
-                <div class="vault-card">
-                    <div class="vault-card-header">
-                        <span class="vault-card-episode serif-italic">Vault 04</span>
-                        <span class="vault-tag-pill">ðŸ’¼ Core Systems &amp; Resell Rights</span>
-                        <h3 class="vault-card-title">Commercial PLR &amp; MRR License</h3>
-                    </div>
-                    <ul class="vault-features-list">
-                        <li class="feature-pill-row">
-                            <span class="feature-pill-icon">ðŸ“‚</span>
-                            <span><strong>5000+ Pre-Built JSON Files:</strong> Organized by category, fully editable in any n8n workflow canvas.</span>
-                        </li>
-                        <li class="feature-pill-row">
-                            <span class="feature-pill-icon">ðŸ’Ž</span>
-                            <span><strong>Commercial Rights (PLR + MRR):</strong> Sell workflows to clients, package into your agency, or resell.</span>
-                        </li>
-                        <li class="feature-pill-row">
-                            <span class="feature-pill-icon">â™¾ï¸</span>
-                            <span><strong>Lifetime Access &amp; Instant Download:</strong> No recurring monthly subscriptions. One payment, forever yours.</span>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <!-- Mid-Page CTA -->
-            <div style="text-align: center; margin-top: 1.25rem;">
-                <a href="n8n-checkout.html" class="cta-btn-main">
-                    <span>ðŸ‘‰ UNLOCK ALL 4 VAULTS FOR â‚¹47</span>
-                    <span class="arrow-icon">â†’</span>
-                </a>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- 6. Timeline: The Reality Shift (Monetise Storytelling Style) -->
-    <section class="timeline-section">
-        <div class="container">
-            
-            <div class="section-header-block">
-                <div class="section-badge-tag">
-                    <span>ðŸ’¡</span>
-                    <span>The Paradigm Shift</span>
-                </div>
-                <h2 class="section-main-title">
-                    Why Building From Scratch Is A <span class="highlight-pink">Losing Game</span>
-                </h2>
-                <p class="section-description">
-                    The difference between high-earning automation agencies and struggling freelancers is not coding skill â€” it's having a ready library.
-                </p>
-            </div>
-
-            <div class="timeline-container">
-                
-                <div class="timeline-node">
-                    <svg class="timeline-star-icon" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/>
-                    </svg>
-                    <h3 class="timeline-node-title">The Trap: Har Naya Client, Har Naya Use-Case Scratch Se</h3>
-                    <p class="timeline-node-desc">
-                        Trigger set karo. Nodes connect karo. Test karo. Break hone pe fix karo. Ek workflow banane mein hi 3â€“4 ghante nikal jaate hain â€” aur jab 10 clients ho, tumhara poora din debugging aur setup mein chala jaata hai instead of scaling your business.
-                    </p>
-                </div>
-
-                <div class="timeline-node">
-                    <svg class="timeline-star-icon" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/>
-                    </svg>
-                    <h3 class="timeline-node-title">The Secret: Builders vs. Assemblers</h3>
-                    <p class="timeline-node-desc">
-                        Jo log automation se real revenue bana rahe hain, woh har baar wheel reinvent nahi karte. Unke paas already ek verified library hoti hai. Jo bhi requirement aaye â€” wahan se pick karo, 10â€“15 minute mein customize karo, deploy karo, aur client se premium fee charge karo.
-                    </p>
-                </div>
-
-                <div class="timeline-node">
-                    <svg class="timeline-star-icon" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/>
-                    </svg>
-                    <h3 class="timeline-node-title">The Solution: 5,000+ Pre-Tested Solutions At Your Fingertips</h3>
-                    <p class="timeline-node-desc">
-                        Instead of wasting weeks learning every API integration, import ready JSON workflows in 30 seconds. Turnaround time 10x faster hota hai, client impress hota hai, aur tumhara time completely free rehta hai.
-                    </p>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <!-- 7. Step-by-Step Guide: How to Import -->
-    <section class="steps-section">
-        <div class="container">
-            
-            <div class="section-header-block">
-                <div class="section-badge-tag">
-                    <span>âš¡</span>
-                    <span>Simple 4-Step Process</span>
-                </div>
-                <h2 class="section-main-title">
-                    How To Import &amp; Launch In <span class="highlight-lime">2 Minutes</span>
-                </h2>
-                <p class="section-description">
-                    Zero technical friction. No coding degree required. Just download, import and run.
-                </p>
-            </div>
-
-            <div class="steps-grid">
-                
-                <div class="step-module-card">
-                    <div class="step-badge-num">1</div>
-                    <h3 class="step-module-title">Instant Digital Access</h3>
-                    <p class="step-module-desc">Payment complete karo, files turant dashboard aur email pe mil jaayengi â€” koi waiting ya delay nahi.</p>
-                </div>
-
-                <div class="step-module-card">
-                    <div class="step-badge-num">2</div>
-                    <h3 class="step-module-title">Select Any Use-Case</h3>
-                    <p class="step-module-desc">Choose any template from the organized directory (e.g. Lead Management, WhatsApp bot, ya Instagram poster).</p>
-                </div>
-
-                <div class="step-module-card">
-                    <div class="step-badge-num">3</div>
-                    <h3 class="step-module-title">Import JSON into n8n</h3>
-                    <p class="step-module-desc">Simply open your n8n workflow canvas and drag-and-drop or import the downloaded JSON template in 10 seconds.</p>
-                </div>
-
-                <div class="step-module-card">
-                    <div class="step-badge-num">4</div>
-                    <h3 class="step-module-title">Customize &amp; Deploy</h3>
-                    <p class="step-module-desc">Add your API keys or client credentials. Done! Start automating your business or delivering to clients immediately.</p>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <!-- 8. Before vs After Comparison Matrix -->
-    <section class="comparison-section">
-        <div class="container">
-            
-            <div class="section-header-block">
-                <div class="section-badge-tag">
-                    <span>ðŸ“Š</span>
-                    <span>The Real Math</span>
-                </div>
-                <h2 class="section-main-title">
-                    Building From Scratch <span class="highlight-pink">vs.</span> This Bundle
-                </h2>
-                <p class="section-description">
-                    See why 5,000+ ready workflows beat doing everything manually every single time.
-                </p>
-            </div>
-
-            <div class="comparison-cards-split">
-                
-                <!-- Old Way -->
-                <div class="comp-column-card comp-card-bad">
-                    <div class="comp-header-badge">
-                        <span>âŒ</span>
-                        <span>Building From Scratch</span>
-                    </div>
-                    <ul class="comp-rows-list">
-                        <li class="comp-row-item">
-                            <span class="comp-row-icon">âœ•</span>
-                            <span><strong>100s of hours</strong> wasted on manual trigger &amp; node configurations</span>
-                        </li>
-                        <li class="comp-row-item">
-                            <span class="comp-row-icon">âœ•</span>
-                            <span><strong>Constant debugging &amp; API errors</strong> draining your patience</span>
-                        </li>
-                        <li class="comp-row-item">
-                            <span class="comp-row-icon">âœ•</span>
-                            <span><strong>Building 1 workflow = 3â€“5 hours</strong> of trial and error</span>
-                        </li>
-                        <li class="comp-row-item">
-                            <span class="comp-row-icon">âœ•</span>
-                            <span><strong>Coding &amp; webhook knowledge required</strong> just to get started</span>
-                        </li>
-                        <li class="comp-row-item">
-                            <span class="comp-row-icon">âœ•</span>
-                            <span><strong>Har naye client ke liye naya kaam</strong> â€” zero scale or leverage</span>
-                        </li>
-                        <li class="comp-row-item">
-                            <span class="comp-row-icon">âœ•</span>
-                            <span>1 workflow = only 1 specific use case solved</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- New Way -->
-                <div class="comp-column-card comp-card-good">
-                    <div class="comp-header-badge">
-                        <span>âœ…</span>
-                        <span>With This 5000+ Bundle</span>
-                    </div>
-                    <ul class="comp-rows-list">
-                        <li class="comp-row-item">
-                            <span class="comp-row-icon">âœ”</span>
-                            <span><strong>Plug &amp; play in 2 minutes</strong> â€” skip all manual setup headaches</span>
-                        </li>
-                        <li class="comp-row-item">
-                            <span class="comp-row-icon">âœ”</span>
-                            <span><strong>Tested, error-proof logic</strong> ready for production environments</span>
-                        </li>
-                        <li class="comp-row-item">
-                            <span class="comp-row-icon">âœ”</span>
-                            <span><strong>Deploying a pre-built workflow = 30 seconds</strong> to import &amp; run</span>
-                        </li>
-                        <li class="comp-row-item">
-                            <span class="comp-row-icon">âœ”</span>
-                            <span><strong>Zero coding needed</strong> â€” beginner friendly visual editing</span>
-                        </li>
-                        <li class="comp-row-item">
-                            <span class="comp-row-icon">âœ”</span>
-                            <span><strong>Reusable permanent library</strong> â€” instant delivery for every client</span>
-                        </li>
-                        <li class="comp-row-item">
-                            <span class="comp-row-icon">âœ”</span>
-                            <span><strong>5,000+ ready use cases covered</strong> across CRM, AI, social &amp; lead gen</span>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <!-- 9. Customer Testimonials -->
-    <section class="testimonials-section">
-        <div class="container">
-            
-            <div class="section-header-block">
-                <div class="section-badge-tag">
-                    <span>â­</span>
-                    <span>Client Feedback</span>
-                </div>
-                <h2 class="section-main-title">
-                    See What Automation Pros Are <span class="highlight-lime">Saying</span>
-                </h2>
-                <p class="section-description">
-                    Freelancers and agency founders delivering results 10x faster with pre-built workflows.
-                </p>
-            </div>
-
-            <div class="testimonials-grid">
-                
-                <div class="testi-card-monetise">
-                    <div>
-                        <div class="testi-stars-row">â˜…â˜…â˜…â˜…â˜…</div>
-                        <p class="testi-quote-body">
-                            "Maine 3 client projects deliver kiye pehle hafte mein hi. Templates ne mera turnaround time 10x fast kar diya. Ab client call pe hi workflow demo de deta hoon."
-                        </p>
-                    </div>
-                    <div class="testi-author-info">
-                        <div class="testi-avatar-placeholder">RS</div>
-                        <div>
-                            <div class="testi-author-name">Rahul S.</div>
-                            <div class="testi-author-role">Automation Freelancer â€¢ Bangalore</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testi-card-monetise">
-                    <div>
-                        <div class="testi-stars-row">â˜…â˜…â˜…â˜…â˜…</div>
-                        <p class="testi-quote-body">
-                            "5000+ workflows at this price is unreal. I've already resold modified versions to 5 clients for â‚¹15,000 each. The PLR/commercial license alone made this a 100x return."
-                        </p>
-                    </div>
-                    <div class="testi-author-info">
-                        <div class="testi-avatar-placeholder">PM</div>
-                        <div>
-                            <div class="testi-author-name">Priya M.</div>
-                            <div class="testi-author-role">Digital Agency Owner â€¢ Mumbai</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testi-card-monetise">
-                    <div>
-                        <div class="testi-stars-row">â˜…â˜…â˜…â˜…â˜…</div>
-                        <p class="testi-quote-body">
-                            "We integrated these n8n workflows into our product onboarding and marketing pipelines. Saved our developer team over 200 hours in the first month."
-                        </p>
-                    </div>
-                    <div class="testi-author-info">
-                        <div class="testi-avatar-placeholder">AK</div>
-                        <div>
-                            <div class="testi-author-name">Aditya K.</div>
-                            <div class="testi-author-role">SaaS Founder â€¢ Hyderabad</div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <!-- 10. FAQ Section -->
-    <section class="faq-section">
-        <div class="container">
-            
-            <div class="section-header-block">
-                <div class="section-badge-tag">
-                    <span>â“</span>
-                    <span>Common Questions</span>
-                </div>
-                <h2 class="section-main-title">
-                    Frequently Asked <span class="highlight-lime">Questions</span>
-                </h2>
-                <p class="section-description">
-                    Everything you need to know before securing your bundle.
-                </p>
-            </div>
-
-            <div class="faq-accordion-wrap">
-                
-                <div class="faq-card-item active">
-                    <div class="faq-question-trigger">
-                        <span>Kya mujhe coding aani chahiye?</span>
-                        <span class="faq-plus-icon">+</span>
-                    </div>
-                    <div class="faq-answer-collapse">
-                        Nahi! Yeh templates plug-and-play JSON files hain. Tumhe sirf apne n8n canvas mein JSON import karna hai aur basic API keys connect karni hain. Coding ka ek single word likhne ki zaroorat nahi hai.
-                    </div>
-                </div>
-
-                <div class="faq-card-item">
-                    <div class="faq-question-trigger">
-                        <span>Kya main yeh templates client projects mein use kar sakta hoon?</span>
-                        <span class="faq-plus-icon">+</span>
-                    </div>
-                    <div class="faq-answer-collapse">
-                        Haan, 100%! Bundle ke sath full Commercial License (PLR + MRR) included hai. Tum inhe apne clients ke liye deploy kar sakte ho, customize karke sell kar sakte ho, ya apni agency mein unlimited times use kar sakte ho.
-                    </div>
-                </div>
-
-                <div class="faq-card-item">
-                    <div class="faq-question-trigger">
-                        <span>Kya yeh one-time payment hai ya monthly subscription?</span>
-                        <span class="faq-plus-icon">+</span>
-                    </div>
-                    <div class="faq-answer-collapse">
-                        Yeh strictly one-time payment hai. Sirf â‚¹47 ek baar dena hai aur tumhe lifetime access milta hai. Koi recurring monthly charge ya hidden fees nahi hai.
-                    </div>
-                </div>
-
-                <div class="faq-card-item">
-                    <div class="faq-question-trigger">
-                        <span>Kya main inhe apne naam se resell kar sakta hoon?</span>
-                        <span class="faq-plus-icon">+</span>
-                    </div>
-                    <div class="faq-answer-collapse">
-                        Haan! Master Resell Rights (MRR) aur Private Label Rights (PLR) included hone ka matlab hai ki tum is bundle ko modify karke ya as-it-is apne customers ko apni marzi ki price pe sell kar sakte ho.
-                    </div>
-                </div>
-
-                <div class="faq-card-item">
-                    <div class="faq-question-trigger">
-                        <span>Support kaise milega agar koi issue aaye?</span>
-                        <span class="faq-plus-icon">+</span>
-                    </div>
-                    <div class="faq-answer-collapse">
-                        Download hone ke baad tumhe instant WhatsApp direct support link milega. Agar import karne mein koi bhi query ho, humari team tumhe guide karegi.
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <!-- 11. Final Urgency & Alert Section -->
-    <section class="final-urgency-section">
-        <div class="container final-urgency-content">
-            
-            <div class="final-warning-badge">
-                <span>âš ï¸</span>
-                <span>Strict Now-Or-Never Offer</span>
-            </div>
-
-            <h2 class="final-hero-title">
-                Secure Your 5,000+ Workflows Before The <span class="highlight-pink">Price Jumps</span>
-            </h2>
-
-            <p style="font-size: 1.15rem; color: var(--text-silver); line-height: 1.65; max-width: 750px; margin: 0 auto;">
-                Still thinking about it? Listen â€” this extreme low price of â‚¹47 is strictly for our launch batch. After every 25 sales, the price shoots up automatically.
-            </p>
-
-            <div class="price-ladder-card">
-                <span>If you invest today, you save <strong>3,000â€“3,500 hours a year</strong> (that is more than 4 entire months saved). For this massive transformation, you are paying only <strong>0.0094 paisa per workflow</strong> â€” less than a Kachha-Aam candy!</span>
-                <span class="price-ladder-path">â‚¹47 (Current) âž” â‚¹75 âž” â‚¹99 âž” â‚¹147 âž” â‚¹199 âž” â‚¹299</span>
-            </div>
-
-            <div style="margin-top: 1.25rem;">
-                <a href="n8n-checkout.html" class="cta-btn-main" style="padding: 1.3rem 3.5rem; font-size: clamp(1.2rem, 3vw, 1.6rem);">
-                    <span>ðŸ‘‰ CLAIM COMPLETE BUNDLE â€” â‚¹47</span>
-                    <span class="arrow-icon">â†’</span>
-                </a>
-                <span class="cta-subtext">Instant digital delivery â€¢ 256-bit encrypted checkout â€¢ Full PLR/MRR rights</span>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- 12. Footer -->
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-links">
-                <a href="#" class="footer-link-item">Instant Download</a>
-                <span style="color: rgba(255,255,255,0.2);">â€¢</span>
-                <a href="#" class="footer-link-item">Lifetime Access</a>
-                <span style="color: rgba(255,255,255,0.2);">â€¢</span>
-                <a href="#" class="footer-link-item">Commercial PLR/MRR Rights</a>
-                <span style="color: rgba(255,255,255,0.2);">â€¢</span>
-                <a href="https://wa.me/919119745093" class="footer-link-item">WhatsApp Support</a>
-            </div>
-            <p>&copy; 2026 N8N Workflows Bundle. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <!-- 13. Floating WhatsApp Support -->
-    <a href="https://wa.me/919119745093?text=Hi%2C%20I%20want%20to%20know%20about%20the%205000%2B%20N8N%20Workflows%20Bundle" target="_blank" class="wa-floating-trigger" aria-label="WhatsApp Support">
-        <svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.972.531 1.76.813 2.796.813h.005c3.18 0 5.767-2.586 5.768-5.766 0-1.543-.601-2.993-1.693-4.085s-2.541-1.693-4.08-1.693zm0-2.172c4.418 0 8 3.582 8 8 0 1.777-.584 3.42-1.573 4.757l1.542 5.632-5.765-1.512c-1.309.845-2.862 1.343-4.204 1.343-4.418 0-8-3.582-8-8 0-4.418 3.582-8 8-8zm3.567 11.235c-.198-.099-1.171-.578-1.353-.644-.182-.066-.314-.099-.446.099-.133.198-.513.644-.629.776-.116.132-.231.149-.429.05-.198-.099-.837-.309-1.595-.985-.59-.526-.988-1.176-1.104-1.374-.116-.198-.012-.305.087-.404.089-.089.198-.231.297-.347.099-.116.132-.198.198-.33.066-.132.033-.248-.017-.347-.05-.099-.446-1.074-.611-1.47-.161-.387-.324-.335-.446-.341-.115-.006-.248-.007-.38-.007-.132 0-.347.05-.529.248s-.694.678-.694 1.653.711 1.917.81 2.049c.099.132 1.399 2.136 3.39 2.993.474.204.844.326 1.132.418.476.151.909.13 1.251.079.381-.057 1.171-.479 1.337-.942.165-.463.165-.86.116-.942-.049-.083-.181-.132-.379-.231z"/>
-        </svg>
-    </a>
-
-    <!-- 14. Mobile Sticky Bottom CTA -->
-    <div class="mobile-bottom-bar">
-        <a href="n8n-checkout.html" class="cta-btn-main">
-            <span>ðŸ‘‰ GET OFFER FOR â€” â‚¹47</span>
-            <span class="arrow-icon">â†’</span>
-        </a>
-    </div>
-
-    <!-- 15. Exit Intent Popup -->
-    <div class="exit-modal-overlay" id="exit-modal">
-        <div class="exit-modal-box">
-            <span class="exit-modal-close" id="exit-modal-close-btn">&times;</span>
-            <div style="font-size: 2.5rem; margin-bottom: 0.8rem;">âš¡</div>
-            <h3 style="font-size: 1.8rem; color: var(--neon-lime); margin-bottom: 0.8rem;">Wait! Don't Leave Empty Handed</h3>
-            <p style="font-size: 1.05rem; color: var(--text-silver); margin-bottom: 1.8rem; line-height: 1.55;">
-                You are 1 click away from owning <strong>5000+ ready n8n workflows</strong> for just â‚¹47. After the next few sales, the price jumps to â‚¹75!
-            </p>
-            <a href="n8n-checkout.html" class="cta-btn-main" style="width: 100%; justify-content: center;">
-                <span>ðŸ‘‰ CLAIM OFFER FOR â‚¹47 NOW</span>
-                <span class="arrow-icon">â†’</span>
-            </a>
-        </div>
-    </div>
-
-    <!-- Scripts: Countdown, Accordion & Exit Intent -->
-    <script>
-        // Synchronized Urgency Countdown Timer (48 Hours, LocalStorage Persisted)
-        function initUrgencyTimer() {
-            let endTime = localStorage.getItem('n8n_offer_end');
-            if (!endTime) {
-                endTime = new Date().getTime() + (8 * 60 * 60 * 1000) + (47 * 60 * 1000); // 8h 47m
-                localStorage.setItem('n8n_offer_end', endTime);
-            }
-
-            const timerEl = document.getElementById('header-timer');
-
-            function updateTimerDisplay() {
-                const now = new Date().getTime();
-                const diff = endTime - now;
-
-                if (diff <= 0) {
-                    timerEl.innerText = "00 DAYS 00 HRS 00 MINS 00 SECS";
-                    return;
-                }
-
-                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-                const dStr = String(days).padStart(2, '0');
-                const hStr = String(hours).padStart(2, '0');
-                const mStr = String(minutes).padStart(2, '0');
-                const sStr = String(seconds).padStart(2, '0');
-
-                timerEl.innerText = `${dStr} DAYS ${hStr} HRS ${mStr} MINS ${sStr} SECS`;
-            }
-
-            updateTimerDisplay();
-            setInterval(updateTimerDisplay, 1000);
-        }
-        initUrgencyTimer();
-
-        // FAQ Accordion Toggle
-        document.querySelectorAll('.faq-card-item').forEach(item => {
-            const trigger = item.querySelector('.faq-question-trigger');
-            trigger.addEventListener('click', () => {
-                const isCurrentlyActive = item.classList.contains('active');
-                document.querySelectorAll('.faq-card-item').forEach(other => other.classList.remove('active'));
-                if (!isCurrentlyActive) {
-                    item.classList.add('active');
-                }
-            });
-        });
-
-        // Exit Intent Modal (Desktop mouseout)
-        let exitShown = sessionStorage.getItem('n8n_exit_shown');
-        document.addEventListener('mouseleave', function(e) {
-            if (e.clientY < 10 && !exitShown && window.innerWidth > 768) {
-                document.getElementById('exit-modal').style.display = 'flex';
-                sessionStorage.setItem('n8n_exit_shown', 'true');
-                exitShown = true;
-            }
-        });
-
-        document.getElementById('exit-modal-close-btn').addEventListener('click', function() {
-            document.getElementById('exit-modal').style.display = 'none';
-        });
-
-        document.getElementById('exit-modal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                this.style.display = 'none';
-            }
-        });
-    </script>
-</body>
-</html>
-
-
-
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5000+ Premium n8n Automation Workflows Bundle | Official Launch Offer</title>
+    <meta name="description" content="Get 5000+ Pre-Built n8n Automation Workflows + AI Faceless Video Generator. Save 8-10 hours daily. Instant download, lifetime access & full commercial license.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:ital,wght@1,600;1,700&family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Monetise Dark Theme Tokens */
+            --bg-black: #000000;
+            --bg-surface: #050811;
+            --bg-card: rgba(8, 14, 26, 0.75);
+            --bg-card-hover: rgba(12, 22, 40, 0.85);
+            
+            /* High-Impact Neon & Emerald Accents */
+            --neon-lime: #D4FF00;
+            --neon-lime-glow: rgba(212, 255, 0, 0.35);
+            --emerald: #00E575;
+            --emerald-glow: rgba(0, 229, 117, 0.25);
+            --emerald-subtle: rgba(16, 185, 129, 0.12);
+            --emerald-border: rgba(16, 185, 129, 0.28);
+            
+            /* Urgency & Alerts */
+            --alert-red: #FF2E4D;
+            --alert-red-bg: rgba(255, 46, 77, 0.12);
+            --alert-red-glow: rgba(255, 46, 77, 0.3);
+            --accent-pink: #E91E8C;
+            --accent-gold: #FFC837;
+            
+            /* Text Hierarchy */
+            --text-white: #FFFFFF;
+            --text-silver: #CBD5E1;
+            --text-muted: #94A3B8;
+            --text-dim: #64748B;
+            
+            /* Typography */
+            --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-serif: 'Cinzel', serif, Georgia;
+            
+            /* Spacing & Borders */
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 20px;
+            --radius-pill: 999px;
+            --container-max: 1200px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background-color: var(--bg-black);
+            color: var(--text-white);
+            font-family: var(--font-body);
+        }
+
+        body {
+            overflow-x: hidden;
+            line-height: 1.6;
+            background: 
+                radial-gradient(circle at 50% 0%, rgba(0, 229, 117, 0.12) 0%, transparent 50%),
+                radial-gradient(circle at 20% 30%, rgba(212, 255, 0, 0.04) 0%, transparent 40%),
+                radial-gradient(circle at 80% 65%, rgba(0, 229, 117, 0.06) 0%, transparent 45%),
+                var(--bg-black);
+            min-height: 100vh;
+        }
+
+        /* 3D Perspective Grid Background overlay */
+        .grid-bg-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 900px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            mask-image: radial-gradient(ellipse 70% 60% at 50% 20%, #000 30%, transparent 80%);
+            -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 20%, #000 30%, transparent 80%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Container */
+        .container {
+            width: 100%;
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 1.25rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Typography Utilities */
+        h1, h2, h3, h4 {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            line-height: 1.18;
+        }
+
+        .serif-italic {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-weight: 600;
+        }
+
+        .highlight-lime {
+            color: var(--neon-lime);
+            text-shadow: 0 0 25px rgba(212, 255, 0, 0.3);
+        }
+
+        .highlight-emerald {
+            color: var(--emerald);
+            text-shadow: 0 0 20px rgba(0, 229, 117, 0.35);
+        }
+
+        .highlight-pink {
+            color: var(--accent-pink);
+        }
+
+        /* 1. Top Fixed Urgency Banner (Monetise Red Bar) */
+        .top-urgency-bar {
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(180deg, rgba(160, 10, 30, 0.95) 0%, rgba(100, 5, 20, 0.95) 100%);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 60, 80, 0.3);
+            box-shadow: 0 4px 25px rgba(255, 46, 77, 0.25);
+            padding: 0.65rem 1rem;
+            text-align: center;
+            z-index: 9999;
+            font-family: var(--font-heading);
+            font-size: 0.88rem;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .top-urgency-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+        }
+
+        .pulse-dot-red {
+            width: 9px;
+            height: 9px;
+            background: #FF4757;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 0 0 rgba(255, 71, 87, 0.7);
+            animation: red-dot-pulse 1.8s infinite;
+        }
+
+        @keyframes red-dot-pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 71, 87, 0.8); }
+            70% { box-shadow: 0 0 0 10px rgba(255, 71, 87, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 71, 87, 0); }
+        }
+
+        .urgency-timer-text {
+            color: #FFFFFF;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .urgency-timer-highlight {
+            color: var(--neon-lime);
+            margin-left: 0.25rem;
+        }
+
+        /* 2. Sleek Sticky Header */
+        header.site-header {
+            width: 100%;
+            padding: 1.1rem 0;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+            z-index: 999;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-family: var(--font-heading);
+            font-weight: 900;
+            font-size: 1.35rem;
+            color: var(--text-white);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .brand-logo .logo-icon {
+            color: var(--neon-lime);
+            font-size: 1.5rem;
+            filter: drop-shadow(0 0 10px var(--neon-lime-glow));
+        }
+
+        .header-cta-btn {
+            background: var(--neon-lime);
+            color: #000000;
+            font-family: var(--font-heading);
+            font-size: 0.85rem;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            padding: 0.6rem 1.4rem;
+            border-radius: var(--radius-pill);
+            text-decoration: none;
+            box-shadow: 0 0 20px var(--neon-lime-glow);
+            transition: all 0.25s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .header-cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(212, 255, 0, 0.6);
+            background: #E4FF1A;
+        }
+
+        @media (max-width: 600px) {
+            .header-cta-btn { display: none; }
+        }
+
+        /* 3. Hero Section */
+        section.hero-section {
+            padding: 4.5rem 0 3.5rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-badge-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.45rem 1.25rem;
+            border-radius: var(--radius-pill);
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid var(--emerald-border);
+            color: var(--emerald);
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 0 20px rgba(0, 229, 117, 0.15);
+        }
+
+        .hero-eyebrow {
+            color: var(--alert-red);
+            font-family: var(--font-heading);
+            font-size: 1.15rem;
+            font-weight: 800;
+            font-style: italic;
+            letter-spacing: 0.02em;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .hero-headline {
+            font-size: clamp(2.1rem, 5.2vw, 3.8rem);
+            max-width: 1080px;
+            margin: 0 auto 1.4rem;
+            color: var(--text-white);
+            line-height: 1.15;
+        }
+
+        .hero-subheadline {
+            font-size: clamp(1.05rem, 2vw, 1.35rem);
+            color: var(--text-silver);
+            max-width: 820px;
+            margin: 0 auto 2.2rem;
+            font-weight: 400;
+            line-height: 1.55;
+        }
+
+        /* Micro Trust Badges Row */
+        .micro-trust-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 2.5rem;
+        }
+
+        .trust-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            font-size: 0.92rem;
+            color: var(--text-silver);
+            font-weight: 500;
+            background: rgba(255, 255, 255, 0.04);
+            padding: 0.4rem 1rem;
+            border-radius: var(--radius-pill);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+        }
+
+        .trust-pill .pill-icon {
+            color: var(--emerald);
+        }
+
+        /* High-Voltage Primary CTA Button */
+        .cta-btn-main {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            background: var(--neon-lime);
+            color: #000000;
+            font-family: var(--font-heading);
+            font-weight: 900;
+            font-size: clamp(1.15rem, 2.5vw, 1.45rem);
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            padding: 1.15rem 3rem;
+            border-radius: var(--radius-pill);
+            text-decoration: none;
+            box-shadow: 0 0 35px var(--neon-lime-glow);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-btn-main:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 0 55px rgba(212, 255, 0, 0.7);
+            background: #E4FF1A;
+        }
+
+        .cta-btn-main .arrow-icon {
+            font-size: 1.4rem;
+            transition: transform 0.25s ease;
+        }
+
+        .cta-btn-main:hover .arrow-icon {
+            transform: translateX(5px);
+        }
+
+        .cta-strikethrough {
+            text-decoration: line-through;
+            color: rgba(0, 0, 0, 0.5);
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-left: 0.3rem;
+        }
+
+        .cta-subtext {
+            display: block;
+            margin-top: 0.8rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            letter-spacing: 0.02em;
+        }
+
+        /* Video Showcase Container */
+        .video-showcase-frame {
+            max-width: 860px;
+            margin: 3.5rem auto 0;
+            background: linear-gradient(180deg, rgba(16, 185, 129, 0.08) 0%, rgba(5, 8, 17, 0.95) 100%);
+            border: 1px solid var(--emerald-border);
+            border-radius: var(--radius-lg);
+            padding: 1rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 229, 117, 0.15);
+            position: relative;
+        }
+
+        .video-inner-box {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: #020408;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            cursor: pointer;
+        }
+
+        .video-play-orb {
+            width: 76px;
+            height: 76px;
+            border-radius: 50%;
+            background: rgba(0, 229, 117, 0.18);
+            border: 2px solid var(--emerald);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.2rem;
+            box-shadow: 0 0 30px var(--emerald-glow);
+            transition: all 0.3s ease;
+        }
+
+        .video-inner-box:hover .video-play-orb {
+            transform: scale(1.1);
+            background: var(--emerald);
+            box-shadow: 0 0 45px rgba(0, 229, 117, 0.6);
+        }
+
+        .video-inner-box:hover .video-play-orb svg {
+            fill: #000;
+        }
+
+        .video-inner-box p {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-white);
+            letter-spacing: -0.01em;
+        }
+
+        .video-inner-box span {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 0.3rem;
+        }
+
+        /* 4. Trust Statistics Bar */
+        section.stats-section {
+            padding: 3rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            background: rgba(4, 7, 16, 0.8);
+            position: relative;
+        }
+
+        .stats-grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .stats-grid-container {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .stat-card-item {
+            padding: 1.2rem;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-md);
+            transition: transform 0.25s ease, border-color 0.25s ease;
+        }
+
+        .stat-card-item:hover {
+            border-color: var(--emerald-border);
+            transform: translateY(-2px);
+        }
+
+        .stat-card-item .stat-number {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 3.5vw, 2.8rem);
+            font-weight: 900;
+            color: var(--neon-lime);
+            text-shadow: 0 0 20px var(--neon-lime-glow);
+            line-height: 1;
+            margin-bottom: 0.4rem;
+        }
+
+        .stat-card-item .stat-caption {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-silver);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        /* 5. Section Header Common Styles */
+        .section-header-block {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3.5rem;
+        }
+
+        .section-badge-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--emerald);
+            background: var(--emerald-subtle);
+            padding: 0.35rem 1rem;
+            border-radius: var(--radius-pill);
+            border: 1px solid var(--emerald-border);
+            margin-bottom: 1rem;
+        }
+
+        .section-main-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--text-white);
+            margin-bottom: 1rem;
+        }
+
+        .section-description {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* 6. Themed Vault / Module Cards (Monetise "Episode" Pattern) */
+        section.vaults-section {
+            padding: 5.5rem 0;
+            position: relative;
+        }
+
+        .vault-cards-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 860px) {
+            .vault-cards-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .vault-card {
+            background: linear-gradient(180deg, rgba(8, 16, 32, 0.9) 0%, rgba(3, 7, 16, 0.95) 100%);
+            border: 1px solid var(--emerald-border);
+            border-radius: var(--radius-lg);
+            padding: 2.2rem;
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.6);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .vault-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--emerald), transparent);
+            opacity: 0.6;
+        }
+
+        .vault-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(0, 229, 117, 0.5);
+            box-shadow: 0 20px 60px rgba(0, 229, 117, 0.15);
+        }
+
+        .vault-card-header {
+            text-align: center;
+            margin-bottom: 1.8rem;
+            padding-bottom: 1.4rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .vault-card-episode {
+            font-size: 2.1rem;
+            color: var(--text-white);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .vault-tag-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--neon-lime);
+            background: rgba(212, 255, 0, 0.08);
+            border: 1px solid rgba(212, 255, 0, 0.25);
+            padding: 0.3rem 0.9rem;
+            border-radius: var(--radius-pill);
+        }
+
+        .vault-card-title {
+            font-size: 1.4rem;
+            color: var(--text-white);
+            margin: 1rem 0 0.5rem;
+            text-align: center;
+        }
+
+        .vault-features-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+            flex-grow: 1;
+        }
+
+        /* Inner Feature Pill Row (Monetise style) */
+        .feature-pill-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.85rem;
+            background: rgba(16, 185, 129, 0.07);
+            border: 1px solid rgba(16, 185, 129, 0.18);
+            padding: 0.85rem 1.1rem;
+            border-radius: 12px;
+            font-size: 0.92rem;
+            color: var(--text-silver);
+            line-height: 1.45;
+            transition: all 0.2s ease;
+        }
+
+        .feature-pill-row:hover {
+            background: rgba(16, 185, 129, 0.12);
+            border-color: rgba(16, 185, 129, 0.35);
+            color: var(--text-white);
+        }
+
+        .feature-pill-icon {
+            color: var(--emerald);
+            font-size: 1.1rem;
+            line-height: 1;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        /* 7. Transformation Story Timeline (The Reality Shift) */
+        section.timeline-section {
+            padding: 5.5rem 0;
+            background: rgba(3, 6, 14, 0.7);
+            position: relative;
+        }
+
+        .timeline-container {
+            max-width: 820px;
+            margin: 0 auto;
+            position: relative;
+            padding-left: 2.5rem;
+        }
+
+        /* Vertical Luminous Green Line */
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            bottom: 20px;
+            left: 10px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--emerald) 0%, rgba(0, 229, 117, 0.2) 90%, transparent 100%);
+            box-shadow: 0 0 15px var(--emerald-glow);
+        }
+
+        .timeline-node {
+            position: relative;
+            margin-bottom: 3.5rem;
+        }
+
+        .timeline-node:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 4-point glowing star icon */
+        .timeline-star-icon {
+            position: absolute;
+            left: -2.5rem;
+            top: 0;
+            width: 22px;
+            height: 22px;
+            color: var(--emerald);
+            transform: translateX(-4px);
+            filter: drop-shadow(0 0 8px var(--emerald-glow));
+        }
+
+        .timeline-node-title {
+            font-size: 1.45rem;
+            color: var(--text-white);
+            margin-bottom: 0.8rem;
+            line-height: 1.3;
+        }
+
+        .timeline-node-desc {
+            font-size: 1.05rem;
+            color: var(--text-silver);
+            line-height: 1.65;
+        }
+
+        /* 8. Step-by-Step Import Architecture */
+        section.steps-section {
+            padding: 5.5rem 0;
+            position: relative;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 768px) {
+            .steps-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .step-module-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius-md);
+            padding: 1.8rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.25s ease;
+        }
+
+        .step-module-card:hover {
+            border-color: var(--emerald-border);
+            transform: translateY(-2px);
+            background: var(--bg-card-hover);
+        }
+
+        .step-badge-num {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(0, 229, 117, 0.12);
+            border: 1px solid var(--emerald);
+            color: var(--emerald);
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.2rem;
+            box-shadow: 0 0 15px rgba(0, 229, 117, 0.2);
+        }
+
+        .step-module-title {
+            font-size: 1.15rem;
+            color: var(--text-white);
+            margin-bottom: 0.6rem;
+        }
+
+        .step-module-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* 9. Before vs After Comparison Matrix */
+        section.comparison-section {
+            padding: 5.5rem 0;
+            position: relative;
+        }
+
+        .comparison-cards-split {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            max-width: 1040px;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 768px) {
+            .comparison-cards-split {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .comp-column-card {
+            border-radius: var(--radius-lg);
+            padding: 2.2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .comp-card-bad {
+            background: linear-gradient(180deg, rgba(35, 8, 15, 0.6) 0%, rgba(15, 4, 8, 0.8) 100%);
+            border: 1px solid rgba(255, 46, 77, 0.35);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+        }
+
+        .comp-card-good {
+            background: linear-gradient(180deg, rgba(8, 30, 20, 0.7) 0%, rgba(4, 15, 10, 0.85) 100%);
+            border: 1px solid var(--emerald);
+            box-shadow: 0 15px 50px rgba(0, 229, 117, 0.18);
+        }
+
+        .comp-header-badge {
+            font-family: var(--font-heading);
+            font-size: 1.35rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin-bottom: 1.8rem;
+            padding-bottom: 1.2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .comp-card-bad .comp-header-badge {
+            color: var(--alert-red);
+        }
+
+        .comp-card-good .comp-header-badge {
+            color: var(--emerald);
+        }
+
+        .comp-rows-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.1rem;
+        }
+
+        .comp-row-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 0.98rem;
+            line-height: 1.5;
+        }
+
+        .comp-card-bad .comp-row-item {
+            color: #E2E8F0;
+        }
+
+        .comp-card-good .comp-row-item {
+            color: #FFFFFF;
+            font-weight: 500;
+        }
+
+        .comp-row-icon {
+            font-size: 1.15rem;
+            line-height: 1;
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+
+        /* 10. Social Proof Testimonials */
+        section.testimonials-section {
+            padding: 5.5rem 0;
+            position: relative;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.8rem;
+        }
+
+        @media (min-width: 768px) {
+            .testimonials-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .testi-card-monetise {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.25s ease;
+        }
+
+        .testi-card-monetise:hover {
+            border-color: var(--emerald-border);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .testi-stars-row {
+            color: var(--accent-gold);
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            margin-bottom: 1.2rem;
+        }
+
+        .testi-quote-body {
+            font-size: 1.02rem;
+            color: var(--text-silver);
+            line-height: 1.6;
+            margin-bottom: 1.8rem;
+            font-style: italic;
+            flex-grow: 1;
+        }
+
+        .testi-author-info {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 1rem;
+        }
+
+        .testi-avatar-placeholder {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--emerald), var(--neon-lime));
+            color: #000;
+            font-weight: 800;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .testi-author-name {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--text-white);
+        }
+
+        .testi-author-role {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+        }
+
+        /* 11. FAQ Accordion (Monetise style) */
+        section.faq-section {
+            padding: 5.5rem 0;
+            position: relative;
+        }
+
+        .faq-accordion-wrap {
+            max-width: 860px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .faq-card-item {
+            background: rgba(8, 14, 26, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            transition: border-color 0.25s ease, background 0.25s ease;
+        }
+
+        .faq-card-item:hover, .faq-card-item.active {
+            border-color: var(--emerald-border);
+            background: rgba(12, 22, 40, 0.9);
+        }
+
+        .faq-question-trigger {
+            padding: 1.3rem 1.6rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+            font-family: var(--font-heading);
+            font-size: 1.12rem;
+            font-weight: 700;
+            color: var(--text-white);
+        }
+
+        .faq-plus-icon {
+            font-size: 1.4rem;
+            color: var(--emerald);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            line-height: 1;
+        }
+
+        .faq-card-item.active .faq-plus-icon {
+            transform: rotate(45deg);
+            color: var(--alert-red);
+        }
+
+        .faq-answer-collapse {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            padding: 0 1.6rem;
+            color: var(--text-silver);
+            font-size: 1rem;
+            line-height: 1.65;
+        }
+
+        .faq-card-item.active .faq-answer-collapse {
+            max-height: 350px;
+            padding-bottom: 1.4rem;
+        }
+
+        /* 12. Final Urgency Offer Section */
+        section.final-urgency-section {
+            padding: 6rem 0;
+            text-align: center;
+            position: relative;
+            background: linear-gradient(180deg, rgba(30, 4, 10, 0.8) 0%, rgba(0, 0, 0, 0.95) 100%);
+            border-top: 2px solid var(--alert-red);
+            border-bottom: 2px solid var(--alert-red);
+            box-shadow: 0 0 60px rgba(255, 46, 77, 0.2);
+        }
+
+        .final-urgency-content {
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        .final-warning-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--alert-red);
+            font-family: var(--font-heading);
+            font-size: 1.15rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 1.2rem;
+        }
+
+        .final-hero-title {
+            font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+            color: var(--text-white);
+            margin-bottom: 1.4rem;
+        }
+
+        .price-ladder-card {
+            background: rgba(255, 46, 77, 0.08);
+            border: 1px dashed rgba(255, 46, 77, 0.35);
+            border-radius: var(--radius-md);
+            padding: 1.4rem;
+            margin: 2rem auto;
+            max-width: 680px;
+            font-size: 1.08rem;
+            color: #FFFFFF;
+            line-height: 1.65;
+        }
+
+        .price-ladder-path {
+            font-weight: 800;
+            color: var(--neon-lime);
+            margin-top: 0.5rem;
+            display: block;
+            font-size: 1.18rem;
+            letter-spacing: 0.04em;
+        }
+
+        /* 13. Clean Dark Footer */
+        footer.site-footer {
+            padding: 3.5rem 0;
+            background: #010206;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+            color: var(--text-dim);
+            font-size: 0.88rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-link-item {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-link-item:hover {
+            color: var(--neon-lime);
+        }
+
+        /* 14. Floating Sticky Elements */
+        .wa-floating-trigger {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #25D366;
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
+            z-index: 995;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            animation: wa-pulse 2s infinite;
+        }
+
+        .wa-floating-trigger:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 35px rgba(37, 211, 102, 0.8);
+        }
+
+        @keyframes wa-pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 16px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        /* Mobile Sticky Bottom CTA Bar */
+        .mobile-bottom-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(4, 8, 18, 0.95);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-top: 1px solid var(--emerald-border);
+            padding: 0.75rem 1rem;
+            z-index: 990;
+            display: none;
+            box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.8);
+        }
+
+        @media (max-width: 768px) {
+            .mobile-bottom-bar {
+                display: block;
+            }
+            body {
+                padding-bottom: 70px;
+            }
+        }
+
+        .mobile-bottom-bar .cta-btn-main {
+            width: 100%;
+            padding: 0.85rem;
+            font-size: 1.05rem;
+        }
+
+        /* 15. Exit Intent Modal */
+        .exit-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            padding: 1.25rem;
+        }
+
+        .exit-modal-box {
+            background: linear-gradient(180deg, #091224 0%, #03060f 100%);
+            border: 2px solid var(--neon-lime);
+            box-shadow: 0 0 50px rgba(212, 255, 0, 0.3);
+            border-radius: var(--radius-lg);
+            padding: 3rem 2.2rem;
+            max-width: 520px;
+            text-align: center;
+            position: relative;
+        }
+
+        .exit-modal-close {
+            position: absolute;
+            top: 16px;
+            right: 20px;
+            font-size: 1.8rem;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: color 0.2s;
+            line-height: 1;
+        }
+
+        .exit-modal-close:hover {
+            color: #FFFFFF;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 3D Perspective Grid Background overlay -->
+    <div class="grid-bg-overlay"></div>
+
+    <!-- 1. Top Urgency Countdown Bar (Monetise Red Bar) -->
+    <div class="top-urgency-bar">
+        <div class="top-urgency-content">
+            <span class="pulse-dot-red"></span>
+            <span>LAUNCH OFFER CLOSING IN:</span>
+            <span class="urgency-timer-text" id="header-timer">00 DAYS 08 HRS 47 MINS 24 SECS</span>
+            <span class="urgency-timer-highlight">• PRICE JUMPS TO ₹75 AFTER 20 SALES</span>
+        </div>
+    </div>
+
+    <!-- 2. Sticky Brand Header -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="#" class="brand-logo">
+                <span class="logo-icon">⚡</span>
+                <span>N8N WORKFLOWS</span>
+            </a>
+            <a href="n8n-checkout.html" class="header-cta-btn">
+                <span>GET OFFER — ₹47</span>
+                <span>→</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- 3. Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            
+            <div class="hero-badge-pill">
+                <span>⚡</span>
+                <span>Instant Digital Download • Lifetime Access • Full Commercial License</span>
+            </div>
+
+            <p class="hero-eyebrow">
+                CLOSING SOON: "Kachha-Aam Candy costs more than a n8n automation workflow (₹0.02 each!)"
+            </p>
+
+            <h1 class="hero-headline">
+                Complete Tasks in Just <span class="highlight-lime">5 Minutes</span> Using 5000+ Premium n8n Workflows &amp; Save <span class="highlight-emerald">8–10 Hours Daily.</span>
+            </h1>
+
+            <p class="hero-subheadline">
+                That is saving <strong>3,000–3,500 hours every year</strong>. Stop building automations from scratch. Plug pre-built JSON logic into your business, deliver for clients 10x faster, or launch your automated agency today.
+            </p>
+
+            <!-- Micro Trust Badges Row -->
+            <div class="micro-trust-row">
+                <div class="trust-pill">
+                    <span class="pill-icon">✕</span>
+                    <span>No paying per workflow</span>
+                </div>
+                <div class="trust-pill">
+                    <span class="pill-icon">✕</span>
+                    <span>No expensive freelancers</span>
+                </div>
+                <div class="trust-pill">
+                    <span class="pill-icon">✕</span>
+                    <span>No endless tutorials</span>
+                </div>
+            </div>
+
+            <!-- Primary High-Voltage CTA Button -->
+            <div style="margin-bottom: 2rem;">
+                <a href="n8n-checkout.html" class="cta-btn-main">
+                    <span>👉 GET INSTANT ACCESS FOR — ₹47</span>
+                    <span class="cta-strikethrough">₹499</span>
+                    <span class="arrow-icon">→</span>
+                </a>
+                <span class="cta-subtext">Instant digital download after payment • Works on any n8n instance (Cloud or Self-Hosted)</span>
+            </div>
+
+            <!-- Video Showcase Frame -->
+            <div class="video-showcase-frame">
+                <div class="video-inner-box">
+                    <div class="video-play-orb">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="#00E575">
+                            <polygon points="6,4 20,12 6,20"></polygon>
+                        </svg>
+                    </div>
+                    <p>Watch How It Works in 2 Minutes</p>
+                    <span>Click to see 5000+ workflows imported and customized live</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 4. Trust Statistics Bar -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid-container">
+                <div class="stat-card-item">
+                    <div class="stat-number">5,000+</div>
+                    <div class="stat-caption">Ready-to-Deploy Workflows</div>
+                </div>
+                <div class="stat-card-item">
+                    <div class="stat-number">3,500+</div>
+                    <div class="stat-caption">Hours Saved Per Year</div>
+                </div>
+                <div class="stat-card-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-caption">Editable JSON Files</div>
+                </div>
+                <div class="stat-card-item">
+                    <div class="stat-number">₹0.009</div>
+                    <div class="stat-caption">Cost Per Workflow</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. What's Included: Themed Vault Cards (Monetise "Episode" Pattern) -->
+    <section class="vaults-section">
+        <div class="container">
+            
+            <div class="section-header-block">
+                <div class="section-badge-tag">
+                    <span>📦</span>
+                    <span>What's Inside The Toolkit</span>
+                </div>
+                <h2 class="section-main-title">
+                    Your Complete Automation <span class="serif-italic highlight-lime">Blueprint</span>
+                </h2>
+                <p class="section-description">
+                    Everything you need to automate your operations, client fulfillment, and AI content machines — divided into 4 battle-tested vault modules.
+                </p>
+            </div>
+
+            <div class="vault-cards-grid">
+                
+                <!-- Vault 01 -->
+                <div class="vault-card">
+                    <div class="vault-card-header">
+                        <span class="vault-card-episode serif-italic">Vault 01</span>
+                        <span class="vault-tag-pill">⚡ Lead Generation &amp; Scraping Engine</span>
+                        <h3 class="vault-card-title">Client Acquisition on Autopilot</h3>
+                    </div>
+                    <ul class="vault-features-list">
+                        <li class="feature-pill-row">
+                            <span class="feature-pill-icon">🚀</span>
+                            <span><strong>LinkedIn Leads Scraping Automation:</strong> Auto-extract verified leads, enrich emails, and sync to CRM.</span>
+                        </li>
+                        <li class="feature-pill-row">
+                            <span class="feature-pill-icon">📊</span>
+                            <span><strong>Google Sheet Real-Time Data Entry:</strong> Capture inbound webhooks and log entries without manual errors.</span>
+                        </li>
+                        <li class="feature-pill-row">
+                            <span class="feature-pill-icon">📅</span>
+                            <span><strong>Automated Appointment Booking:</strong> Auto-calendar invite dispatch, reminder sequences &amp; no-show reduction.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Vault 02 -->
+                <div class="vault-card">
+                    <div class="vault-card-header">
+                        <span class="vault-card-episode serif-italic">Vault 02</span>
+                        <span class="vault-tag-pill">🎬 AI Video &amp; Viral Content Machines</span>
+                        <h3 class="vault-card-title">Faceless Content &amp; Media Scale</h3>
+                    </div>
+                    <ul class="vault-features-list">
+                        <li class="feature-pill-row">
+                            <span class="feature-pill-icon">🤖</span>
+                            <span><strong>AI Faceless Video Generator:</strong> Script-to-video workflow that crafts motion, visuals &amp; subtitles automatically.</span>
+                        </li>
+                        <li class="feature-pill-row">
+                            <span class="feature-pill-icon">📱</span>
+                            <span><strong>Instagram Reels &amp; TikTok Auto-Poster:</strong> Schedule and push reels across multiple accounts seamlessly.</span>
+                        </li>
+                        <li class="feature-pill-row">
+                            <span class="feature-pill-icon">▶️</span>
+                            <span><strong>YouTube Automated Video Publishing:</strong> Tag generation, thumbnail upload &amp; SEO description automation.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Vault 03 -->
+                <div class="vault-card">
+                    <div class="vault-card-header">
+                        <span class="vault-card-episode serif-italic">Vault 03</span>
+                        <span class="vault-tag-pill">💬 WhatsApp &amp; Telegram Smart Bots</span>
+                        <h3 class="vault-card-title">24/7 Conversational AI Workflows</h3>
+                    </div>
+                    <ul class="vault-features-list">
+                        <li class="feature-pill-row">
+                            <span class="feature-pill-icon">🟢</span>
+                            <span><strong>WhatsApp Chat &amp; Broadcast Automation:</strong> Instant lead responses, order updates &amp; follow-up triggers.</span>
+                        </li>
+                        <li class="feature-pill-row">
+                            <span class="feature-pill-icon">✈️</span>
+                            <span><strong>Telegram Community Bots:</strong> Automated group moderation, payment verification &amp; content alerts.</span>
+                        </li>
+                        <li class="feature-pill-row">
+                            <span class="feature-pill-icon">🧠</span>
+                            <span><strong>Personal AI Chatbot Support:</strong> Trained on your business knowledge base for instant answers.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Vault 04 -->
+                <div class="vault-card">
+                    <div class="vault-card-header">
+                        <span class="vault-card-episode serif-italic">Vault 04</span>
+                        <span class="vault-tag-pill">💼 Core Systems &amp; Resell Rights</span>
+                        <h3 class="vault-card-title">Commercial PLR &amp; MRR License</h3>
+                    </div>
+                    <ul class="vault-features-list">
+                        <li class="feature-pill-row">
+                            <span class="feature-pill-icon">📂</span>
+                            <span><strong>5000+ Pre-Built JSON Files:</strong> Organized by category, fully editable in any n8n workflow canvas.</span>
+                        </li>
+                        <li class="feature-pill-row">
+                            <span class="feature-pill-icon">💎</span>
+                            <span><strong>Commercial Rights (PLR + MRR):</strong> Sell workflows to clients, package into your agency, or resell.</span>
+                        </li>
+                        <li class="feature-pill-row">
+                            <span class="feature-pill-icon">♾️</span>
+                            <span><strong>Lifetime Access &amp; Instant Download:</strong> No recurring monthly subscriptions. One payment, forever yours.</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Mid-Page CTA -->
+            <div style="text-align: center; margin-top: 3.5rem;">
+                <a href="n8n-checkout.html" class="cta-btn-main">
+                    <span>👉 UNLOCK ALL 4 VAULTS FOR ₹47</span>
+                    <span class="arrow-icon">→</span>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 6. Timeline: The Reality Shift (Monetise Storytelling Style) -->
+    <section class="timeline-section">
+        <div class="container">
+            
+            <div class="section-header-block">
+                <div class="section-badge-tag">
+                    <span>💡</span>
+                    <span>The Paradigm Shift</span>
+                </div>
+                <h2 class="section-main-title">
+                    Why Building From Scratch Is A <span class="highlight-pink">Losing Game</span>
+                </h2>
+                <p class="section-description">
+                    The difference between high-earning automation agencies and struggling freelancers is not coding skill — it's having a ready library.
+                </p>
+            </div>
+
+            <div class="timeline-container">
+                
+                <div class="timeline-node">
+                    <svg class="timeline-star-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/>
+                    </svg>
+                    <h3 class="timeline-node-title">The Trap: Har Naya Client, Har Naya Use-Case Scratch Se</h3>
+                    <p class="timeline-node-desc">
+                        Trigger set karo. Nodes connect karo. Test karo. Break hone pe fix karo. Ek workflow banane mein hi 3–4 ghante nikal jaate hain — aur jab 10 clients ho, tumhara poora din debugging aur setup mein chala jaata hai instead of scaling your business.
+                    </p>
+                </div>
+
+                <div class="timeline-node">
+                    <svg class="timeline-star-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/>
+                    </svg>
+                    <h3 class="timeline-node-title">The Secret: Builders vs. Assemblers</h3>
+                    <p class="timeline-node-desc">
+                        Jo log automation se real revenue bana rahe hain, woh har baar wheel reinvent nahi karte. Unke paas already ek verified library hoti hai. Jo bhi requirement aaye — wahan se pick karo, 10–15 minute mein customize karo, deploy karo, aur client se premium fee charge karo.
+                    </p>
+                </div>
+
+                <div class="timeline-node">
+                    <svg class="timeline-star-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/>
+                    </svg>
+                    <h3 class="timeline-node-title">The Solution: 5,000+ Pre-Tested Solutions At Your Fingertips</h3>
+                    <p class="timeline-node-desc">
+                        Instead of wasting weeks learning every API integration, import ready JSON workflows in 30 seconds. Turnaround time 10x faster hota hai, client impress hota hai, aur tumhara time completely free rehta hai.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 7. Step-by-Step Guide: How to Import -->
+    <section class="steps-section">
+        <div class="container">
+            
+            <div class="section-header-block">
+                <div class="section-badge-tag">
+                    <span>⚡</span>
+                    <span>Simple 4-Step Process</span>
+                </div>
+                <h2 class="section-main-title">
+                    How To Import &amp; Launch In <span class="highlight-lime">2 Minutes</span>
+                </h2>
+                <p class="section-description">
+                    Zero technical friction. No coding degree required. Just download, import and run.
+                </p>
+            </div>
+
+            <div class="steps-grid">
+                
+                <div class="step-module-card">
+                    <div class="step-badge-num">1</div>
+                    <h3 class="step-module-title">Instant Digital Access</h3>
+                    <p class="step-module-desc">Payment complete karo, files turant dashboard aur email pe mil jaayengi — koi waiting ya delay nahi.</p>
+                </div>
+
+                <div class="step-module-card">
+                    <div class="step-badge-num">2</div>
+                    <h3 class="step-module-title">Select Any Use-Case</h3>
+                    <p class="step-module-desc">Choose any template from the organized directory (e.g. Lead Management, WhatsApp bot, ya Instagram poster).</p>
+                </div>
+
+                <div class="step-module-card">
+                    <div class="step-badge-num">3</div>
+                    <h3 class="step-module-title">Import JSON into n8n</h3>
+                    <p class="step-module-desc">Simply open your n8n workflow canvas and drag-and-drop or import the downloaded JSON template in 10 seconds.</p>
+                </div>
+
+                <div class="step-module-card">
+                    <div class="step-badge-num">4</div>
+                    <h3 class="step-module-title">Customize &amp; Deploy</h3>
+                    <p class="step-module-desc">Add your API keys or client credentials. Done! Start automating your business or delivering to clients immediately.</p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 8. Before vs After Comparison Matrix -->
+    <section class="comparison-section">
+        <div class="container">
+            
+            <div class="section-header-block">
+                <div class="section-badge-tag">
+                    <span>📊</span>
+                    <span>The Real Math</span>
+                </div>
+                <h2 class="section-main-title">
+                    Building From Scratch <span class="highlight-pink">vs.</span> This Bundle
+                </h2>
+                <p class="section-description">
+                    See why 5,000+ ready workflows beat doing everything manually every single time.
+                </p>
+            </div>
+
+            <div class="comparison-cards-split">
+                
+                <!-- Old Way -->
+                <div class="comp-column-card comp-card-bad">
+                    <div class="comp-header-badge">
+                        <span>❌</span>
+                        <span>Building From Scratch</span>
+                    </div>
+                    <ul class="comp-rows-list">
+                        <li class="comp-row-item">
+                            <span class="comp-row-icon">✕</span>
+                            <span><strong>100s of hours</strong> wasted on manual trigger &amp; node configurations</span>
+                        </li>
+                        <li class="comp-row-item">
+                            <span class="comp-row-icon">✕</span>
+                            <span><strong>Constant debugging &amp; API errors</strong> draining your patience</span>
+                        </li>
+                        <li class="comp-row-item">
+                            <span class="comp-row-icon">✕</span>
+                            <span><strong>Building 1 workflow = 3–5 hours</strong> of trial and error</span>
+                        </li>
+                        <li class="comp-row-item">
+                            <span class="comp-row-icon">✕</span>
+                            <span><strong>Coding &amp; webhook knowledge required</strong> just to get started</span>
+                        </li>
+                        <li class="comp-row-item">
+                            <span class="comp-row-icon">✕</span>
+                            <span><strong>Har naye client ke liye naya kaam</strong> — zero scale or leverage</span>
+                        </li>
+                        <li class="comp-row-item">
+                            <span class="comp-row-icon">✕</span>
+                            <span>1 workflow = only 1 specific use case solved</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- New Way -->
+                <div class="comp-column-card comp-card-good">
+                    <div class="comp-header-badge">
+                        <span>✅</span>
+                        <span>With This 5000+ Bundle</span>
+                    </div>
+                    <ul class="comp-rows-list">
+                        <li class="comp-row-item">
+                            <span class="comp-row-icon">✔</span>
+                            <span><strong>Plug &amp; play in 2 minutes</strong> — skip all manual setup headaches</span>
+                        </li>
+                        <li class="comp-row-item">
+                            <span class="comp-row-icon">✔</span>
+                            <span><strong>Tested, error-proof logic</strong> ready for production environments</span>
+                        </li>
+                        <li class="comp-row-item">
+                            <span class="comp-row-icon">✔</span>
+                            <span><strong>Deploying a pre-built workflow = 30 seconds</strong> to import &amp; run</span>
+                        </li>
+                        <li class="comp-row-item">
+                            <span class="comp-row-icon">✔</span>
+                            <span><strong>Zero coding needed</strong> — beginner friendly visual editing</span>
+                        </li>
+                        <li class="comp-row-item">
+                            <span class="comp-row-icon">✔</span>
+                            <span><strong>Reusable permanent library</strong> — instant delivery for every client</span>
+                        </li>
+                        <li class="comp-row-item">
+                            <span class="comp-row-icon">✔</span>
+                            <span><strong>5,000+ ready use cases covered</strong> across CRM, AI, social &amp; lead gen</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 9. Customer Testimonials -->
+    <section class="testimonials-section">
+        <div class="container">
+            
+            <div class="section-header-block">
+                <div class="section-badge-tag">
+                    <span>⭐</span>
+                    <span>Client Feedback</span>
+                </div>
+                <h2 class="section-main-title">
+                    See What Automation Pros Are <span class="highlight-lime">Saying</span>
+                </h2>
+                <p class="section-description">
+                    Freelancers and agency founders delivering results 10x faster with pre-built workflows.
+                </p>
+            </div>
+
+            <div class="testimonials-grid">
+                
+                <div class="testi-card-monetise">
+                    <div>
+                        <div class="testi-stars-row">★★★★★</div>
+                        <p class="testi-quote-body">
+                            "Maine 3 client projects deliver kiye pehle hafte mein hi. Templates ne mera turnaround time 10x fast kar diya. Ab client call pe hi workflow demo de deta hoon."
+                        </p>
+                    </div>
+                    <div class="testi-author-info">
+                        <div class="testi-avatar-placeholder">RS</div>
+                        <div>
+                            <div class="testi-author-name">Rahul S.</div>
+                            <div class="testi-author-role">Automation Freelancer • Bangalore</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testi-card-monetise">
+                    <div>
+                        <div class="testi-stars-row">★★★★★</div>
+                        <p class="testi-quote-body">
+                            "5000+ workflows at this price is unreal. I've already resold modified versions to 5 clients for ₹15,000 each. The PLR/commercial license alone made this a 100x return."
+                        </p>
+                    </div>
+                    <div class="testi-author-info">
+                        <div class="testi-avatar-placeholder">PM</div>
+                        <div>
+                            <div class="testi-author-name">Priya M.</div>
+                            <div class="testi-author-role">Digital Agency Owner • Mumbai</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testi-card-monetise">
+                    <div>
+                        <div class="testi-stars-row">★★★★★</div>
+                        <p class="testi-quote-body">
+                            "We integrated these n8n workflows into our product onboarding and marketing pipelines. Saved our developer team over 200 hours in the first month."
+                        </p>
+                    </div>
+                    <div class="testi-author-info">
+                        <div class="testi-avatar-placeholder">AK</div>
+                        <div>
+                            <div class="testi-author-name">Aditya K.</div>
+                            <div class="testi-author-role">SaaS Founder • Hyderabad</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 10. FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            
+            <div class="section-header-block">
+                <div class="section-badge-tag">
+                    <span>❓</span>
+                    <span>Common Questions</span>
+                </div>
+                <h2 class="section-main-title">
+                    Frequently Asked <span class="highlight-lime">Questions</span>
+                </h2>
+                <p class="section-description">
+                    Everything you need to know before securing your bundle.
+                </p>
+            </div>
+
+            <div class="faq-accordion-wrap">
+                
+                <div class="faq-card-item active">
+                    <div class="faq-question-trigger">
+                        <span>Kya mujhe coding aani chahiye?</span>
+                        <span class="faq-plus-icon">+</span>
+                    </div>
+                    <div class="faq-answer-collapse">
+                        Nahi! Yeh templates plug-and-play JSON files hain. Tumhe sirf apne n8n canvas mein JSON import karna hai aur basic API keys connect karni hain. Coding ka ek single word likhne ki zaroorat nahi hai.
+                    </div>
+                </div>
+
+                <div class="faq-card-item">
+                    <div class="faq-question-trigger">
+                        <span>Kya main yeh templates client projects mein use kar sakta hoon?</span>
+                        <span class="faq-plus-icon">+</span>
+                    </div>
+                    <div class="faq-answer-collapse">
+                        Haan, 100%! Bundle ke sath full Commercial License (PLR + MRR) included hai. Tum inhe apne clients ke liye deploy kar sakte ho, customize karke sell kar sakte ho, ya apni agency mein unlimited times use kar sakte ho.
+                    </div>
+                </div>
+
+                <div class="faq-card-item">
+                    <div class="faq-question-trigger">
+                        <span>Kya yeh one-time payment hai ya monthly subscription?</span>
+                        <span class="faq-plus-icon">+</span>
+                    </div>
+                    <div class="faq-answer-collapse">
+                        Yeh strictly one-time payment hai. Sirf ₹47 ek baar dena hai aur tumhe lifetime access milta hai. Koi recurring monthly charge ya hidden fees nahi hai.
+                    </div>
+                </div>
+
+                <div class="faq-card-item">
+                    <div class="faq-question-trigger">
+                        <span>Kya main inhe apne naam se resell kar sakta hoon?</span>
+                        <span class="faq-plus-icon">+</span>
+                    </div>
+                    <div class="faq-answer-collapse">
+                        Haan! Master Resell Rights (MRR) aur Private Label Rights (PLR) included hone ka matlab hai ki tum is bundle ko modify karke ya as-it-is apne customers ko apni marzi ki price pe sell kar sakte ho.
+                    </div>
+                </div>
+
+                <div class="faq-card-item">
+                    <div class="faq-question-trigger">
+                        <span>Support kaise milega agar koi issue aaye?</span>
+                        <span class="faq-plus-icon">+</span>
+                    </div>
+                    <div class="faq-answer-collapse">
+                        Download hone ke baad tumhe instant WhatsApp direct support link milega. Agar import karne mein koi bhi query ho, humari team tumhe guide karegi.
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 11. Final Urgency & Alert Section -->
+    <section class="final-urgency-section">
+        <div class="container final-urgency-content">
+            
+            <div class="final-warning-badge">
+                <span>⚠️</span>
+                <span>Strict Now-Or-Never Offer</span>
+            </div>
+
+            <h2 class="final-hero-title">
+                Secure Your 5,000+ Workflows Before The <span class="highlight-pink">Price Jumps</span>
+            </h2>
+
+            <p style="font-size: 1.15rem; color: var(--text-silver); line-height: 1.65; max-width: 750px; margin: 0 auto;">
+                Still thinking about it? Listen — this extreme low price of ₹47 is strictly for our launch batch. After every 25 sales, the price shoots up automatically.
+            </p>
+
+            <div class="price-ladder-card">
+                <span>If you invest today, you save <strong>3,000–3,500 hours a year</strong> (that is more than 4 entire months saved). For this massive transformation, you are paying only <strong>0.0094 paisa per workflow</strong> — less than a Kachha-Aam candy!</span>
+                <span class="price-ladder-path">₹47 (Current) ➔ ₹75 ➔ ₹99 ➔ ₹147 ➔ ₹199 ➔ ₹299</span>
+            </div>
+
+            <div style="margin-top: 2.5rem;">
+                <a href="n8n-checkout.html" class="cta-btn-main" style="padding: 1.3rem 3.5rem; font-size: clamp(1.2rem, 3vw, 1.6rem);">
+                    <span>👉 CLAIM COMPLETE BUNDLE — ₹47</span>
+                    <span class="arrow-icon">→</span>
+                </a>
+                <span class="cta-subtext">Instant digital delivery • 256-bit encrypted checkout • Full PLR/MRR rights</span>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 12. Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="#" class="footer-link-item">Instant Download</a>
+                <span style="color: rgba(255,255,255,0.2);">•</span>
+                <a href="#" class="footer-link-item">Lifetime Access</a>
+                <span style="color: rgba(255,255,255,0.2);">•</span>
+                <a href="#" class="footer-link-item">Commercial PLR/MRR Rights</a>
+                <span style="color: rgba(255,255,255,0.2);">•</span>
+                <a href="https://wa.me/919119745093" class="footer-link-item">WhatsApp Support</a>
+            </div>
+            <p>&copy; 2026 N8N Workflows Bundle. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- 13. Floating WhatsApp Support -->
+    <a href="https://wa.me/919119745093?text=Hi%2C%20I%20want%20to%20know%20about%20the%205000%2B%20N8N%20Workflows%20Bundle" target="_blank" class="wa-floating-trigger" aria-label="WhatsApp Support">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.972.531 1.76.813 2.796.813h.005c3.18 0 5.767-2.586 5.768-5.766 0-1.543-.601-2.993-1.693-4.085s-2.541-1.693-4.08-1.693zm0-2.172c4.418 0 8 3.582 8 8 0 1.777-.584 3.42-1.573 4.757l1.542 5.632-5.765-1.512c-1.309.845-2.862 1.343-4.204 1.343-4.418 0-8-3.582-8-8 0-4.418 3.582-8 8-8zm3.567 11.235c-.198-.099-1.171-.578-1.353-.644-.182-.066-.314-.099-.446.099-.133.198-.513.644-.629.776-.116.132-.231.149-.429.05-.198-.099-.837-.309-1.595-.985-.59-.526-.988-1.176-1.104-1.374-.116-.198-.012-.305.087-.404.089-.089.198-.231.297-.347.099-.116.132-.198.198-.33.066-.132.033-.248-.017-.347-.05-.099-.446-1.074-.611-1.47-.161-.387-.324-.335-.446-.341-.115-.006-.248-.007-.38-.007-.132 0-.347.05-.529.248s-.694.678-.694 1.653.711 1.917.81 2.049c.099.132 1.399 2.136 3.39 2.993.474.204.844.326 1.132.418.476.151.909.13 1.251.079.381-.057 1.171-.479 1.337-.942.165-.463.165-.86.116-.942-.049-.083-.181-.132-.379-.231z"/>
+        </svg>
+    </a>
+
+    <!-- 14. Mobile Sticky Bottom CTA -->
+    <div class="mobile-bottom-bar">
+        <a href="n8n-checkout.html" class="cta-btn-main">
+            <span>👉 GET OFFER FOR — ₹47</span>
+            <span class="arrow-icon">→</span>
+        </a>
+    </div>
+
+    <!-- 15. Exit Intent Popup -->
+    <div class="exit-modal-overlay" id="exit-modal">
+        <div class="exit-modal-box">
+            <span class="exit-modal-close" id="exit-modal-close-btn">&times;</span>
+            <div style="font-size: 2.5rem; margin-bottom: 0.8rem;">⚡</div>
+            <h3 style="font-size: 1.8rem; color: var(--neon-lime); margin-bottom: 0.8rem;">Wait! Don't Leave Empty Handed</h3>
+            <p style="font-size: 1.05rem; color: var(--text-silver); margin-bottom: 1.8rem; line-height: 1.55;">
+                You are 1 click away from owning <strong>5000+ ready n8n workflows</strong> for just ₹47. After the next few sales, the price jumps to ₹75!
+            </p>
+            <a href="n8n-checkout.html" class="cta-btn-main" style="width: 100%; justify-content: center;">
+                <span>👉 CLAIM OFFER FOR ₹47 NOW</span>
+                <span class="arrow-icon">→</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Scripts: Countdown, Accordion & Exit Intent -->
+    <script>
+        // Synchronized Urgency Countdown Timer (48 Hours, LocalStorage Persisted)
+        function initUrgencyTimer() {
+            let endTime = localStorage.getItem('n8n_offer_end');
+            if (!endTime) {
+                endTime = new Date().getTime() + (8 * 60 * 60 * 1000) + (47 * 60 * 1000); // 8h 47m
+                localStorage.setItem('n8n_offer_end', endTime);
+            }
+
+            const timerEl = document.getElementById('header-timer');
+
+            function updateTimerDisplay() {
+                const now = new Date().getTime();
+                const diff = endTime - now;
+
+                if (diff <= 0) {
+                    timerEl.innerText = "00 DAYS 00 HRS 00 MINS 00 SECS";
+                    return;
+                }
+
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+                const dStr = String(days).padStart(2, '0');
+                const hStr = String(hours).padStart(2, '0');
+                const mStr = String(minutes).padStart(2, '0');
+                const sStr = String(seconds).padStart(2, '0');
+
+                timerEl.innerText = `${dStr} DAYS ${hStr} HRS ${mStr} MINS ${sStr} SECS`;
+            }
+
+            updateTimerDisplay();
+            setInterval(updateTimerDisplay, 1000);
+        }
+        initUrgencyTimer();
+
+        // FAQ Accordion Toggle
+        document.querySelectorAll('.faq-card-item').forEach(item => {
+            const trigger = item.querySelector('.faq-question-trigger');
+            trigger.addEventListener('click', () => {
+                const isCurrentlyActive = item.classList.contains('active');
+                document.querySelectorAll('.faq-card-item').forEach(other => other.classList.remove('active'));
+                if (!isCurrentlyActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Exit Intent Modal (Desktop mouseout)
+        let exitShown = sessionStorage.getItem('n8n_exit_shown');
+        document.addEventListener('mouseleave', function(e) {
+            if (e.clientY < 10 && !exitShown && window.innerWidth > 768) {
+                document.getElementById('exit-modal').style.display = 'flex';
+                sessionStorage.setItem('n8n_exit_shown', 'true');
+                exitShown = true;
+            }
+        });
+
+        document.getElementById('exit-modal-close-btn').addEventListener('click', function() {
+            document.getElementById('exit-modal').style.display = 'none';
+        });
+
+        document.getElementById('exit-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
