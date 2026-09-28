@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout - 5000+ Premium N8N Workflows</title>
+    <title>Checkout - 4000+ Premium N8N Workflows</title>
     
     <!-- Preconnect for Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,17 +13,17 @@
     
     <style>
         :root {
-            --bg-dark: #000000;
-            --bg-light: #050811;
+            --bg-dark: #07153E;
+            --bg-light: #0A1B4D;
             --text-primary: #D4FF00;
             --text-secondary: #00E575;
-            --text-body: #CBD5E1;
+            --text-body: #FFFFFF;
             --accent-gold: #FFC837;
             --accent-pink: #FF2E4D;
             --cta-green: #D4FF00;
             --cta-hover: #E4FF1A;
-            --glass-bg: rgba(8, 14, 26, 0.75);
-            --glass-border: rgba(16, 185, 129, 0.25);
+            --glass-bg: rgba(12, 30, 80, 0.78);
+            --glass-border: rgba(59, 130, 246, 0.32);
             --font-heading: 'Outfit', sans-serif;
             --font-body: 'Inter', sans-serif;
         }
@@ -34,13 +34,37 @@
             padding: 0;
         }
 
+        
         body {
-            font-family: var(--font-body);
-            background-color: var(--bg-dark);
-            color: var(--text-body);
+            overflow-x: hidden;
             line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
+            background: 
+                radial-gradient(ellipse 90% 50% at 50% 0%, rgba(37, 99, 245, 0.45) 0%, transparent 70%),
+                radial-gradient(ellipse 70% 40% at 10% 28%, rgba(30, 85, 230, 0.35) 0%, transparent 60%),
+                radial-gradient(ellipse 75% 45% at 90% 52%, rgba(37, 99, 245, 0.35) 0%, transparent 60%),
+                radial-gradient(ellipse 70% 40% at 10% 74%, rgba(30, 85, 230, 0.32) 0%, transparent 60%),
+                radial-gradient(ellipse 85% 45% at 50% 100%, rgba(37, 99, 245, 0.38) 0%, transparent 65%),
+                linear-gradient(180deg, #0A1C52 0%, #081745 25%, #07143E 50%, #081745 75%, #0A1C52 100%);
+            background-color: #07143E;
+            color: #FFFFFF;
         }
+
+        .grid-bg-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1200px;
+            background-image: 
+                linear-gradient(to right, rgba(96, 165, 250, 0.12) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(96, 165, 250, 0.12) 1px, transparent 1px);
+            background-size: 60px 60px;
+            mask-image: radial-gradient(ellipse 80% 70% at 50% 25%, #000 35%, transparent 85%);
+            -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 25%, #000 35%, transparent 85%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
 
         h1, h2, h3, h4, h5, h6 {
             font-family: var(--font-heading);
@@ -51,7 +75,7 @@
         .header {
             position: sticky;
             top: 0;
-            background: rgba(5, 10, 24, 0.85);
+            background: rgba(7, 21, 62, 0.88); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--glass-border);
@@ -168,7 +192,7 @@
         /* 4. ORDER SUMMARY CARD */
         .card {
             background: var(--bg-light);
-            border: 1px solid var(--glass-border);
+            border: 1px solid rgba(59, 130, 246, 0.32); box-shadow: 0 10px 30px rgba(2, 6, 24, 0.45);
             border-radius: 12px;
             padding: 25px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
@@ -472,15 +496,51 @@
             padding: 30px 20px;
             font-size: 0.85rem;
             color: #666;
-            background: #030610;
+            background: #07143E; border-top: 1px solid rgba(59, 130, 246, 0.25); color: #AEB9DA;
         }
         
         footer p {
             margin-bottom: 5px;
         }
+    
+        /* High-Contrast Checkout Text Rules */
+        .card, .summary-card, .bump-card, .total-section, .trust-section {
+            color: #FFFFFF !important;
+        }
+        .included-list li, .bump-items li, .price-row, .order-total-row {
+            color: #FFFFFF !important;
+        }
+        .included-list li strong, .bump-items li strong {
+            color: #FFFFFF !important;
+        }
+        .product-title, .bump-title {
+            color: #FFFFFF !important;
+        }
+        .bump-desc {
+            color: #E2E8F0 !important;
+        }
+        .bump-warning {
+            color: #FFE600 !important;
+        }
+        .checkbox-label {
+            color: #FFFFFF !important;
+        }
+        .progress-subtext, .micro-trust, .trust-item p {
+            color: #CBD5E1 !important;
+        }
+        .price-strike, del {
+            color: #94A3B8 !important;
+        }
+        .price-row span {
+            color: #FFFFFF !important;
+        }
+
     </style>
 </head>
 <body>
+    <!-- 3D Perspective Grid Background overlay -->
+    <div class="grid-bg-overlay"></div>
+
 
     <!-- 1. HEADER BAR -->
     <header class="header">
@@ -511,15 +571,19 @@
             <div>
                 <!-- 4. ORDER SUMMARY CARD -->
                 <div class="card summary-card">
-                    <h2 class="product-title">5000+ Premium N8N Automation Workflows Bundle</h2>
+                    <h2 class="product-title">4000+ Premium N8N Automation Workflows Bundle</h2>
                     
+                    <div style="margin: 15px 0 20px; border-radius: 12px; overflow: hidden; border: 1px solid rgba(59, 130, 246, 0.35); box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);">
+                        <img src="assets/n8n 4000+bonus.png" alt="4000+ Premium N8N Automation Workflows Bundle with Bonuses" style="width: 100%; height: auto; display: block;" loading="eager">
+                    </div>
+
                     <div class="price-display">
                         <span class="price-strike">₹499</span>
                         <span class="price-current">₹47</span>
                     </div>
 
                     <ul class="included-list">
-                        <li>✅ <strong>5000+ Pre-Built N8N Workflows</strong></li>
+                        <li>✅ <strong>4000+ Pre-Built N8N Workflows</strong></li>
                         <li>✅ <strong>Fully Editable JSON Files</strong></li>
                         <li>✅ <strong>AI Automation Workflows</strong></li>
                         <li>✅ <strong>Commercial License (PLR + MRR)</strong></li>
@@ -637,7 +701,7 @@
         <div class="trust-section">
             <p>Your information is 100% secure</p>
             <p>Instant download after payment</p>
-            <p>Questions? <a href="https://wa.me/919119745093" target="_blank">WhatsApp us</a></p>
+            <p>24/7 Digital Delivery Support Included</p>
         </div>
     </div>
 

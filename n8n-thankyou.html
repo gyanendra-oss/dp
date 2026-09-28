@@ -11,17 +11,17 @@
     
     <style>
         :root {
-            --bg-dark: #000000;
-            --bg-light: #050811;
+            --bg-dark: #07153E;
+            --bg-light: #0A1B4D;
             --text-primary: #D4FF00;
             --text-secondary: #00E575;
-            --text-body: #CBD5E1;
+            --text-body: #FFFFFF;
             --accent-gold: #FFC837;
             --accent-pink: #FF2E4D;
             --cta-green: #D4FF00;
             --cta-hover: #E4FF1A;
-            --glass-bg: rgba(8, 14, 26, 0.75);
-            --glass-border: rgba(16, 185, 129, 0.25);
+            --glass-bg: rgba(12, 30, 80, 0.78);
+            --glass-border: rgba(59, 130, 246, 0.32);
             --font-heading: 'Outfit', sans-serif;
             --font-body: 'Inter', sans-serif;
         }
@@ -32,16 +32,37 @@
             box-sizing: border-box;
         }
 
+        
         body {
-            font-family: var(--font-body);
-            background-color: var(--bg-dark);
-            color: var(--text-body);
-            line-height: 1.6;
             overflow-x: hidden;
-            background-image: 
-                radial-gradient(circle at 15% 50%, rgba(233, 30, 140, 0.05), transparent 25%),
-                radial-gradient(circle at 85% 30%, rgba(212, 167, 69, 0.05), transparent 25%);
+            line-height: 1.6;
+            background: 
+                radial-gradient(ellipse 90% 50% at 50% 0%, rgba(37, 99, 245, 0.45) 0%, transparent 70%),
+                radial-gradient(ellipse 70% 40% at 10% 28%, rgba(30, 85, 230, 0.35) 0%, transparent 60%),
+                radial-gradient(ellipse 75% 45% at 90% 52%, rgba(37, 99, 245, 0.35) 0%, transparent 60%),
+                radial-gradient(ellipse 70% 40% at 10% 74%, rgba(30, 85, 230, 0.32) 0%, transparent 60%),
+                radial-gradient(ellipse 85% 45% at 50% 100%, rgba(37, 99, 245, 0.38) 0%, transparent 65%),
+                linear-gradient(180deg, #0A1C52 0%, #081745 25%, #07143E 50%, #081745 75%, #0A1C52 100%);
+            background-color: #07143E;
+            color: #FFFFFF;
         }
+
+        .grid-bg-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1200px;
+            background-image: 
+                linear-gradient(to right, rgba(96, 165, 250, 0.12) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(96, 165, 250, 0.12) 1px, transparent 1px);
+            background-size: 60px 60px;
+            mask-image: radial-gradient(ellipse 80% 70% at 50% 25%, #000 35%, transparent 85%);
+            -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 25%, #000 35%, transparent 85%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
 
         h1, h2, h3, h4 {
             font-family: var(--font-heading);
@@ -59,7 +80,7 @@
         header {
             padding: 20px 0;
             border-bottom: 1px solid var(--glass-border);
-            background: rgba(5, 10, 24, 0.8);
+            background: rgba(7, 21, 62, 0.88); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
             backdrop-filter: blur(10px);
             position: sticky;
             top: 0;
@@ -187,7 +208,7 @@
         /* CARDS / GLASSMORPHISM */
         .glass-card {
             background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
+            border: 1px solid rgba(59, 130, 246, 0.32); box-shadow: 0 10px 30px rgba(2, 6, 24, 0.45);
             border-radius: 16px;
             padding: 30px;
             margin-bottom: 30px;
@@ -319,7 +340,6 @@
             opacity: 0.9;
         }
 
-        .btn-whatsapp { background-color: #25D366; }
         .btn-twitter { background-color: #1DA1F2; }
         .btn-linkedin { background-color: #0A66C2; }
 
@@ -410,9 +430,24 @@
                 gap: 10px;
             }
         }
+    
+        /* High-Contrast Thank You Text Rules */
+        .step-desc, .resource-desc, .share-body, .bonus-desc {
+            color: #E2E8F0 !important;
+        }
+        .step-title, .resource-title, .bonus-title {
+            color: #FFFFFF !important;
+        }
+        .step-num {
+            color: var(--text-primary) !important;
+        }
+
     </style>
 </head>
 <body>
+    <!-- 3D Perspective Grid Background overlay -->
+    <div class="grid-bg-overlay"></div>
+
 
     <!-- Confetti Container -->
     <div class="confetti-container" id="confetti-container"></div>
@@ -433,7 +468,7 @@
             </div>
             <h1>🎉 Payment Successful!</h1>
             <h2>Thank You for Your Purchase!</h2>
-            <p>Your 5000+ Premium N8N Automation Workflows Bundle has been processed successfully. You will receive your download link shortly.</p>
+            <p>Your 4000+ Premium N8N Automation Workflows Bundle has been processed successfully. You will receive your download link shortly.</p>
         </section>
 
         <!-- WHAT HAPPENS NEXT -->
@@ -451,7 +486,7 @@
                     <div class="step-icon">📥</div>
                     <div class="step-content">
                         <h3>Step 2: Download your files</h3>
-                        <p>Click the download link to get your complete bundle of 5000+ N8N workflow JSON files.</p>
+                        <p>Click the download link to get your complete bundle of 4000+ N8N workflow JSON files.</p>
                     </div>
                 </div>
                 <div class="step">
@@ -475,13 +510,13 @@
                         <div style="font-size: 0.9rem; color: #aaa;">Step-by-step setup guide</div>
                     </div>
                 </a>
-                <a href="https://wa.me/919119745093?text=Hi%20I%20just%20purchased%20the%20N8N%20Workflows%20Bundle" target="_blank" rel="noopener noreferrer" class="resource-link">
+                <div class="resource-link" style="cursor: default;">
                     <span class="icon">💬</span>
                     <div>
-                        <div style="font-weight: 600; font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 2px;">Need Help? WhatsApp Support</div>
-                        <div style="font-size: 0.9rem; color: #aaa;">Message us for quick assistance</div>
+                        <div style="font-weight: 600; font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 2px;">24/7 Digital Delivery Support</div>
+                        <div style="font-size: 0.9rem; color: #aaa;">Need help? Reply directly to your delivery confirmation email</div>
                     </div>
-                </a>
+                </div>
                 <div class="resource-link" style="cursor: default;">
                     <span class="icon">📂</span>
                     <div>
@@ -498,12 +533,6 @@
             <p>Help fellow automation enthusiasts discover this bundle. Share on your social media and help others save 3000+ hours!</p>
             
             <div class="share-buttons">
-                <button class="share-btn btn-whatsapp" onclick="shareTo('whatsapp')">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm3.427-10.02c1.458 1.459 2.261 3.397 2.261 5.46 0 4.256-3.463 7.72-7.72 7.72-1.328 0-2.63-.346-3.771-1.002L2 19l2.42-6.331C3.766 11.53 3.42 10.229 3.42 8.902c0-4.256 3.463-7.72 7.72-7.72 2.064 0 4.002.803 5.46 2.261z"/>
-                    </svg>
-                    Share on WhatsApp
-                </button>
                 <button class="share-btn btn-twitter" onclick="shareTo('twitter')">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
@@ -573,7 +602,7 @@
 
         // Web Share API & Fallbacks
         async function shareTo(platform) {
-            const shareText = "Just got 5000+ N8N automation workflows for ₹47! Check it out: https://superprofile.bio/vp/n8nworkflow";
+            const shareText = "Just got 4000+ N8N automation workflows for ₹47! Check it out: https://superprofile.bio/vp/n8nworkflow";
             const shareUrl = "https://superprofile.bio/vp/n8nworkflow";
             
             // Try Native Web Share API first if supported
@@ -581,7 +610,7 @@
                 try {
                     await navigator.share({
                         title: 'N8N Workflows Bundle',
-                        text: "Just got 5000+ N8N automation workflows for ₹47! Check it out:",
+                        text: "Just got 4000+ N8N automation workflows for ₹47! Check it out:",
                         url: shareUrl
                     });
                     return; // Stop here if native share succeeds
@@ -593,9 +622,7 @@
             
             // Fallbacks
             let url = '';
-            if (platform === 'whatsapp') {
-                url = `https://wa.me/?text=${encodeURIComponent(shareText)}`;
-            } else if (platform === 'twitter') {
+            if (platform === 'twitter') {
                 url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`;
             } else if (platform === 'linkedin') {
                 url = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`;
