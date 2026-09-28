@@ -11,6 +11,9 @@
     <!-- Google Fonts: Outfit (headings) + Inter (body) -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     
+    <!-- Razorpay Standard Checkout SDK -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    
     <style>
         :root {
             --bg-dark: #07153E;
@@ -252,6 +255,126 @@
             background: rgba(255,255,255,0.05);
             padding: 10px;
             border-radius: 6px;
+        }
+
+        /* CUSTOMER DETAILS FORM */
+        .customer-info-card {
+            background: var(--glass-bg);
+            border: 1px solid rgba(212, 167, 69, 0.35);
+            border-radius: 12px;
+            padding: 22px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .customer-info-card:hover {
+            border-color: rgba(212, 167, 69, 0.6);
+        }
+
+        .customer-info-card .form-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 18px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding-bottom: 12px;
+        }
+
+        .customer-info-card .form-title {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .customer-info-card .form-badge {
+            background: rgba(0, 229, 117, 0.15);
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 229, 117, 0.35);
+            margin-left: auto;
+            letter-spacing: 0.02em;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: #CBD5E1;
+            margin-bottom: 6px;
+            font-family: var(--font-body);
+        }
+
+        .form-group label span.req {
+            color: var(--accent-pink);
+            font-weight: 700;
+        }
+
+        .form-group .input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .form-group .input-icon {
+            position: absolute;
+            left: 14px;
+            color: #94A3B8;
+            font-size: 1.05rem;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .form-group input {
+            width: 100%;
+            background: rgba(5, 10, 24, 0.85);
+            border: 1.5px solid rgba(59, 130, 246, 0.35);
+            border-radius: 8px;
+            padding: 12px 14px 12px 44px;
+            color: #FFFFFF;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.25s ease;
+        }
+
+        .form-group input:focus {
+            border-color: var(--text-primary);
+            box-shadow: 0 0 16px rgba(212, 255, 0, 0.22);
+            background: rgba(7, 13, 31, 0.95);
+        }
+
+        .form-group input.is-invalid {
+            border-color: var(--accent-pink);
+            box-shadow: 0 0 12px rgba(255, 46, 77, 0.35);
+        }
+
+        .form-group input::placeholder {
+            color: #64748B;
+            font-size: 0.92rem;
+        }
+
+        .form-group .helper-text {
+            font-size: 0.78rem;
+            color: #94A3B8;
+            margin-top: 5px;
+            line-height: 1.4;
+        }
+
+        .form-error {
+            color: #FF5E7E;
+            font-size: 0.82rem;
+            margin-top: 5px;
+            display: none;
+            font-weight: 500;
         }
 
         /* 5 & 6. BUMP OFFERS */
@@ -597,9 +720,47 @@
                 </div>
             </div>
 
-            <!-- Right Column: Bump Offers & Total -->
+            <!-- Right Column: Customer Details, Bump Offers & Total -->
             <div class="bump-offers-col">
                 
+                <!-- CUSTOMER DETAILS FORM -->
+                <div class="customer-info-card">
+                    <div class="form-header">
+                        <span style="font-size: 1.3rem;">👤</span>
+                        <h3 class="form-title">Step 1: Your Delivery Details</h3>
+                        <span class="form-badge">🔒 Instant Access</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cust-name">Full Name <span class="req">*</span></label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">👤</span>
+                            <input type="text" id="cust-name" name="name" placeholder="Enter your full name" required autocomplete="name">
+                        </div>
+                        <div class="form-error" id="name-error">Please enter your full name</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cust-email">Email Address <span class="req">*</span></label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">📧</span>
+                            <input type="email" id="cust-email" name="email" placeholder="you@gmail.com" required autocomplete="email">
+                        </div>
+                        <div class="helper-text">⚡ Your 4,000+ workflow bundle files will be delivered here instantly.</div>
+                        <div class="form-error" id="email-error">Please enter a valid email address</div>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 0;">
+                        <label for="cust-phone">Mobile Number / UPI Number <span class="req">*</span></label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">📱</span>
+                            <input type="tel" id="cust-phone" name="phone" placeholder="9876543210" maxlength="10" required autocomplete="tel">
+                        </div>
+                        <div class="helper-text">📱 For order confirmation SMS & instant access support.</div>
+                        <div class="form-error" id="phone-error">Please enter a valid 10-digit mobile number</div>
+                    </div>
+                </div>
+
                 <!-- 5. BUMP OFFER 1 -->
                 <label class="bump-card bump-1" for="bump-1-check" id="bump-1-wrapper">
                     <div class="bump-badge">LIMITED-TIME UPGRADE</div>
@@ -683,9 +844,9 @@
                         <span id="final-price-display">₹47</span>
                     </div>
 
-                    <a href="https://superprofile.bio/vp/n8nworkflow" class="cta-btn" id="checkout-btn">
+                    <button type="button" class="cta-btn" id="checkout-btn" style="border: none; cursor: pointer; width: 100%;">
                         🔒 COMPLETE MY ORDER — ₹47
-                    </a>
+                    </button>
 
                     <div class="trust-badges">
                         <span>🔒 256-bit SSL Encrypted</span>
@@ -718,6 +879,7 @@
             const bumpCheckboxes = document.querySelectorAll('.bump-trigger');
             const finalPriceDisplay = document.getElementById('final-price-display');
             const checkoutBtn = document.getElementById('checkout-btn');
+            let currentTotal = basePrice;
             
             function calculateTotal() {
                 let total = basePrice;
@@ -737,6 +899,7 @@
                     }
                 });
 
+                currentTotal = total;
                 finalPriceDisplay.textContent = `₹${total}`;
                 checkoutBtn.innerHTML = `🔒 COMPLETE MY ORDER — ₹${total}`;
             }
@@ -747,6 +910,145 @@
 
             // Init total
             calculateTotal();
+
+            // -- Razorpay Integration & Form Validation --
+            const RAZORPAY_KEY = "rzp_live_TMt2h9XhlfVeQc";
+
+            const nameInput = document.getElementById('cust-name');
+            const emailInput = document.getElementById('cust-email');
+            const phoneInput = document.getElementById('cust-phone');
+
+            const nameError = document.getElementById('name-error');
+            const emailError = document.getElementById('email-error');
+            const phoneError = document.getElementById('phone-error');
+
+            function clearErrors() {
+                [nameInput, emailInput, phoneInput].forEach(el => el.classList.remove('is-invalid'));
+                [nameError, emailError, phoneError].forEach(el => el.style.display = 'none');
+            }
+
+            [nameInput, emailInput, phoneInput].forEach(input => {
+                input.addEventListener('input', function() {
+                    this.classList.remove('is-invalid');
+                    const errEl = document.getElementById(`${this.id.replace('cust-', '')}-error`);
+                    if (errEl) errEl.style.display = 'none';
+                });
+            });
+
+            checkoutBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                clearErrors();
+
+                const name = nameInput.value.trim();
+                const email = emailInput.value.trim();
+                const phone = phoneInput.value.trim();
+
+                let isValid = true;
+                let firstInvalid = null;
+
+                if (!name || name.length < 2) {
+                    nameInput.classList.add('is-invalid');
+                    nameError.style.display = 'block';
+                    isValid = false;
+                    if (!firstInvalid) firstInvalid = nameInput;
+                }
+
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!email || !emailRegex.test(email)) {
+                    emailInput.classList.add('is-invalid');
+                    emailError.style.display = 'block';
+                    isValid = false;
+                    if (!firstInvalid) firstInvalid = emailInput;
+                }
+
+                const phoneClean = phone.replace(/\D/g, '');
+                if (!phoneClean || phoneClean.length < 10) {
+                    phoneInput.classList.add('is-invalid');
+                    phoneError.style.display = 'block';
+                    isValid = false;
+                    if (!firstInvalid) firstInvalid = phoneInput;
+                }
+
+                if (!isValid) {
+                    firstInvalid.focus();
+                    firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    return;
+                }
+
+                // Check Razorpay SDK availability
+                if (typeof Razorpay === 'undefined') {
+                    alert("Payment Gateway is loading. Please check your internet connection and try again.");
+                    return;
+                }
+
+                // Build item description
+                let itemsList = ["4000+ N8N Workflows Bundle"];
+                const bump1 = document.getElementById('bump-1-check').checked;
+                const bump2 = document.getElementById('bump-2-check').checked;
+                if (bump1) itemsList.push("Visionary Planners");
+                if (bump2) itemsList.push("Claude Prompts Pack");
+
+                checkoutBtn.disabled = true;
+                checkoutBtn.innerHTML = `⏳ Connecting to Razorpay...`;
+
+                const options = {
+                    key: RAZORPAY_KEY,
+                    amount: currentTotal * 100, // Amount in paise
+                    currency: "INR",
+                    name: "N8N Automation Workflows",
+                    description: itemsList.join(" + "),
+                    image: "assets/n8n 4000+bonus.png",
+                    prefill: {
+                        name: name,
+                        email: email,
+                        contact: phoneClean
+                    },
+                    notes: {
+                        product: "4000+ N8N Workflows Bundle",
+                        bump1_planner: bump1 ? "yes" : "no",
+                        bump2_claude: bump2 ? "yes" : "no",
+                        customer_name: name,
+                        customer_email: email,
+                        customer_phone: phoneClean
+                    },
+                    theme: {
+                        color: "#00E575"
+                    },
+                    modal: {
+                        ondismiss: function() {
+                            checkoutBtn.disabled = false;
+                            checkoutBtn.innerHTML = `🔒 COMPLETE MY ORDER — ₹${currentTotal}`;
+                        }
+                    },
+                    handler: function(response) {
+                        const paymentId = response.razorpay_payment_id;
+                        
+                        // Store order details in localStorage
+                        localStorage.setItem('n8n_order_success', JSON.stringify({
+                            paymentId: paymentId,
+                            name: name,
+                            email: email,
+                            phone: phoneClean,
+                            amount: currentTotal,
+                            items: itemsList,
+                            timestamp: Date.now()
+                        }));
+
+                        // Redirect to thank you page
+                        window.location.href = `n8n-thankyou.html?payment_id=${encodeURIComponent(paymentId)}&name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}`;
+                    }
+                };
+
+                const rzp = new Razorpay(options);
+
+                rzp.on('payment.failed', function(response) {
+                    alert("Payment Unsuccessful: " + (response.error.description || "Please try again with UPI or Card."));
+                    checkoutBtn.disabled = false;
+                    checkoutBtn.innerHTML = `🔒 COMPLETE MY ORDER — ₹${currentTotal}`;
+                });
+
+                rzp.open();
+            });
 
             // -- Timer Logic --
             const timerElement = document.getElementById('countdown-timer');

@@ -469,6 +469,12 @@
             <h1>🎉 Payment Successful!</h1>
             <h2>Thank You for Your Purchase!</h2>
             <p>Your 4000+ Premium N8N Automation Workflows Bundle has been processed successfully. You will receive your download link shortly.</p>
+            
+            <div id="payment-receipt-badge" style="display: none; align-items: center; justify-content: center; margin: 15px auto 0; padding: 10px 22px; background: rgba(0, 229, 117, 0.12); border: 1px solid rgba(0, 229, 117, 0.35); border-radius: 30px; font-size: 0.95rem; color: #FFFFFF; max-width: 550px; flex-wrap: wrap; gap: 8px;">
+                <span>Payment ID: <strong id="receipt-pid" style="color: var(--text-primary); font-family: monospace;">--</strong></span>
+                <span style="color: rgba(255,255,255,0.3);">•</span>
+                <span>Access Sent To: <strong id="receipt-email" style="color: #CBD5E1;">--</strong></span>
+            </div>
         </section>
 
         <!-- WHAT HAPPENS NEXT -->
@@ -632,6 +638,34 @@
                 window.open(url, '_blank');
             }
         }
+
+        // Display Razorpay Payment Receipt Details
+        (function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            let paymentId = urlParams.get('payment_id');
+            let email = urlParams.get('email');
+            
+            if (!paymentId) {
+                try {
+                    const saved = JSON.parse(localStorage.getItem('n8n_order_success') || '{}');
+                    if (saved.paymentId) {
+                        paymentId = saved.paymentId;
+                        email = saved.email;
+                    }
+                } catch(e) {}
+            }
+
+            if (paymentId) {
+                const badge = document.getElementById('payment-receipt-badge');
+                if (badge) {
+                    badge.style.display = 'inline-flex';
+                    document.getElementById('receipt-pid').textContent = paymentId;
+                    if (email) {
+                        document.getElementById('receipt-email').textContent = email;
+                    }
+                }
+            }
+        })();
     </script>
 </body>
 </html>
