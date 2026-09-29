@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>4000+ Premium n8n Automation Workflows Bundle | Official Launch Offer</title>
     <meta name="description" content="Get 4000+ Pre-Built n8n Automation Workflows + AI Faceless Video Generator. Save 8-10 hours daily. Instant download, lifetime access & full commercial license.">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -227,8 +228,8 @@
         }
 
         .header-cta-btn {
-            background: var(--neon-lime);
-            color: #000000;
+            background: linear-gradient(135deg, #059669 0%, #10B981 100%) !important;
+            color: #FFFFFF !important;
             font-family: var(--font-heading);
             font-size: 0.85rem;
             font-weight: 800;
@@ -237,7 +238,7 @@
             padding: 0.6rem 1.4rem;
             border-radius: var(--radius-pill);
             text-decoration: none;
-            box-shadow: 0 0 20px var(--neon-lime-glow);
+            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.45);
             transition: all 0.25s ease;
             display: inline-flex;
             align-items: center;
@@ -246,8 +247,9 @@
 
         .header-cta-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 0 30px rgba(212, 255, 0, 0.6);
-            background: #E4FF1A;
+            box-shadow: 0 6px 30px rgba(16, 185, 129, 0.65);
+            background: linear-gradient(135deg, #047857 0%, #059669 100%) !important;
+            color: #FFFFFF !important;
         }
 
         @media (max-width: 600px) {
@@ -333,14 +335,14 @@
             color: var(--emerald);
         }
 
-        /* High-Voltage Primary CTA Button */
+        /* High-Impact Green Primary CTA Button */
         .cta-btn-main {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 0.8rem;
-            background: var(--neon-lime);
-            color: #000000;
+            background: linear-gradient(135deg, #059669 0%, #10B981 100%) !important;
+            color: #FFFFFF !important;
             font-family: var(--font-heading);
             font-weight: 900;
             font-size: clamp(1.15rem, 2.5vw, 1.45rem);
@@ -349,7 +351,7 @@
             padding: 1.15rem 3rem;
             border-radius: var(--radius-pill);
             text-decoration: none;
-            box-shadow: 0 0 35px var(--neon-lime-glow);
+            box-shadow: 0 6px 30px rgba(16, 185, 129, 0.45);
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
             position: relative;
             overflow: hidden;
@@ -359,11 +361,17 @@
 
         .cta-btn-main:hover {
             transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 0 55px rgba(212, 255, 0, 0.7);
-            background: #E4FF1A;
+            box-shadow: 0 8px 45px rgba(16, 185, 129, 0.7);
+            background: linear-gradient(135deg, #047857 0%, #059669 100%) !important;
+            color: #FFFFFF !important;
+        }
+
+        .cta-btn-main span {
+            color: #FFFFFF !important;
         }
 
         .cta-btn-main .arrow-icon {
+            color: #FFFFFF !important;
             font-size: 1.4rem;
             transition: transform 0.25s ease;
         }
@@ -374,10 +382,36 @@
 
         .cta-strikethrough {
             text-decoration: line-through;
-            color: rgba(0, 0, 0, 0.5);
+            color: rgba(255, 255, 255, 0.75) !important;
             font-size: 0.95rem;
             font-weight: 700;
             margin-left: 0.3rem;
+        }
+
+        /* Downward Arrow Indicator Before CTA */
+        .cta-down-indicator {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 12px;
+            animation: ctaBounceDown 1.3s infinite ease-in-out;
+            user-select: none;
+        }
+
+        .cta-down-indicator svg {
+            width: 36px;
+            height: 36px;
+            stroke: #10B981;
+            filter: drop-shadow(0 2px 10px rgba(16, 185, 129, 0.65));
+        }
+
+        @keyframes ctaBounceDown {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(8px);
+            }
         }
 
         .cta-subtext {
@@ -1243,6 +1277,12 @@
                 <p style="font-size: 0.98rem; color: #CBD5E1; margin-bottom: 1.2rem; font-weight: 500;">
                     As this is our new launch, we have kept the price extremely low. After just <strong style="color: #FFE600;">20 sales</strong>, we will be increasing the price to <strong style="color: #00E575;">₹75 → ₹99 → ₹147 → ₹199 → ₹247</strong>... after every 25 sales.
                 </p>
+                <div class="cta-down-indicator">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="3" x2="12" y2="19"></line>
+                        <polyline points="19 12 12 19 5 12"></polyline>
+                    </svg>
+                </div>
                 <a href="n8n-checkout.html" class="cta-btn-main">
                     <span>👉 GET OFFER FOR — ₹47</span>
                     <span class="cta-strikethrough">₹499</span>
@@ -1259,6 +1299,11 @@
                 <p style="font-size: 1.05rem; color: #CBD5E1; font-weight: 500; margin: 0;">
                     (see the video given below to know it more neatly)
                 </p>
+            </div>
+
+            <!-- File Protocol Warning Alert (only shown when opened directly via file:///) -->
+            <div id="file-protocol-alert" style="display: none; background: rgba(234, 179, 8, 0.12); border: 1px solid rgba(234, 179, 8, 0.45); border-radius: 12px; padding: 12px 18px; margin: 0 auto 16px; max-width: 820px; text-align: center; color: #FEF08A; font-size: 0.92rem; line-height: 1.5;">
+                ℹ️ <strong>Desktop Preview Notice:</strong> YouTube blocks in-frame playback when opened directly from desktop via <code>file:///</code> (Error 153). To see it playing natively inside this frame on your PC, double-click <strong>Preview-Funnel.bat</strong> in this folder (or open <a href="http://localhost:8085/index.html" target="_blank" style="color: #67E8F9; font-weight: 700;">http://localhost:8085</a>). On your live website domain, it plays seamlessly!
             </div>
 
             <!-- Video Showcase Frame -->
@@ -1448,6 +1493,12 @@
 
             <!-- Mid-Page CTA -->
             <div style="text-align: center; margin-top: 2rem;">
+                <div class="cta-down-indicator">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="3" x2="12" y2="19"></line>
+                        <polyline points="19 12 12 19 5 12"></polyline>
+                    </svg>
+                </div>
                 <a href="n8n-checkout.html" class="cta-btn-main">
                     <span>👉 GET INSTANT ACCESS WITH ALL BONUSES — ₹47</span>
                     <span class="arrow-icon">→</span>
@@ -1791,6 +1842,12 @@
                     Just ₹47/-
                 </div>
 
+                <div class="cta-down-indicator">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="3" x2="12" y2="19"></line>
+                        <polyline points="19 12 12 19 5 12"></polyline>
+                    </svg>
+                </div>
                 <a href="n8n-checkout.html" class="cta-btn-main" style="max-width: 420px; margin: 0 auto;">
                     <span>👉 GET OFFER FOR — ₹47</span>
                     <span class="cta-strikethrough">₹499</span>
@@ -1991,6 +2048,12 @@
             </div>
 
             <div style="margin-top: 2.5rem;">
+                <div class="cta-down-indicator">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="3" x2="12" y2="19"></line>
+                        <polyline points="19 12 12 19 5 12"></polyline>
+                    </svg>
+                </div>
                 <a href="n8n-checkout.html" class="cta-btn-main" style="padding: 1.3rem 3.5rem; font-size: clamp(1.2rem, 3vw, 1.6rem);">
                     <span>👉 CLAIM COMPLETE BUNDLE — ₹47</span>
                     <span class="arrow-icon">→</span>
@@ -2027,6 +2090,12 @@
             <p style="font-size: 1.05rem; color: var(--text-silver); margin-bottom: 1.8rem; line-height: 1.55;">
                 You are 1 click away from owning <strong>4000+ ready n8n workflows</strong> for just ₹47. After the next few sales, the price jumps to ₹75!
             </p>
+            <div class="cta-down-indicator">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="3" x2="12" y2="19"></line>
+                    <polyline points="19 12 12 19 5 12"></polyline>
+                </svg>
+            </div>
             <a href="n8n-checkout.html" class="cta-btn-main" style="width: 100%; justify-content: center;">
                 <span>👉 CLAIM OFFER FOR ₹47 NOW</span>
                 <span class="arrow-icon">→</span>
@@ -2104,6 +2173,12 @@
                 this.style.display = 'none';
             }
         });
+
+        // Detect if opened as local file:/// and show preview helper
+        if (window.location.protocol === 'file:') {
+            const fileAlert = document.getElementById('file-protocol-alert');
+            if (fileAlert) fileAlert.style.display = 'block';
+        }
 
     </script>
 </body>

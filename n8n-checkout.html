@@ -16,17 +16,18 @@
     
     <style>
         :root {
-            --bg-dark: #07153E;
-            --bg-light: #0A1B4D;
-            --text-primary: #D4FF00;
-            --text-secondary: #00E575;
-            --text-body: #FFFFFF;
-            --accent-gold: #FFC837;
-            --accent-pink: #FF2E4D;
-            --cta-green: #D4FF00;
-            --cta-hover: #E4FF1A;
-            --glass-bg: rgba(12, 30, 80, 0.78);
-            --glass-border: rgba(59, 130, 246, 0.32);
+            --bg-page: #F4F7FC;
+            --box-bg: #F0F6FF;
+            --box-border: #BFDBFE;
+            --text-heading: #0F172A;
+            --text-body: #1E293B;
+            --text-muted: #64748B;
+            --accent-green: #059669;
+            --accent-green-light: #10B981;
+            --accent-blue: #2563EB;
+            --accent-amber: #D97706;
+            --accent-purple: #7C3AED;
+            --accent-red: #DC2626;
             --font-heading: 'Outfit', sans-serif;
             --font-body: 'Inter', sans-serif;
         }
@@ -37,19 +38,17 @@
             padding: 0;
         }
 
-        
         body {
             overflow-x: hidden;
             line-height: 1.6;
-            background: 
-                radial-gradient(ellipse 90% 50% at 50% 0%, rgba(37, 99, 245, 0.45) 0%, transparent 70%),
-                radial-gradient(ellipse 70% 40% at 10% 28%, rgba(30, 85, 230, 0.35) 0%, transparent 60%),
-                radial-gradient(ellipse 75% 45% at 90% 52%, rgba(37, 99, 245, 0.35) 0%, transparent 60%),
-                radial-gradient(ellipse 70% 40% at 10% 74%, rgba(30, 85, 230, 0.32) 0%, transparent 60%),
-                radial-gradient(ellipse 85% 45% at 50% 100%, rgba(37, 99, 245, 0.38) 0%, transparent 65%),
-                linear-gradient(180deg, #0A1C52 0%, #081745 25%, #07143E 50%, #081745 75%, #0A1C52 100%);
-            background-color: #07143E;
-            color: #FFFFFF;
+            background-color: var(--bg-page);
+            background-image: 
+                radial-gradient(ellipse 90% 60% at 50% 0%, rgba(191, 219, 254, 0.45) 0%, transparent 70%),
+                radial-gradient(ellipse 70% 50% at 90% 40%, rgba(224, 238, 255, 0.5) 0%, transparent 60%),
+                radial-gradient(ellipse 80% 50% at 10% 80%, rgba(219, 234, 254, 0.4) 0%, transparent 60%);
+            color: var(--text-body);
+            font-family: var(--font-body);
+            -webkit-font-smoothing: antialiased;
         }
 
         .grid-bg-overlay {
@@ -57,82 +56,46 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 1200px;
+            height: 1000px;
             background-image: 
-                linear-gradient(to right, rgba(96, 165, 250, 0.12) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(96, 165, 250, 0.12) 1px, transparent 1px);
-            background-size: 60px 60px;
-            mask-image: radial-gradient(ellipse 80% 70% at 50% 25%, #000 35%, transparent 85%);
-            -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 25%, #000 35%, transparent 85%);
+                linear-gradient(to right, rgba(37, 99, 235, 0.04) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(37, 99, 235, 0.04) 1px, transparent 1px);
+            background-size: 40px 40px;
             pointer-events: none;
             z-index: 0;
         }
 
-
         h1, h2, h3, h4, h5, h6 {
             font-family: var(--font-heading);
             font-weight: 700;
-        }
-
-        /* 1. HEADER BAR */
-        .header {
-            position: sticky;
-            top: 0;
-            background: rgba(7, 21, 62, 0.88); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--glass-border);
-            z-index: 100;
-            padding: 15px 0;
-        }
-
-        .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: var(--font-heading);
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--text-primary);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .secure-badge {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: #00C853;
-            display: flex;
-            align-items: center;
-            gap: 5px;
+            color: var(--text-heading);
         }
 
         /* 2. URGENCY BANNER */
         .urgency-banner {
-            background: linear-gradient(180deg, rgba(160, 10, 30, 0.95) 0%, rgba(100, 5, 20, 0.95) 100%);
-            border-bottom: 1px solid rgba(255, 60, 80, 0.3);
+            background: #FEF2F2;
+            border-bottom: 1.5px solid #FECACA;
             text-align: center;
-            padding: 10px 20px;
+            padding: 11px 20px;
             font-family: var(--font-heading);
             font-weight: 700;
             font-size: 0.95rem;
-            color: #FFFFFF;
+            color: #991B1B;
+            position: relative;
+            z-index: 1;
         }
         
         .timer-container {
             display: inline-block;
             margin-left: 10px;
-            color: var(--text-primary);
+            color: #DC2626;
+            background: #FEE2E2;
+            border: 1px solid #FCA5A5;
+            padding: 2px 10px;
+            border-radius: 6px;
             font-variant-numeric: tabular-nums;
             font-weight: 800;
+            letter-spacing: 0.5px;
         }
 
         /* Main Content Container */
@@ -140,6 +103,8 @@
             max-width: 1000px;
             margin: 0 auto;
             padding: 30px 20px;
+            position: relative;
+            z-index: 1;
         }
 
         /* 3. PROGRESS BAR */
@@ -151,15 +116,16 @@
         .progress-text {
             font-family: var(--font-heading);
             font-size: 1.2rem;
-            color: var(--text-primary);
+            font-weight: 800;
+            color: var(--text-heading);
             margin-bottom: 10px;
         }
 
         .progress-bar-container {
             width: 100%;
-            max-width: 600px;
-            height: 12px;
-            background: rgba(255,255,255,0.1);
+            max-width: 580px;
+            height: 10px;
+            background: #E2E8F0;
             border-radius: 20px;
             margin: 0 auto 8px auto;
             overflow: hidden;
@@ -168,49 +134,53 @@
         .progress-bar-fill {
             width: 90%;
             height: 100%;
-            background: linear-gradient(90deg, var(--cta-green), #4CAF50);
+            background: linear-gradient(90deg, #10B981, #059669);
             border-radius: 20px;
-            box-shadow: 0 0 10px rgba(0, 200, 83, 0.5);
+            box-shadow: 0 0 10px rgba(16, 185, 129, 0.4);
         }
 
         .progress-subtext {
             font-size: 0.85rem;
-            color: #aaa;
+            color: var(--text-muted);
+            font-weight: 500;
         }
 
         /* Layout Grid */
         .checkout-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 30px;
+            gap: 28px;
             align-items: start;
         }
 
         @media (max-width: 768px) {
             .checkout-grid {
                 grid-template-columns: 1fr;
+                gap: 20px;
             }
         }
 
-        /* 4. ORDER SUMMARY CARD */
+        /* 4. CARDS & ORDER SUMMARY */
         .card {
-            background: var(--bg-light);
-            border: 1px solid rgba(59, 130, 246, 0.32); box-shadow: 0 10px 30px rgba(2, 6, 24, 0.45);
-            border-radius: 12px;
-            padding: 25px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            background: var(--box-bg);
+            border: 1.5px solid var(--box-border);
+            border-radius: 14px;
+            padding: 24px;
+            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.07), 0 1px 3px rgba(15, 23, 42, 0.04);
+            color: var(--text-body);
         }
 
         .summary-card {
             position: sticky;
-            top: 90px;
+            top: 24px;
         }
 
         .product-title {
-            font-size: 1.4rem;
-            color: var(--text-body);
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--text-heading);
             margin-bottom: 15px;
-            line-height: 1.3;
+            line-height: 1.35;
         }
 
         .price-display {
@@ -218,21 +188,22 @@
             align-items: baseline;
             gap: 15px;
             margin-bottom: 20px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 18px;
+            border-bottom: 1.5px solid #DBEAFE;
         }
 
         .price-strike {
             font-size: 1.2rem;
-            color: #888;
+            color: #94A3B8;
             text-decoration: line-through;
+            font-weight: 500;
         }
 
         .price-current {
             font-family: var(--font-heading);
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--text-primary);
+            font-size: 2.6rem;
+            font-weight: 900;
+            color: var(--accent-green);
         }
 
         .included-list {
@@ -241,34 +212,241 @@
         }
 
         .included-list li {
-            margin-bottom: 10px;
+            margin-bottom: 11px;
             display: flex;
             align-items: flex-start;
             gap: 10px;
             font-size: 0.95rem;
+            color: var(--text-body);
+        }
+
+        .included-list li strong {
+            color: var(--text-heading);
         }
 
         .micro-trust {
             font-size: 0.85rem;
-            color: #aaa;
+            color: #1E40AF;
             text-align: center;
-            background: rgba(255,255,255,0.05);
-            padding: 10px;
+            background: #DBEAFE;
+            border: 1px solid #BFDBFE;
+            padding: 11px;
+            border-radius: 8px;
+            font-weight: 600;
+            letter-spacing: 0.2px;
+        }
+
+        /* 5 & 6. BUMP OFFERS */
+        .bump-offers-col {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .bump-card {
+            background: var(--box-bg);
+            border: 2px dashed #93C5FD;
+            border-radius: 14px;
+            padding: 22px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            position: relative;
+            box-shadow: 0 4px 16px rgba(37, 99, 235, 0.06);
+            display: block;
+        }
+
+        .bump-card:hover {
+            background: #E8F2FE;
+            border-color: #60A5FA;
+        }
+
+        .bump-1 { 
+            border-color: #F59E0B; 
+            background: #FDFEFF;
+        }
+        
+        .bump-1.checked { 
+            background: #FEFCE8; 
+            border: 2px solid #D97706;
+            box-shadow: 0 6px 24px rgba(217, 119, 6, 0.16); 
+        }
+
+        .bump-2 { 
+            border-color: #A855F7; 
+            background: #FDFEFF;
+        }
+        
+        .bump-2.checked { 
+            background: #FAF5FF; 
+            border: 2px solid #7C3AED;
+            box-shadow: 0 6px 24px rgba(124, 58, 237, 0.16); 
+        }
+
+        .bump-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            font-family: var(--font-heading);
+            white-space: nowrap;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+        }
+
+        .bump-1 .bump-badge {
+            background: #FEF3C7;
+            color: #92400E;
+            border: 1px solid #FCD34D;
+        }
+
+        .bump-2 .bump-badge {
+            background: #F3E8FF;
+            color: #6B21A8;
+            border: 1px solid #D8B4FE;
+        }
+
+        .checkbox-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 12px;
+        }
+
+        .custom-checkbox {
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border: 2px solid #94A3B8;
             border-radius: 6px;
+            background: #FFFFFF;
+            cursor: pointer;
+            position: relative;
+            flex-shrink: 0;
+            transition: all 0.2s;
+        }
+
+        .custom-checkbox:checked {
+            background: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+
+        .custom-checkbox:checked::after {
+            content: '✔';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #FFFFFF;
+            font-size: 14px;
+            font-weight: 900;
+        }
+
+        .checkbox-label {
+            font-weight: 800;
+            font-size: 1.08rem;
+            color: var(--text-heading);
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .bump-title {
+            font-family: var(--font-heading);
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--text-heading);
+            margin-bottom: 10px;
+            line-height: 1.35;
+        }
+
+        .bump-desc {
+            font-size: 0.9rem;
+            color: #334155;
+            margin-bottom: 14px;
+            line-height: 1.5;
+        }
+
+        .bump-list {
+            list-style: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            display: grid;
+            gap: 8px;
+            color: var(--text-body);
+        }
+
+        .bump-list-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @media (max-width: 480px) {
+            .bump-list-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .bump-warning {
+            font-size: 0.82rem;
+            background: #FFFBEB;
+            color: #92400E;
+            padding: 10px 12px;
+            border-radius: 8px;
+            border-left: 4px solid #F59E0B;
+            margin-bottom: 10px;
+            font-weight: 500;
+            line-height: 1.45;
+        }
+
+        .bump-urgency {
+            font-size: 0.85rem;
+            color: var(--accent-red);
+            font-weight: 700;
+        }
+
+        .bump-img-box {
+            margin: 12px 0 16px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1.5px solid var(--box-border);
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.08);
+            background: #FFFFFF;
+        }
+
+        .bump-1 .bump-img-box {
+            border-color: #FDE68A;
+        }
+
+        .bump-2 .bump-img-box {
+            border-color: #E9D5FF;
+        }
+
+        .bump-img-box img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .bump-card:hover .bump-img-box img {
+            transform: scale(1.015);
         }
 
         /* CUSTOMER DETAILS FORM */
         .customer-info-card {
-            background: var(--glass-bg);
-            border: 1px solid rgba(212, 167, 69, 0.35);
-            border-radius: 12px;
-            padding: 22px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            background: var(--box-bg);
+            border: 1.5px solid var(--box-border);
+            border-radius: 14px;
+            padding: 24px;
+            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.07), 0 1px 3px rgba(15, 23, 42, 0.04);
             transition: all 0.3s ease;
         }
 
         .customer-info-card:hover {
-            border-color: rgba(212, 167, 69, 0.6);
+            border-color: #93C5FD;
         }
 
         .customer-info-card .form-header {
@@ -276,26 +454,26 @@
             align-items: center;
             gap: 10px;
             margin-bottom: 18px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1.5px solid #DBEAFE;
             padding-bottom: 12px;
         }
 
         .customer-info-card .form-title {
             font-family: var(--font-heading);
             font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--text-primary);
+            font-weight: 800;
+            color: var(--text-heading);
             margin: 0;
         }
 
         .customer-info-card .form-badge {
-            background: rgba(0, 229, 117, 0.15);
-            color: var(--text-secondary);
-            font-size: 0.75rem;
+            background: #DCFCE7;
+            color: #15803D;
+            font-size: 0.78rem;
             font-weight: 700;
             padding: 4px 10px;
             border-radius: 20px;
-            border: 1px solid rgba(0, 229, 117, 0.35);
+            border: 1px solid #86EFAC;
             margin-left: auto;
             letter-spacing: 0.02em;
         }
@@ -307,14 +485,14 @@
         .form-group label {
             display: block;
             font-size: 0.92rem;
-            font-weight: 600;
-            color: #CBD5E1;
+            font-weight: 700;
+            color: var(--text-heading);
             margin-bottom: 6px;
             font-family: var(--font-body);
         }
 
         .form-group label span.req {
-            color: var(--accent-pink);
+            color: var(--accent-red);
             font-weight: 700;
         }
 
@@ -327,7 +505,7 @@
         .form-group .input-icon {
             position: absolute;
             left: 14px;
-            color: #94A3B8;
+            color: #64748B;
             font-size: 1.05rem;
             pointer-events: none;
             user-select: none;
@@ -335,11 +513,11 @@
 
         .form-group input {
             width: 100%;
-            background: rgba(5, 10, 24, 0.85);
-            border: 1.5px solid rgba(59, 130, 246, 0.35);
+            background: #FFFFFF;
+            border: 1.5px solid #CBD5E1;
             border-radius: 8px;
             padding: 12px 14px 12px 44px;
-            color: #FFFFFF;
+            color: var(--text-heading);
             font-family: var(--font-body);
             font-size: 1rem;
             outline: none;
@@ -347,187 +525,57 @@
         }
 
         .form-group input:focus {
-            border-color: var(--text-primary);
-            box-shadow: 0 0 16px rgba(212, 255, 0, 0.22);
-            background: rgba(7, 13, 31, 0.95);
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+            background: #FFFFFF;
         }
 
         .form-group input.is-invalid {
-            border-color: var(--accent-pink);
-            box-shadow: 0 0 12px rgba(255, 46, 77, 0.35);
+            border-color: var(--accent-red);
+            box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15);
         }
 
         .form-group input::placeholder {
-            color: #64748B;
+            color: #94A3B8;
             font-size: 0.92rem;
         }
 
         .form-group .helper-text {
-            font-size: 0.78rem;
-            color: #94A3B8;
+            font-size: 0.8rem;
+            color: var(--text-muted);
             margin-top: 5px;
             line-height: 1.4;
         }
 
         .form-error {
-            color: #FF5E7E;
+            color: var(--accent-red);
             font-size: 0.82rem;
             margin-top: 5px;
             display: none;
-            font-weight: 500;
-        }
-
-        /* 5 & 6. BUMP OFFERS */
-        .bump-offers-col {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .bump-card {
-            background: var(--glass-bg);
-            border: 2px dashed;
-            border-radius: 12px;
-            padding: 20px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .bump-card:hover {
-            background: rgba(255,255,255,0.06);
-        }
-
-        .bump-card.checked {
-            background: rgba(255,255,255,0.08);
-            border-style: solid;
-        }
-
-        .bump-1 { border-color: var(--text-secondary); }
-        .bump-2 { border-color: var(--accent-pink); }
-        
-        .bump-1.checked { box-shadow: 0 0 15px rgba(245, 197, 24, 0.2); }
-        .bump-2.checked { box-shadow: 0 0 15px rgba(233, 30, 140, 0.2); }
-
-        .bump-badge {
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            font-family: var(--font-heading);
-            white-space: nowrap;
-        }
-
-        .bump-1 .bump-badge {
-            background: var(--text-secondary);
-            color: #000;
-        }
-
-        .bump-2 .bump-badge {
-            background: var(--accent-pink);
-            color: #fff;
-        }
-
-        .checkbox-row {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 15px;
-        }
-
-        .custom-checkbox {
-            appearance: none;
-            width: 24px;
-            height: 24px;
-            border: 2px solid #888;
-            border-radius: 6px;
-            background: rgba(0,0,0,0.3);
-            cursor: pointer;
-            position: relative;
-            flex-shrink: 0;
-            transition: all 0.2s;
-        }
-
-        .custom-checkbox:checked {
-            background: var(--cta-green);
-            border-color: var(--cta-green);
-        }
-
-        .custom-checkbox:checked::after {
-            content: '✔';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            font-size: 14px;
-        }
-
-        .checkbox-label {
-            font-weight: 700;
-            font-size: 1.1rem;
-            cursor: pointer;
-            user-select: none;
-        }
-
-        .bump-title {
-            font-family: var(--font-heading);
-            font-size: 1.15rem;
-            color: var(--text-primary);
-            margin-bottom: 10px;
-        }
-
-        .bump-desc {
-            font-size: 0.9rem;
-            color: #ddd;
-            margin-bottom: 15px;
-        }
-
-        .bump-list {
-            list-style: none;
-            font-size: 0.85rem;
-            margin-bottom: 15px;
-            display: grid;
-            gap: 8px;
-        }
-
-        .bump-list-grid {
-            grid-template-columns: 1fr 1fr;
-        }
-
-        .bump-warning {
-            font-size: 0.8rem;
-            background: rgba(255,0,0,0.1);
-            padding: 10px;
-            border-radius: 6px;
-            border-left: 3px solid #ff4444;
-            margin-bottom: 10px;
-        }
-
-        .bump-urgency {
-            font-size: 0.85rem;
-            color: #ff4444;
             font-weight: 600;
         }
 
         /* 7. ORDER TOTAL SECTION */
         .order-total-card {
-            background: var(--bg-light);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 12px;
-            padding: 25px;
-            margin-top: 20px;
+            background: var(--box-bg);
+            border: 1.5px solid var(--box-border);
+            border-radius: 14px;
+            padding: 24px;
+            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.07), 0 1px 3px rgba(15, 23, 42, 0.04);
         }
 
         .total-line {
             display: flex;
             justify-content: space-between;
             margin-bottom: 10px;
-            font-size: 0.95rem;
+            font-size: 0.98rem;
+            color: #334155;
+            font-weight: 500;
+        }
+
+        .total-line span:last-child {
+            font-weight: 700;
+            color: var(--text-heading);
         }
         
         .total-line.hidden {
@@ -535,8 +583,8 @@
         }
 
         .total-separator {
-            height: 1px;
-            background: rgba(255,255,255,0.1);
+            height: 1.5px;
+            background: #DBEAFE;
             margin: 15px 0;
         }
 
@@ -545,72 +593,105 @@
             justify-content: space-between;
             align-items: center;
             font-family: var(--font-heading);
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: 800;
-            color: var(--text-primary);
-            margin-bottom: 25px;
+            color: var(--text-heading);
+            margin-bottom: 22px;
+        }
+
+        .final-total span:last-child {
+            color: var(--accent-green);
+        }
+
+        /* Downward Arrow Indicator Before CTA */
+        .cta-down-indicator {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 12px;
+            animation: ctaBounceDown 1.3s infinite ease-in-out;
+            user-select: none;
+        }
+
+        .cta-down-indicator svg {
+            width: 32px;
+            height: 32px;
+            stroke: #059669;
+            filter: drop-shadow(0 2px 6px rgba(5, 150, 105, 0.4));
+        }
+
+        @keyframes ctaBounceDown {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(7px);
+            }
         }
 
         .cta-btn {
             display: block;
             width: 100%;
-            background: var(--cta-green);
-            color: #000;
+            background: linear-gradient(135deg, #059669 0%, #10B981 100%);
+            color: #FFFFFF !important;
             text-align: center;
             text-decoration: none;
             padding: 18px 20px;
-            border-radius: 8px;
+            border-radius: 10px;
             font-family: var(--font-heading);
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             border: none;
             cursor: pointer;
-            box-shadow: 0 4px 25px var(--cta-green);
+            box-shadow: 0 6px 20px rgba(5, 150, 105, 0.35);
             transition: all 0.3s ease;
-            animation: pulse 2s infinite;
+            animation: pulse-green 2s infinite;
         }
 
         .cta-btn:hover {
-            background: var(--cta-hover);
+            background: linear-gradient(135deg, #047857 0%, #059669 100%);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 200, 83, 0.6);
+            box-shadow: 0 8px 25px rgba(5, 150, 105, 0.45);
         }
 
-        @keyframes pulse {
-            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 200, 83, 0.7); }
-            70% { transform: scale(1.02); box-shadow: 0 0 0 15px rgba(0, 200, 83, 0); }
-            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 200, 83, 0); }
+        @keyframes pulse-green {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6); }
+            70% { transform: scale(1.015); box-shadow: 0 0 0 12px rgba(16, 185, 129, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
         }
 
         .trust-badges {
             display: flex;
             justify-content: center;
             gap: 15px;
-            margin-top: 15px;
-            font-size: 0.8rem;
-            color: #aaa;
+            margin-top: 16px;
+            font-size: 0.82rem;
+            color: #475569;
             flex-wrap: wrap;
+            font-weight: 600;
         }
 
         /* 8. TRUST/GUARANTEE */
         .trust-section {
             text-align: center;
             margin-top: 40px;
-            padding: 20px;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            padding: 24px;
+            border-top: 1.5px solid #E2E8F0;
         }
         
         .trust-section p {
-            font-size: 0.9rem;
-            color: #888;
-            margin-bottom: 8px;
+            font-size: 0.92rem;
+            color: #475569;
+            margin-bottom: 6px;
+            font-weight: 500;
         }
         
         .trust-section a {
-            color: var(--text-primary);
+            color: var(--accent-blue);
             text-decoration: none;
+            font-weight: 600;
         }
 
         /* 9. FOOTER */
@@ -618,60 +699,20 @@
             text-align: center;
             padding: 30px 20px;
             font-size: 0.85rem;
-            color: #666;
-            background: #07143E; border-top: 1px solid rgba(59, 130, 246, 0.25); color: #AEB9DA;
+            color: #64748B;
+            background: #EBF2FC;
+            border-top: 1.5px solid #BFDBFE;
         }
         
         footer p {
             margin-bottom: 5px;
         }
-    
-        /* High-Contrast Checkout Text Rules */
-        .card, .summary-card, .bump-card, .total-section, .trust-section {
-            color: #FFFFFF !important;
-        }
-        .included-list li, .bump-items li, .price-row, .order-total-row {
-            color: #FFFFFF !important;
-        }
-        .included-list li strong, .bump-items li strong {
-            color: #FFFFFF !important;
-        }
-        .product-title, .bump-title {
-            color: #FFFFFF !important;
-        }
-        .bump-desc {
-            color: #E2E8F0 !important;
-        }
-        .bump-warning {
-            color: #FFE600 !important;
-        }
-        .checkbox-label {
-            color: #FFFFFF !important;
-        }
-        .progress-subtext, .micro-trust, .trust-item p {
-            color: #CBD5E1 !important;
-        }
-        .price-strike, del {
-            color: #94A3B8 !important;
-        }
-        .price-row span {
-            color: #FFFFFF !important;
-        }
 
     </style>
 </head>
 <body>
-    <!-- 3D Perspective Grid Background overlay -->
+    <!-- Background overlay -->
     <div class="grid-bg-overlay"></div>
-
-
-    <!-- 1. HEADER BAR -->
-    <header class="header">
-        <div class="header-content">
-            <a href="#" class="logo">⚡ N8N Workflows</a>
-            <div class="secure-badge">🔒 Secure Checkout</div>
-        </div>
-    </header>
 
     <!-- 2. URGENCY BANNER -->
     <div class="urgency-banner">
@@ -696,7 +737,7 @@
                 <div class="card summary-card">
                     <h2 class="product-title">4000+ Premium N8N Automation Workflows Bundle</h2>
                     
-                    <div style="margin: 15px 0 20px; border-radius: 12px; overflow: hidden; border: 1px solid rgba(59, 130, 246, 0.35); box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);">
+                    <div style="margin: 15px 0 20px; border-radius: 12px; overflow: hidden; border: 1.5px solid #BFDBFE; box-shadow: 0 4px 16px rgba(37, 99, 235, 0.1); background: #FFFFFF;">
                         <img src="assets/n8n 4000+bonus.png" alt="4000+ Premium N8N Automation Workflows Bundle with Bonuses" style="width: 100%; height: auto; display: block;" loading="eager">
                     </div>
 
@@ -720,14 +761,81 @@
                 </div>
             </div>
 
-            <!-- Right Column: Customer Details, Bump Offers & Total -->
+            <!-- Right Column: Bump Offers, Customer Details & Order Total -->
             <div class="bump-offers-col">
                 
-                <!-- CUSTOMER DETAILS FORM -->
+                <!-- 5. BUMP OFFER 1 -->
+                <label class="bump-card bump-1" for="bump-1-check" id="bump-1-wrapper">
+                    <div class="bump-badge">LIMITED-TIME UPGRADE</div>
+                    
+                    <div class="checkbox-row">
+                        <input type="checkbox" id="bump-1-check" class="custom-checkbox bump-trigger" data-price="147" data-name="Premium Planner">
+                        <span class="checkbox-label">✅ YES! Add this to my order</span>
+                    </div>
+
+                    <div class="bump-img-box">
+                        <img src="assets/ai planner.png" alt="Ready-to-Use Visionary Planners Pack" loading="lazy">
+                    </div>
+                    
+                    <h3 class="bump-title">Get My "Ready-to-Use Visionary Planners" for ₹147 + GST (<del style="color:#94A3B8;font-size:0.9em">₹450</del>)</h3>
+                    <p class="bump-desc">Stop spending weeks trying to structure your goals, routines, and vision boards from scratch. Get a complete Ready-to-Use Visionary Planner vault where you will get result-oriented systems that increase daily productivity, track your habits, and bring your biggest life goals to life.</p>
+                    
+                    <ul class="bump-list">
+                        <li>✅ Goal Planner Workbook</li>
+                        <li>✅ Productivity Planner</li>
+                        <li>✅ 75 Day Challenge</li>
+                        <li>✅ Vision Board Planner</li>
+                        <li>🎁 Bonus: Great Leaders Hidden Inspiring Videos</li>
+                    </ul>
+
+                    <div class="bump-warning">
+                        🚨 IMPORTANT – Developing professional and result-oriented planners through trial and error can cost ₹1,500–₹2,000+ and waste months of effort.
+                    </div>
+                    
+                    <div class="bump-urgency">
+                        🔴 Once you leave this page, this offer is gone.
+                    </div>
+                </label>
+
+                <!-- 6. BUMP OFFER 2 -->
+                <label class="bump-card bump-2" for="bump-2-check" id="bump-2-wrapper">
+                    <div class="bump-badge">EXCLUSIVE ADD-ON</div>
+                    
+                    <div class="checkbox-row">
+                        <input type="checkbox" id="bump-2-check" class="custom-checkbox bump-trigger" data-price="97" data-name="Claude Prompts Pack">
+                        <span class="checkbox-label">✅ YES! Add Claude Prompts Pack</span>
+                    </div>
+
+                    <div class="bump-img-box">
+                        <img src="assets/ai prompt.png" alt="100+ Premium Claude AI Prompts Pack" loading="lazy">
+                    </div>
+                    
+                    <h3 class="bump-title">Get 100+ Premium Claude AI Prompts for ₹97 (<del style="color:#94A3B8;font-size:0.9em">₹399</del>)</h3>
+                    <p class="bump-desc">Supercharge your business with 100+ expertly crafted Claude AI prompts covering every aspect of business growth.</p>
+                    
+                    <ul class="bump-list bump-list-grid">
+                        <li>✅ Business ROI Strategies</li>
+                        <li>✅ Customer Support Templates</li>
+                        <li>✅ Hiring & HR Prompts</li>
+                        <li>✅ Pinterest Content Making</li>
+                        <li>✅ Business Analysis</li>
+                        <li>✅ Email Marketing</li>
+                        <li>✅ On-page & Off-page SEO</li>
+                        <li>✅ Market Research & Trends</li>
+                        <li>✅ Content Marketing</li>
+                        <li>✅ Product Market Analysis</li>
+                    </ul>
+
+                    <div class="bump-urgency">
+                        🔴 This bundle is only available on this page.
+                    </div>
+                </label>
+
+                <!-- CUSTOMER DETAILS FORM (Positioned under Bumps & directly above Order Total) -->
                 <div class="customer-info-card">
                     <div class="form-header">
                         <span style="font-size: 1.3rem;">👤</span>
-                        <h3 class="form-title">Step 1: Your Delivery Details</h3>
+                        <h3 class="form-title">Your Delivery Details</h3>
                         <span class="form-badge">🔒 Instant Access</span>
                     </div>
 
@@ -761,65 +869,6 @@
                     </div>
                 </div>
 
-                <!-- 5. BUMP OFFER 1 -->
-                <label class="bump-card bump-1" for="bump-1-check" id="bump-1-wrapper">
-                    <div class="bump-badge">LIMITED-TIME UPGRADE</div>
-                    
-                    <div class="checkbox-row">
-                        <input type="checkbox" id="bump-1-check" class="custom-checkbox bump-trigger" data-price="147" data-name="Premium Planner">
-                        <span class="checkbox-label">✅ YES! Add this to my order</span>
-                    </div>
-                    
-                    <h3 class="bump-title">Get My "Ready-to-Use Visionary Planners" for ₹147 + GST (<del style="color:#888;font-size:0.9em">₹450</del>)</h3>
-                    <p class="bump-desc">Stop spending weeks trying to structure your goals, routines, and vision boards from scratch. Get a complete Ready-to-Use Visionary Planner vault where you will get result-oriented systems that increase daily productivity, track your habits, and bring your biggest life goals to life.</p>
-                    
-                    <ul class="bump-list">
-                        <li>✅ Goal Planner Workbook</li>
-                        <li>✅ Productivity Planner</li>
-                        <li>✅ 75 Day Challenge</li>
-                        <li>✅ Vision Board Planner</li>
-                        <li>🎁 Bonus: Great Leaders Hidden Inspiring Videos</li>
-                    </ul>
-
-                    <div class="bump-warning">
-                        🚨 IMPORTANT – Developing professional and result-oriented planners through trial and error can cost ₹1,500–₹2,000+ and waste months of effort.
-                    </div>
-                    
-                    <div class="bump-urgency">
-                        🔴 Once you leave this page, this offer is gone.
-                    </div>
-                </label>
-
-                <!-- 6. BUMP OFFER 2 -->
-                <label class="bump-card bump-2" for="bump-2-check" id="bump-2-wrapper">
-                    <div class="bump-badge">EXCLUSIVE ADD-ON</div>
-                    
-                    <div class="checkbox-row">
-                        <input type="checkbox" id="bump-2-check" class="custom-checkbox bump-trigger" data-price="97" data-name="Claude Prompts Pack">
-                        <span class="checkbox-label">✅ YES! Add Claude Prompts Pack</span>
-                    </div>
-                    
-                    <h3 class="bump-title">Get 100+ Premium Claude AI Prompts for ₹97 (<del style="color:#888;font-size:0.9em">₹399</del>)</h3>
-                    <p class="bump-desc">Supercharge your business with 100+ expertly crafted Claude AI prompts covering every aspect of business growth.</p>
-                    
-                    <ul class="bump-list bump-list-grid">
-                        <li>✅ Business ROI Strategies</li>
-                        <li>✅ Customer Support Templates</li>
-                        <li>✅ Hiring & HR Prompts</li>
-                        <li>✅ Pinterest Content Making</li>
-                        <li>✅ Business Analysis</li>
-                        <li>✅ Email Marketing</li>
-                        <li>✅ On-page & Off-page SEO</li>
-                        <li>✅ Market Research & Trends</li>
-                        <li>✅ Content Marketing</li>
-                        <li>✅ Product Market Analysis</li>
-                    </ul>
-
-                    <div class="bump-urgency">
-                        🔴 This bundle is only available on this page.
-                    </div>
-                </label>
-
                 <!-- 7. ORDER TOTAL SECTION -->
                 <div class="order-total-card">
                     <div class="total-line">
@@ -842,6 +891,13 @@
                     <div class="final-total">
                         <span>Total:</span>
                         <span id="final-price-display">₹47</span>
+                    </div>
+
+                    <div class="cta-down-indicator">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="3" x2="12" y2="19"></line>
+                            <polyline points="19 12 12 19 5 12"></polyline>
+                        </svg>
                     </div>
 
                     <button type="button" class="cta-btn" id="checkout-btn" style="border: none; cursor: pointer; width: 100%;">
@@ -1012,7 +1068,7 @@
                         customer_phone: phoneClean
                     },
                     theme: {
-                        color: "#00E575"
+                        color: "#059669"
                     },
                     modal: {
                         ondismiss: function() {
