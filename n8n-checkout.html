@@ -13,6 +13,29 @@
     
     <!-- Razorpay Standard Checkout SDK -->
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+    <!-- Google Analytics (GA4) & Meta Pixel Tracking Base Code -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DUMMYXYZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-DUMMYXYZ');
+
+        // Meta Pixel Base Code (Dummy ID: 123456789012345)
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=this;n.ready=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '123456789012345');
+        fbq('track', 'PageView');
+        fbq('track', 'InitiateCheckout');
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=123456789012345&ev=PageView&noscript=1"/></noscript>
     
     <style>
         :root {
@@ -630,36 +653,105 @@
         }
 
         .cta-btn {
-            display: block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: clamp(0.4rem, 1.2vw, 0.8rem);
             width: 100%;
-            background: linear-gradient(135deg, #059669 0%, #10B981 100%);
-            color: #FFFFFF !important;
-            text-align: center;
-            text-decoration: none;
-            padding: 18px 20px;
-            border-radius: 10px;
+            background: linear-gradient(180deg, #E4FF2E 0%, #B7E600 50%, #8CBF00 100%);
+            color: #04122E !important;
             font-family: var(--font-heading);
-            font-size: 1.25rem;
-            font-weight: 800;
+            font-weight: 900;
+            font-size: clamp(0.95rem, 2.1vw, 1.35rem);
+            letter-spacing: 0.01em;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            padding: 1.05rem clamp(1.1rem, 3vw, 3rem);
+            border-radius: 999px;
+            text-decoration: none;
+            box-sizing: border-box;
+            box-shadow: 0 10px 30px rgba(212, 255, 0, 0.3), 0 0 35px rgba(212, 255, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.55);
+            transition: transform 0.35s var(--ease-premium, cubic-bezier(0.16, 1, 0.3, 1)), filter 0.35s var(--ease-premium, cubic-bezier(0.16, 1, 0.3, 1));
+            position: relative;
+            overflow: hidden;
             border: none;
             cursor: pointer;
-            box-shadow: 0 6px 20px rgba(5, 150, 105, 0.35);
-            transition: all 0.3s ease;
-            animation: pulse-green 2s infinite;
+            isolation: isolate;
+            animation: cta-gradient-glow 3.2s ease-in-out infinite;
+        }
+
+        /* Continuous gradient glow: shifts lime <-> emerald aura */
+        @keyframes cta-gradient-glow {
+            0%, 100% {
+                box-shadow: 0 10px 30px rgba(212, 255, 0, 0.3),
+                            0 0 38px rgba(212, 255, 0, 0.55),
+                            0 0 70px rgba(212, 255, 0, 0.22),
+                            inset 0 1px 0 rgba(255, 255, 255, 0.55);
+            }
+            50% {
+                box-shadow: 0 10px 30px rgba(0, 229, 117, 0.35),
+                            0 0 48px rgba(0, 229, 117, 0.6),
+                            0 0 90px rgba(20, 224, 201, 0.3),
+                            inset 0 1px 0 rgba(255, 255, 255, 0.55);
+            }
+        }
+
+        /* Continuous light-shine / beam sweep */
+        .cta-btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            bottom: -50%;
+            left: -40%;
+            width: 60%;
+            background: linear-gradient(100deg,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.35) 34%,
+                rgba(255, 255, 255, 1) 50%,
+                rgba(255, 255, 255, 0.35) 66%,
+                rgba(255, 255, 255, 0) 100%);
+            transform: skewX(-22deg);
+            z-index: 3;
+            box-shadow: 0 0 30px 8px rgba(255, 255, 255, 0.85);
+            animation: cta-beam-sweep 2.8s cubic-bezier(0.45, 0, 0.35, 1) infinite;
+            pointer-events: none;
+        }
+
+        /* Secondary thinner trailing beam for a layered shine */
+        .cta-btn::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            bottom: -50%;
+            left: -40%;
+            width: 24%;
+            background: linear-gradient(100deg, rgba(255, 255, 255, 0) 0%, rgba(220, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
+            transform: skewX(-22deg);
+            z-index: 3;
+            animation: cta-beam-sweep 2.8s cubic-bezier(0.45, 0, 0.35, 1) 0.16s infinite;
+            pointer-events: none;
+        }
+
+        .cta-btn > span {
+            position: relative;
+            z-index: 4;
+            color: #04122E !important;
+        }
+
+        @keyframes cta-beam-sweep {
+            0%   { left: -60%; opacity: 0; }
+            6%   { opacity: 1; }
+            78%  { left: 120%; opacity: 1; }
+            90%  { opacity: 0; }
+            100% { left: 120%; opacity: 0; }
         }
 
         .cta-btn:hover {
-            background: linear-gradient(135deg, #047857 0%, #059669 100%);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(5, 150, 105, 0.45);
+            transform: translateY(-3px) scale(1.02);
+            filter: brightness(1.06);
         }
 
-        @keyframes pulse-green {
-            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6); }
-            70% { transform: scale(1.015); box-shadow: 0 0 0 12px rgba(16, 185, 129, 0); }
-            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        .cta-btn:active {
+            transform: translateY(-1px) scale(0.99);
         }
 
         .trust-badges {
@@ -901,7 +993,7 @@
                     </div>
 
                     <button type="button" class="cta-btn" id="checkout-btn" style="border: none; cursor: pointer; width: 100%;">
-                        🔒 COMPLETE MY ORDER — ₹47
+                        <span>👉 COMPLETE MY ORDER — ₹47</span>
                     </button>
 
                     <div class="trust-badges">
@@ -1078,17 +1170,46 @@
                     },
                     handler: function(response) {
                         const paymentId = response.razorpay_payment_id;
-                        
-                        // Store order details in localStorage
-                        localStorage.setItem('n8n_order_success', JSON.stringify({
+                        window.orderCompleted = true; // Flag to prevent abandoned cart trigger
+
+                        // Fire Conversion Events (Meta Pixel & GA4)
+                        if (typeof fbq === 'function') {
+                            fbq('track', 'Purchase', { value: currentTotal, currency: 'INR', content_name: itemsList.join(" + ") });
+                        }
+                        if (typeof gtag === 'function') {
+                            gtag('event', 'purchase', {
+                                transaction_id: paymentId,
+                                value: currentTotal,
+                                currency: 'INR',
+                                items: itemsList.map(name => ({ item_name: name }))
+                            });
+                        }
+
+                        // Send order success to n8n Webhook / CRM
+                        const orderData = {
+                            event: "order_success",
                             paymentId: paymentId,
                             name: name,
                             email: email,
                             phone: phoneClean,
                             amount: currentTotal,
                             items: itemsList,
-                            timestamp: Date.now()
-                        }));
+                            timestamp: new Date().toISOString()
+                        };
+
+                        try {
+                            navigator.sendBeacon('https://your-n8n-webhook-url.com/webhook/order-success', JSON.stringify(orderData));
+                        } catch(e) {
+                            fetch('https://your-n8n-webhook-url.com/webhook/order-success', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify(orderData),
+                                keepalive: true
+                            }).catch(() => {});
+                        }
+
+                        // Store order details in localStorage
+                        localStorage.setItem('n8n_order_success', JSON.stringify(orderData));
 
                         // Redirect to thank you page
                         window.location.href = `n8n-thankyou.html?payment_id=${encodeURIComponent(paymentId)}&name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}`;
@@ -1104,6 +1225,39 @@
                 });
 
                 rzp.open();
+            });
+
+            // -- Abandoned Cart Tracking (n8n Webhook & Meta Pixel Lead) --
+            window.orderCompleted = false;
+            let cartAbandonedTracked = false;
+
+            window.addEventListener('beforeunload', function() {
+                if (window.orderCompleted) return;
+                
+                const enteredEmail = emailInput.value.trim();
+                const enteredPhone = phoneInput.value.trim();
+                const enteredName = nameInput.value.trim();
+
+                if ((enteredEmail || enteredPhone) && !cartAbandonedTracked) {
+                    cartAbandonedTracked = true;
+                    
+                    if (typeof fbq === 'function') {
+                        fbq('track', 'Lead', { content_name: 'Abandoned Cart', email: enteredEmail, phone: enteredPhone });
+                    }
+
+                    const abandonedData = {
+                        event: "abandoned_cart",
+                        name: enteredName,
+                        email: enteredEmail,
+                        phone: enteredPhone,
+                        currentTotal: currentTotal,
+                        timestamp: new Date().toISOString()
+                    };
+
+                    try {
+                        navigator.sendBeacon('https://your-n8n-webhook-url.com/webhook/abandoned-cart', JSON.stringify(abandonedData));
+                    } catch(e) {}
+                }
             });
 
             // -- Timer Logic --

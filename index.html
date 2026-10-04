@@ -5,8 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>4000+ Premium n8n Automation Workflows Bundle | Official Launch Offer</title>
     <meta name="description" content="Get 4000+ Pre-Built n8n Automation Workflows + AI Faceless Video Generator. Save 8-10 hours daily. Instant download, lifetime access & full commercial license.">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
     
+    <!-- Google Analytics (GA4) & Meta Pixel Tracking Base Code -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DUMMYXYZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-DUMMYXYZ');
+
+        // Meta Pixel Base Code (Dummy ID: 123456789012345)
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=this;n.ready=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '123456789012345');
+        fbq('track', 'PageView');
+        fbq('track', 'ViewContent', { content_name: '4000+ n8n Workflows Bundle', content_type: 'product', value: 47, currency: 'INR' });
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=123456789012345&ev=PageView&noscript=1"/></noscript>
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,6 +74,15 @@
             --radius-lg: 20px;
             --radius-pill: 999px;
             --container-max: 1200px;
+
+            /* Premium Design System Additions */
+            --border-hairline: rgba(255, 255, 255, 0.08);
+            --glass-sheen: linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0) 45%);
+            --shadow-sm: 0 4px 14px rgba(2, 6, 24, 0.4);
+            --shadow-md: 0 14px 40px rgba(2, 6, 24, 0.55);
+            --shadow-lg: 0 30px 80px rgba(2, 6, 24, 0.7);
+            --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
+            --gradient-emerald: linear-gradient(120deg, #D4FF00 0%, #00E575 55%, #14E0C9 100%);
         }
 
         * {
@@ -65,6 +96,7 @@
             background-color: var(--bg-black);
             color: var(--text-white);
             font-family: var(--font-body);
+            -webkit-text-size-adjust: 100%;
         }
 
         body {
@@ -79,6 +111,72 @@
                 linear-gradient(180deg, #0A1C52 0%, #081745 25%, #07143E 50%, #081745 75%, #0A1C52 100%);
             background-color: #07143E;
             color: #FFFFFF;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+
+        /* Ambient aurora glow that drifts behind all content */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: -20% -10%;
+            background:
+                radial-gradient(45% 35% at 20% 15%, rgba(0, 229, 117, 0.10) 0%, transparent 60%),
+                radial-gradient(40% 30% at 82% 30%, rgba(37, 99, 245, 0.16) 0%, transparent 65%),
+                radial-gradient(35% 30% at 60% 80%, rgba(212, 255, 0, 0.06) 0%, transparent 60%);
+            filter: blur(20px);
+            pointer-events: none;
+            z-index: 0;
+            animation: aurora-drift 22s ease-in-out infinite alternate;
+        }
+
+        @keyframes aurora-drift {
+            0%   { transform: translate3d(0, 0, 0) scale(1); }
+            100% { transform: translate3d(-3%, 2%, 0) scale(1.08); }
+        }
+
+        ::selection {
+            background: var(--emerald);
+            color: #04122E;
+        }
+
+        /* Refined scrollbar */
+        ::-webkit-scrollbar { width: 11px; height: 11px; }
+        ::-webkit-scrollbar-track { background: #050F30; }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--emerald), #0a9e63);
+            border-radius: 999px;
+            border: 2px solid #050F30;
+        }
+        ::-webkit-scrollbar-thumb:hover { background: var(--neon-lime); }
+
+        :focus-visible {
+            outline: 2px solid var(--neon-lime);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+
+        /* Scroll reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(26px);
+            transition: opacity 0.7s var(--ease-premium), transform 0.7s var(--ease-premium);
+            will-change: opacity, transform;
+        }
+        .reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.001ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.001ms !important;
+                scroll-behavior: auto !important;
+            }
+            .reveal { opacity: 1; transform: none; }
         }
 
         /* 3D Perspective Grid Background overlay */
@@ -114,6 +212,7 @@
             font-weight: 800;
             letter-spacing: -0.02em;
             line-height: 1.18;
+            text-wrap: balance;
         }
 
         .serif-italic {
@@ -134,6 +233,16 @@
 
         .highlight-pink {
             color: #FF6599;
+            text-shadow: 0 0 22px rgba(255, 101, 153, 0.28);
+        }
+
+        .text-gradient {
+            background: var(--gradient-emerald);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+            text-shadow: none;
         }
 
         /* 1. Top Fixed Urgency Banner (Monetise Red Bar) */
@@ -195,10 +304,10 @@
         header.site-header {
             width: 100%;
             padding: 1.1rem 0;
-            background: rgba(7, 21, 62, 0.88); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid rgba(59, 130, 246, 0.28); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid rgba(59, 130, 246, 0.25);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            background: rgba(7, 21, 62, 0.72);
+            backdrop-filter: blur(16px) saturate(140%);
+            -webkit-backdrop-filter: blur(16px) saturate(140%);
+            border-bottom: 1px solid rgba(59, 130, 246, 0.2);
             position: relative;
             z-index: 999;
         }
@@ -228,8 +337,8 @@
         }
 
         .header-cta-btn {
-            background: linear-gradient(135deg, #059669 0%, #10B981 100%) !important;
-            color: #FFFFFF !important;
+            background: var(--neon-lime);
+            color: #000000;
             font-family: var(--font-heading);
             font-size: 0.85rem;
             font-weight: 800;
@@ -238,7 +347,7 @@
             padding: 0.6rem 1.4rem;
             border-radius: var(--radius-pill);
             text-decoration: none;
-            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.45);
+            box-shadow: 0 0 20px var(--neon-lime-glow);
             transition: all 0.25s ease;
             display: inline-flex;
             align-items: center;
@@ -247,9 +356,8 @@
 
         .header-cta-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 30px rgba(16, 185, 129, 0.65);
-            background: linear-gradient(135deg, #047857 0%, #059669 100%) !important;
-            color: #FFFFFF !important;
+            box-shadow: 0 0 30px rgba(212, 255, 0, 0.6);
+            background: #E4FF1A;
         }
 
         @media (max-width: 600px) {
@@ -277,7 +385,13 @@
             letter-spacing: 0.06em;
             text-transform: uppercase;
             margin-bottom: 1.5rem;
-            box-shadow: 0 0 20px rgba(0, 229, 117, 0.15);
+            box-shadow: 0 0 20px rgba(0, 229, 117, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+            animation: badge-float 4s ease-in-out infinite;
+        }
+
+        @keyframes badge-float {
+            0%, 100% { transform: translateY(0); }
+            50%      { transform: translateY(-5px); }
         }
 
         .hero-eyebrow {
@@ -289,6 +403,7 @@
             letter-spacing: 0.02em;
             margin-bottom: 1rem;
             text-transform: uppercase;
+            text-shadow: 0 0 26px rgba(255, 94, 126, 0.35);
         }
 
         .hero-headline {
@@ -329,51 +444,140 @@
             padding: 0.4rem 1rem;
             border-radius: var(--radius-pill);
             border: 1px solid rgba(255, 255, 255, 0.07);
+            transition: transform 0.25s var(--ease-premium), border-color 0.25s var(--ease-premium), background 0.25s var(--ease-premium);
+        }
+
+        .trust-pill:hover {
+            transform: translateY(-2px);
+            border-color: rgba(255, 94, 126, 0.4);
+            background: rgba(255, 94, 126, 0.06);
         }
 
         .trust-pill .pill-icon {
             color: var(--emerald);
         }
 
-        /* High-Impact Green Primary CTA Button */
+        /* High-Voltage Primary CTA Button */
         .cta-btn-main {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 0.8rem;
-            background: linear-gradient(135deg, #059669 0%, #10B981 100%) !important;
-            color: #FFFFFF !important;
+            gap: clamp(0.4rem, 1.2vw, 0.8rem);
+            background: linear-gradient(180deg, #E4FF2E 0%, #B7E600 50%, #8CBF00 100%);
+            color: #04122E;
             font-family: var(--font-heading);
             font-weight: 900;
-            font-size: clamp(1.15rem, 2.5vw, 1.45rem);
-            letter-spacing: 0.02em;
+            font-size: clamp(0.95rem, 2.1vw, 1.35rem);
+            letter-spacing: 0.01em;
             text-transform: uppercase;
-            padding: 1.15rem 3rem;
+            padding: 1.05rem clamp(1.1rem, 3vw, 3rem);
             border-radius: var(--radius-pill);
             text-decoration: none;
-            box-shadow: 0 6px 30px rgba(16, 185, 129, 0.45);
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            max-width: 100%;
+            box-sizing: border-box;
+            white-space: nowrap;
+            box-shadow: 0 10px 30px rgba(212, 255, 0, 0.25), 0 0 35px var(--neon-lime-glow), inset 0 1px 0 rgba(255, 255, 255, 0.55);
+            transition: transform 0.35s var(--ease-premium), filter 0.35s var(--ease-premium);
             position: relative;
             overflow: hidden;
             border: none;
             cursor: pointer;
+            isolation: isolate;
+            animation: cta-gradient-glow 3.2s ease-in-out infinite;
+        }
+
+        /* Continuous gradient glow: shifts lime <-> emerald aura */
+        @keyframes cta-gradient-glow {
+            0%, 100% {
+                box-shadow: 0 10px 30px rgba(212, 255, 0, 0.25),
+                            0 0 38px rgba(212, 255, 0, 0.55),
+                            0 0 70px rgba(212, 255, 0, 0.22),
+                            inset 0 1px 0 rgba(255, 255, 255, 0.55);
+            }
+            50% {
+                box-shadow: 0 10px 30px rgba(0, 229, 117, 0.3),
+                            0 0 48px rgba(0, 229, 117, 0.6),
+                            0 0 90px rgba(20, 224, 201, 0.3),
+                            inset 0 1px 0 rgba(255, 255, 255, 0.55);
+            }
+        }
+
+        /* Continuous light-shine / beam sweep */
+        .cta-btn-main::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            bottom: -50%;
+            left: -40%;
+            width: 60%;
+            background: linear-gradient(100deg,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.35) 34%,
+                rgba(255, 255, 255, 1) 50%,
+                rgba(255, 255, 255, 0.35) 66%,
+                rgba(255, 255, 255, 0) 100%);
+            transform: skewX(-22deg);
+            z-index: 3;
+            box-shadow: 0 0 30px 8px rgba(255, 255, 255, 0.85);
+            animation: cta-beam-sweep 2.8s cubic-bezier(0.45, 0, 0.35, 1) infinite;
+            pointer-events: none;
+        }
+
+        /* Secondary thinner trailing beam for a layered shine */
+        .cta-btn-main::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            bottom: -50%;
+            left: -40%;
+            width: 24%;
+            background: linear-gradient(100deg, rgba(255, 255, 255, 0) 0%, rgba(220, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
+            transform: skewX(-22deg);
+            z-index: 3;
+            animation: cta-beam-sweep 2.8s cubic-bezier(0.45, 0, 0.35, 1) 0.16s infinite;
+            pointer-events: none;
+        }
+
+        /* Animated gradient color wash under the beam for extra glow */
+        .cta-btn-main > span {
+            position: relative;
+            z-index: 4;
+        }
+
+        @keyframes cta-beam-sweep {
+            0%   { left: -60%; opacity: 0; }
+            6%   { opacity: 1; }
+            78%  { left: 120%; opacity: 1; }
+            90%  { opacity: 0; }
+            100% { left: 120%; opacity: 0; }
+        }
+
+        /* Keep the CTA shine running even when the OS reduces motion (user-requested effect) */
+        @media (prefers-reduced-motion: reduce) {
+            .cta-btn-main::before,
+            .cta-btn-main::after {
+                animation-duration: 2.8s !important;
+                animation-iteration-count: infinite !important;
+            }
+            .cta-btn-main {
+                animation-duration: 3.2s !important;
+                animation-iteration-count: infinite !important;
+            }
         }
 
         .cta-btn-main:hover {
             transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 8px 45px rgba(16, 185, 129, 0.7);
-            background: linear-gradient(135deg, #047857 0%, #059669 100%) !important;
-            color: #FFFFFF !important;
+            filter: brightness(1.06);
         }
 
-        .cta-btn-main span {
-            color: #FFFFFF !important;
+        .cta-btn-main:active {
+            transform: translateY(-1px) scale(0.99);
         }
 
         .cta-btn-main .arrow-icon {
-            color: #FFFFFF !important;
-            font-size: 1.4rem;
-            transition: transform 0.25s ease;
+            font-size: 1.3em;
+            transition: transform 0.25s var(--ease-premium);
+            flex-shrink: 0;
         }
 
         .cta-btn-main:hover .arrow-icon {
@@ -382,36 +586,10 @@
 
         .cta-strikethrough {
             text-decoration: line-through;
-            color: rgba(255, 255, 255, 0.75) !important;
-            font-size: 0.95rem;
+            color: rgba(0, 0, 0, 0.5);
+            font-size: 0.78em;
             font-weight: 700;
-            margin-left: 0.3rem;
-        }
-
-        /* Downward Arrow Indicator Before CTA */
-        .cta-down-indicator {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 12px;
-            animation: ctaBounceDown 1.3s infinite ease-in-out;
-            user-select: none;
-        }
-
-        .cta-down-indicator svg {
-            width: 36px;
-            height: 36px;
-            stroke: #10B981;
-            filter: drop-shadow(0 2px 10px rgba(16, 185, 129, 0.65));
-        }
-
-        @keyframes ctaBounceDown {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(8px);
-            }
+            margin-left: 0.2rem;
         }
 
         .cta-subtext {
@@ -420,6 +598,39 @@
             font-size: 0.85rem;
             color: var(--text-muted);
             letter-spacing: 0.02em;
+        }
+
+        /* Small-screen fit: keep long CTA labels on one line and inside the viewport */
+        @media (max-width: 560px) {
+            .cta-btn-main {
+                font-size: 0.8rem;
+                padding: 0.95rem 1rem;
+                gap: 0.35rem;
+                letter-spacing: 0;
+                width: 100%;
+                max-width: 100%;
+                white-space: normal;
+                text-align: center;
+                line-height: 1.25;
+            }
+            .cta-btn-main .arrow-icon { font-size: 1.1em; }
+            .cta-strikethrough { font-size: 0.72em; margin-left: 0.1rem; }
+        }
+
+        @media (max-width: 360px) {
+            .cta-btn-main { font-size: 0.7rem; padding: 0.85rem 0.75rem; }
+        }
+
+        /* Override large inline CTA sizing so it still fits on narrow screens */
+        @media (max-width: 560px) {
+            section.final-urgency-section .cta-btn-main {
+                padding: 0.95rem 1rem !important;
+                font-size: 0.82rem !important;
+                width: 100%;
+            }
+            .mobile-bottom-bar .cta-btn-main {
+                font-size: 0.85rem !important;
+            }
         }
 
         /* Video Showcase Container */
@@ -436,12 +647,27 @@
         .video-showcase-frame {
             max-width: 860px;
             margin: 3.5rem auto 0;
-            background: linear-gradient(180deg, rgba(16, 185, 129, 0.08) 0%, rgba(10, 26, 74, 0.95) 100%);
+            background:
+                var(--glass-sheen),
+                linear-gradient(180deg, rgba(16, 185, 129, 0.08) 0%, rgba(10, 26, 74, 0.95) 100%);
             border: 1px solid var(--emerald-border);
             border-radius: var(--radius-lg);
             padding: 1rem;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 229, 117, 0.15);
+            box-shadow: var(--shadow-lg), 0 0 40px rgba(0, 229, 117, 0.15);
             position: relative;
+        }
+
+        .video-showcase-frame::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: var(--radius-lg);
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(0, 229, 117, 0.5), transparent 40%, transparent 60%, rgba(212, 255, 0, 0.4));
+            -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
         }
 
         .video-inner-box {
@@ -520,26 +746,31 @@
         }
 
         .stat-card-item {
-            padding: 1.2rem;
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 1.4rem 1.2rem;
+            background: var(--glass-sheen), rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
             border-radius: var(--radius-md);
-            transition: transform 0.25s ease, border-color 0.25s ease;
+            transition: transform 0.3s var(--ease-premium), border-color 0.3s var(--ease-premium), box-shadow 0.3s var(--ease-premium);
         }
 
         .stat-card-item:hover {
             border-color: var(--emerald-border);
-            transform: translateY(-2px);
+            transform: translateY(-4px);
+            box-shadow: 0 16px 40px rgba(0, 229, 117, 0.12);
         }
 
         .stat-card-item .stat-number {
             font-family: var(--font-heading);
             font-size: clamp(2rem, 3.5vw, 2.8rem);
             font-weight: 900;
+            background: var(--gradient-emerald);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
             color: var(--neon-lime);
-            text-shadow: 0 0 20px var(--neon-lime-glow);
             line-height: 1;
             margin-bottom: 0.4rem;
+            letter-spacing: -0.02em;
         }
 
         .stat-card-item .stat-caption {
@@ -567,10 +798,11 @@
             text-transform: uppercase;
             color: var(--emerald);
             background: var(--emerald-subtle);
-            padding: 0.35rem 1rem;
+            padding: 0.4rem 1.1rem;
             border-radius: var(--radius-pill);
             border: 1px solid var(--emerald-border);
             margin-bottom: 1rem;
+            box-shadow: 0 0 22px rgba(0, 229, 117, 0.12);
         }
 
         .section-main-title {
@@ -604,11 +836,14 @@
         }
 
         .vault-card {
-            background: linear-gradient(180deg, rgba(14, 34, 94, 0.85) 0%, rgba(7, 20, 60, 0.95) 100%); border: 1px solid rgba(59, 130, 246, 0.35); box-shadow: 0 12px 35px rgba(2, 6, 24, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            background:
+                var(--glass-sheen),
+                linear-gradient(180deg, rgba(14, 34, 94, 0.85) 0%, rgba(7, 20, 60, 0.95) 100%);
+            border: 1px solid rgba(59, 130, 246, 0.28);
+            box-shadow: var(--shadow-md), inset 0 1px 0 rgba(255, 255, 255, 0.08);
             border-radius: var(--radius-lg);
             padding: 2.2rem;
-            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.6);
-            transition: all 0.3s ease;
+            transition: transform 0.35s var(--ease-premium), border-color 0.35s var(--ease-premium), box-shadow 0.35s var(--ease-premium);
             position: relative;
             overflow: hidden;
             display: flex;
@@ -626,11 +861,24 @@
             opacity: 0.6;
         }
 
-        .vault-card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(0, 229, 117, 0.5);
-            box-shadow: 0 20px 60px rgba(0, 229, 117, 0.15);
+        /* Sweeping radial glow on hover */
+        .vault-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(60% 45% at 50% 0%, rgba(0, 229, 117, 0.14) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s var(--ease-premium);
+            pointer-events: none;
         }
+
+        .vault-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(0, 229, 117, 0.5);
+            box-shadow: 0 26px 70px rgba(0, 229, 117, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+        }
+
+        .vault-card:hover::after { opacity: 1; }
 
         .vault-card-header {
             text-align: center;
@@ -784,18 +1032,21 @@
         }
 
         .step-module-card {
-            background: rgba(12, 30, 80, 0.78); border: 1px solid rgba(59, 130, 246, 0.30); box-shadow: 0 8px 25px rgba(2, 6, 24, 0.4);
+            background: var(--glass-sheen), rgba(12, 30, 80, 0.7);
+            border: 1px solid rgba(59, 130, 246, 0.28);
+            box-shadow: var(--shadow-sm);
             border-radius: var(--radius-md);
             padding: 1.8rem;
             position: relative;
             overflow: hidden;
-            transition: all 0.25s ease;
+            transition: transform 0.3s var(--ease-premium), border-color 0.3s var(--ease-premium), background 0.3s var(--ease-premium), box-shadow 0.3s var(--ease-premium);
         }
 
         .step-module-card:hover {
             border-color: var(--emerald-border);
-            transform: translateY(-2px);
-            background: var(--bg-card-hover);
+            transform: translateY(-4px);
+            background: var(--glass-sheen), var(--bg-card-hover);
+            box-shadow: var(--shadow-md);
         }
 
         .step-badge-num {
@@ -936,19 +1187,21 @@
         }
 
         .testi-card-monetise {
-            background: rgba(12, 30, 80, 0.78); border: 1px solid rgba(59, 130, 246, 0.30); box-shadow: 0 8px 25px rgba(2, 6, 24, 0.4);
+            background: var(--glass-sheen), rgba(12, 30, 80, 0.7);
+            border: 1px solid rgba(59, 130, 246, 0.28);
+            box-shadow: var(--shadow-sm);
             border-radius: var(--radius-md);
             padding: 2rem;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: all 0.25s ease;
+            transition: transform 0.3s var(--ease-premium), border-color 0.3s var(--ease-premium), box-shadow 0.3s var(--ease-premium);
         }
 
         .testi-card-monetise:hover {
             border-color: var(--emerald-border);
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md), 0 0 30px rgba(0, 229, 117, 0.1);
         }
 
         .testi-stars-row {
@@ -1014,15 +1267,18 @@
         }
 
         .faq-card-item {
-            background: rgba(12, 30, 80, 0.78); border: 1px solid rgba(59, 130, 246, 0.30); box-shadow: 0 8px 25px rgba(2, 6, 24, 0.4);
+            background: var(--glass-sheen), rgba(12, 30, 80, 0.7);
+            border: 1px solid rgba(59, 130, 246, 0.28);
+            box-shadow: var(--shadow-sm);
             border-radius: var(--radius-md);
             overflow: hidden;
-            transition: border-color 0.25s ease, background 0.25s ease;
+            transition: border-color 0.25s var(--ease-premium), background 0.25s var(--ease-premium), box-shadow 0.25s var(--ease-premium);
         }
 
         .faq-card-item:hover, .faq-card-item.active {
-            border-color: var(--emerald-border);
-            background: rgba(16, 38, 102, 0.9); border-color: rgba(59, 130, 246, 0.55);
+            border-color: rgba(59, 130, 246, 0.55);
+            background: var(--glass-sheen), rgba(16, 38, 102, 0.9);
+            box-shadow: var(--shadow-md);
         }
 
         .faq-question-trigger {
@@ -1061,16 +1317,18 @@
         }
 
         .faq-card-item.active .faq-answer-collapse {
-            max-height: 350px;
+            max-height: 500px;
             padding-bottom: 1.4rem;
         }
 
         /* 12. Final Urgency Offer Section */
         section.final-urgency-section {
-            padding: 2.5rem 0;
+            padding: clamp(3.2rem, 6vw, 4.75rem) 0;
             text-align: center;
             position: relative;
-            background: linear-gradient(180deg, rgba(70, 15, 30, 0.8) 0%, rgba(10, 24, 68, 0.95) 100%);
+            background:
+                radial-gradient(60% 60% at 50% 0%, rgba(255, 46, 77, 0.12) 0%, transparent 70%),
+                linear-gradient(180deg, rgba(70, 15, 30, 0.8) 0%, rgba(10, 24, 68, 0.95) 100%);
             border-top: 2px solid var(--alert-red);
             border-bottom: 2px solid var(--alert-red);
             box-shadow: 0 0 60px rgba(255, 46, 77, 0.2);
@@ -1123,9 +1381,9 @@
 
         /* 13. Clean Dark Footer */
         footer.site-footer {
-            padding: 1.8rem 0;
-            background: #07143E; border-top: 1px solid rgba(59, 130, 246, 0.2);
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 2.2rem 0;
+            background: #07143E;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
             text-align: center;
             color: #94A3B8;
             font-size: 0.88rem;
@@ -1157,7 +1415,7 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            background: rgba(7, 21, 62, 0.96); border-top: 1px solid rgba(59, 130, 246, 0.3);
+            background: rgba(7, 21, 62, 0.96);
             backdrop-filter: blur(14px);
             -webkit-backdrop-filter: blur(14px);
             border-top: 1px solid var(--emerald-border);
@@ -1224,6 +1482,64 @@
         .exit-modal-close:hover {
             color: #FFFFFF;
         }
+
+        /* 16. Premium vertical rhythm & section polish [overrides] */
+        section.vaults-section,
+        section.timeline-section,
+        section.steps-section,
+        section.comparison-section,
+        section.testimonials-section,
+        section.faq-section,
+        section.hero-section {
+            padding-top: clamp(3.2rem, 6vw, 4.75rem);
+            padding-bottom: clamp(3.2rem, 6vw, 4.75rem);
+        }
+
+        section.stats-section {
+            padding-top: clamp(2rem, 4vw, 2.75rem);
+            padding-bottom: clamp(2rem, 4vw, 2.75rem);
+        }
+
+        /* Soft divider glow between sections */
+        section.stats-section {
+            box-shadow: inset 0 1px 0 rgba(59, 130, 246, 0.12), inset 0 -1px 0 rgba(59, 130, 246, 0.12);
+        }
+
+        /* Feature bonus list items premium hover */
+        .bonus-tile {
+            transition: transform 0.28s var(--ease-premium), border-color 0.28s var(--ease-premium), background 0.28s var(--ease-premium);
+        }
+        .bonus-tile:hover {
+            transform: translateX(3px);
+            border-color: rgba(96, 165, 250, 0.5) !important;
+            background: rgba(16, 38, 102, 0.85) !important;
+        }
+
+        /* Comparison rows subtle accent */
+        .comp-row-item {
+            transition: transform 0.22s var(--ease-premium);
+        }
+        .comp-card-bad .comp-row-item:hover { transform: translateX(3px); }
+        .comp-card-good .comp-row-item:hover { transform: translateX(3px); }
+
+        /* Step images get a crisp premium frame */
+        .step-module-card img {
+            transition: transform 0.5s var(--ease-premium), filter 0.5s var(--ease-premium);
+        }
+        .step-module-card:hover img {
+            transform: scale(1.03);
+            filter: brightness(1.05) saturate(1.05);
+        }
+
+        /* Audience pills hover */
+        .audience-pill {
+            transition: transform 0.25s var(--ease-premium), border-color 0.25s var(--ease-premium), box-shadow 0.25s var(--ease-premium);
+        }
+        .audience-pill:hover {
+            transform: translateY(-3px);
+            border-color: var(--emerald-border) !important;
+            box-shadow: 0 12px 30px rgba(0, 229, 117, 0.15);
+        }
     </style>
 </head>
 <body>
@@ -1277,12 +1593,6 @@
                 <p style="font-size: 0.98rem; color: #CBD5E1; margin-bottom: 1.2rem; font-weight: 500;">
                     As this is our new launch, we have kept the price extremely low. After just <strong style="color: #FFE600;">20 sales</strong>, we will be increasing the price to <strong style="color: #00E575;">₹75 → ₹99 → ₹147 → ₹199 → ₹247</strong>... after every 25 sales.
                 </p>
-                <div class="cta-down-indicator">
-                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="12" y1="3" x2="12" y2="19"></line>
-                        <polyline points="19 12 12 19 5 12"></polyline>
-                    </svg>
-                </div>
                 <a href="n8n-checkout.html" class="cta-btn-main">
                     <span>👉 GET OFFER FOR — ₹47</span>
                     <span class="cta-strikethrough">₹499</span>
@@ -1301,24 +1611,11 @@
                 </p>
             </div>
 
-            <!-- File Protocol Warning Alert (only shown when opened directly via file:///) -->
-            <div id="file-protocol-alert" style="display: none; background: rgba(234, 179, 8, 0.12); border: 1px solid rgba(234, 179, 8, 0.45); border-radius: 12px; padding: 12px 18px; margin: 0 auto 16px; max-width: 820px; text-align: center; color: #FEF08A; font-size: 0.92rem; line-height: 1.5;">
-                ℹ️ <strong>Desktop Preview Notice:</strong> YouTube blocks in-frame playback when opened directly from desktop via <code>file:///</code> (Error 153). To see it playing natively inside this frame on your PC, double-click <strong>Preview-Funnel.bat</strong> in this folder (or open <a href="http://localhost:8085/index.html" target="_blank" style="color: #67E8F9; font-weight: 700;">http://localhost:8085</a>). On your live website domain, it plays seamlessly!
-            </div>
-
             <!-- Video Showcase Frame -->
             <div class="video-showcase-frame" style="margin-top: 0;">
                 <div class="video-inner-box" id="video-container" style="position: relative;">
                     <iframe id="hero-yt-video" width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/_GN8nEq2GSo?rel=0" title="Step by Step Guide: How To Import n8n Templates" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="border: 0; width: 100%; height: 100%; aspect-ratio: 16/9; display: block; border-radius: 10px;"></iframe>
                 </div>
-            </div>
-
-            <!-- YouTube Direct Link & Fallback -->
-            <div style="display: flex; justify-content: center; align-items: center; gap: 12px; margin-top: 0.9rem; flex-wrap: wrap;">
-                <a href="https://www.youtube.com/watch?v=_GN8nEq2GSo" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; color: #CBD5E1; font-size: 0.95rem; text-decoration: none; padding: 7px 18px; border-radius: 20px; background: rgba(12, 30, 80, 0.7); border: 1px solid rgba(59, 130, 246, 0.4); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); transition: all 0.25s ease;" onmouseover="this.style.borderColor='#FFE600'; this.style.color='#FFFFFF';" onmouseout="this.style.borderColor='rgba(59, 130, 246, 0.4)'; this.style.color='#CBD5E1';">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#FF0000"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                    <span style="font-weight: 600;">Watch on YouTube (HD) ↗</span>
-                </a>
             </div>
 
         </div>
@@ -1418,55 +1715,55 @@
                 </div>
 
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px;">
-                    <div style="background: rgba(10, 24, 68, 0.65); border: 1px solid rgba(59, 130, 246, 0.22); border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; gap: 10px; color: #E2E8F0; font-size: 0.92rem;">
+                    <div class="bonus-tile" style="background: rgba(10, 24, 68, 0.65); border: 1px solid rgba(59, 130, 246, 0.22); border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; gap: 10px; color: #E2E8F0; font-size: 0.92rem;">
                         <span style="color: #60A5FA; font-size: 1.1rem;">💎</span>
                         <span>Perplexity Research AI-Powered Content Generation</span>
                     </div>
-                    <div style="background: rgba(10, 24, 68, 0.65); border: 1px solid rgba(59, 130, 246, 0.22); border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; gap: 10px; color: #E2E8F0; font-size: 0.92rem;">
+                    <div class="bonus-tile" style="background: rgba(10, 24, 68, 0.65); border: 1px solid rgba(59, 130, 246, 0.22); border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; gap: 10px; color: #E2E8F0; font-size: 0.92rem;">
                         <span style="color: #60A5FA; font-size: 1.1rem;">💎</span>
                         <span>Analysing Trading Charts with Chrome Extension</span>
                     </div>
-                    <div style="background: rgba(10, 24, 68, 0.65); border: 1px solid rgba(59, 130, 246, 0.22); border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; gap: 10px; color: #E2E8F0; font-size: 0.92rem;">
+                    <div class="bonus-tile" style="background: rgba(10, 24, 68, 0.65); border: 1px solid rgba(59, 130, 246, 0.22); border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; gap: 10px; color: #E2E8F0; font-size: 0.92rem;">
                         <span style="color: #60A5FA; font-size: 1.1rem;">💎</span>
                         <span>AI Chatbot for Movie &amp; Media Recommendation</span>
                     </div>
-                    <div style="background: rgba(10, 24, 68, 0.65); border: 1px solid rgba(59, 130, 246, 0.22); border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; gap: 10px; color: #E2E8F0; font-size: 0.92rem;">
+                    <div class="bonus-tile" style="background: rgba(10, 24, 68, 0.65); border: 1px solid rgba(59, 130, 246, 0.22); border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; gap: 10px; color: #E2E8F0; font-size: 0.92rem;">
                         <span style="color: #60A5FA; font-size: 1.1rem;">💎</span>
                         <span>News-to-Video Automated Content Workflow</span>
                     </div>
-                    <div style="background: rgba(10, 24, 68, 0.65); border: 1px solid rgba(59, 130, 246, 0.22); border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; gap: 10px; color: #E2E8F0; font-size: 0.92rem;">
+                    <div class="bonus-tile" style="background: rgba(10, 24, 68, 0.65); border: 1px solid rgba(59, 130, 246, 0.22); border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; gap: 10px; color: #E2E8F0; font-size: 0.92rem;">
                         <span style="color: #60A5FA; font-size: 1.1rem;">💎</span>
                         <span>Website AI Chatbot for 10x User Experience</span>
                     </div>
-                    <div style="background: rgba(10, 24, 68, 0.65); border: 1px solid rgba(59, 130, 246, 0.22); border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; gap: 10px; color: #E2E8F0; font-size: 0.92rem;">
+                    <div class="bonus-tile" style="background: rgba(10, 24, 68, 0.65); border: 1px solid rgba(59, 130, 246, 0.22); border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; gap: 10px; color: #E2E8F0; font-size: 0.92rem;">
                         <span style="color: #60A5FA; font-size: 1.1rem;">💎</span>
                         <span>Dynamic AI Email Content Writer</span>
                     </div>
-                    <div style="background: rgba(10, 24, 68, 0.65); border: 1px solid rgba(59, 130, 246, 0.22); border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; gap: 10px; color: #E2E8F0; font-size: 0.92rem;">
+                    <div class="bonus-tile" style="background: rgba(10, 24, 68, 0.65); border: 1px solid rgba(59, 130, 246, 0.22); border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; gap: 10px; color: #E2E8F0; font-size: 0.92rem;">
                         <span style="color: #60A5FA; font-size: 1.1rem;">💎</span>
                         <span>Discord AI-Powered Community Bots</span>
                     </div>
-                    <div style="background: rgba(10, 24, 68, 0.65); border: 1px solid rgba(59, 130, 246, 0.22); border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; gap: 10px; color: #E2E8F0; font-size: 0.92rem;">
+                    <div class="bonus-tile" style="background: rgba(10, 24, 68, 0.65); border: 1px solid rgba(59, 130, 246, 0.22); border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; gap: 10px; color: #E2E8F0; font-size: 0.92rem;">
                         <span style="color: #60A5FA; font-size: 1.1rem;">💎</span>
                         <span>AI Agent to Chat Directly with Your Local Files</span>
                     </div>
-                    <div style="background: rgba(10, 24, 68, 0.65); border: 1px solid rgba(59, 130, 246, 0.22); border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; gap: 10px; color: #E2E8F0; font-size: 0.92rem;">
+                    <div class="bonus-tile" style="background: rgba(10, 24, 68, 0.65); border: 1px solid rgba(59, 130, 246, 0.22); border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; gap: 10px; color: #E2E8F0; font-size: 0.92rem;">
                         <span style="color: #60A5FA; font-size: 1.1rem;">💎</span>
                         <span>ChatGPT Automatic Intelligent Email Replier</span>
                     </div>
-                    <div style="background: rgba(10, 24, 68, 0.65); border: 1px solid rgba(59, 130, 246, 0.22); border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; gap: 10px; color: #E2E8F0; font-size: 0.92rem;">
+                    <div class="bonus-tile" style="background: rgba(10, 24, 68, 0.65); border: 1px solid rgba(59, 130, 246, 0.22); border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; gap: 10px; color: #E2E8F0; font-size: 0.92rem;">
                         <span style="color: #60A5FA; font-size: 1.1rem;">💎</span>
                         <span>Notion-Related Productivity &amp; Sync Workflows</span>
                     </div>
-                    <div style="background: rgba(10, 24, 68, 0.65); border: 1px solid rgba(59, 130, 246, 0.22); border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; gap: 10px; color: #E2E8F0; font-size: 0.92rem;">
+                    <div class="bonus-tile" style="background: rgba(10, 24, 68, 0.65); border: 1px solid rgba(59, 130, 246, 0.22); border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; gap: 10px; color: #E2E8F0; font-size: 0.92rem;">
                         <span style="color: #60A5FA; font-size: 1.1rem;">💎</span>
                         <span>Breaking Long Documents into Structured Study Notes</span>
                     </div>
-                    <div style="background: rgba(10, 24, 68, 0.65); border: 1px solid rgba(59, 130, 246, 0.22); border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; gap: 10px; color: #E2E8F0; font-size: 0.92rem;">
+                    <div class="bonus-tile" style="background: rgba(10, 24, 68, 0.65); border: 1px solid rgba(59, 130, 246, 0.22); border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; gap: 10px; color: #E2E8F0; font-size: 0.92rem;">
                         <span style="color: #60A5FA; font-size: 1.1rem;">💎</span>
                         <span>Chat with PDF Documents Using AI</span>
                     </div>
-                    <div style="background: rgba(10, 24, 68, 0.65); border: 1px solid rgba(59, 130, 246, 0.22); border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; gap: 10px; color: #E2E8F0; font-size: 0.92rem;">
+                    <div class="bonus-tile" style="background: rgba(10, 24, 68, 0.65); border: 1px solid rgba(59, 130, 246, 0.22); border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; gap: 10px; color: #E2E8F0; font-size: 0.92rem;">
                         <span style="color: #60A5FA; font-size: 1.1rem;">💎</span>
                         <span>Automatic Content Creation for WordPress</span>
                     </div>
@@ -1493,12 +1790,6 @@
 
             <!-- Mid-Page CTA -->
             <div style="text-align: center; margin-top: 2rem;">
-                <div class="cta-down-indicator">
-                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="12" y1="3" x2="12" y2="19"></line>
-                        <polyline points="19 12 12 19 5 12"></polyline>
-                    </svg>
-                </div>
                 <a href="n8n-checkout.html" class="cta-btn-main">
                     <span>👉 GET INSTANT ACCESS WITH ALL BONUSES — ₹47</span>
                     <span class="arrow-icon">→</span>
@@ -1582,7 +1873,7 @@
                     <h3 class="step-module-title">Instant Digital Delivery</h3>
                     <p class="step-module-desc">Payment complete karo, files turant mil jaayengi — koi delay nahi.</p>
                     <div style="margin-top: 1.25rem; border-radius: 10px; overflow: hidden; border: 1px solid rgba(59, 130, 246, 0.35); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);">
-                        <img src="assets/step1.png" alt="Step 1 - Instant Digital Delivery" style="width: 100%; height: auto; display: block; border-radius: 8px;" loading="lazy">
+                        <img src="assets/step1_01.png" alt="Step 1 - Instant Digital Delivery" style="width: 100%; height: auto; display: block; border-radius: 8px;" loading="lazy">
                     </div>
                 </div>
 
@@ -1591,7 +1882,7 @@
                     <h3 class="step-module-title">Choose Your Template</h3>
                     <p class="step-module-desc">Choose any template from the provided document. For Example: Choose a template that automates lead management &amp; instagram posting.</p>
                     <div style="margin-top: 1.25rem; border-radius: 10px; overflow: hidden; border: 1px solid rgba(59, 130, 246, 0.35); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);">
-                        <img src="assets/step2.png" alt="Step 2 - Choose Your Template" style="width: 100%; height: auto; display: block; border-radius: 8px;" loading="lazy">
+                        <img src="assets/step1.png" alt="Step 1 - Instant Digital Delivery" style="width: 100%; height: auto; display: block; border-radius: 8px;" loading="lazy">
                     </div>
                 </div>
 
@@ -1600,7 +1891,7 @@
                     <h3 class="step-module-title">Import JSON into n8n</h3>
                     <p class="step-module-desc">Import the template / JSON File into the N8N. Simply Import the downloaded JSON file into the N8N workflow.</p>
                     <div style="margin-top: 1.25rem; border-radius: 10px; overflow: hidden; border: 1px solid rgba(59, 130, 246, 0.35); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);">
-                        <img src="assets/step3.png" alt="Step 3 - Import JSON into n8n" style="width: 100%; height: auto; display: block; border-radius: 8px;" loading="lazy">
+                        <img src="assets/step2.png" alt="Step 2 - Choose Your Template" style="width: 100%; height: auto; display: block; border-radius: 8px;" loading="lazy">
                     </div>
                 </div>
 
@@ -1608,6 +1899,9 @@
                     <div class="step-badge-num">4</div>
                     <h3 class="step-module-title">Customize &amp; Automate</h3>
                     <p class="step-module-desc">After you import the JSON file, you are done and you can start customizing your N8N template.</p>
+                    <div style="margin-top: 1.25rem; border-radius: 10px; overflow: hidden; border: 1px solid rgba(59, 130, 246, 0.35); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);">
+                        <img src="assets/step3.png" alt="Step 3 - Import JSON into n8n" style="width: 100%; height: auto; display: block; border-radius: 8px;" loading="lazy">
+                    </div>
                 </div>
 
             </div>
@@ -1629,37 +1923,37 @@
             </div>
 
             <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; max-width: 900px; margin: 0 auto 1.2rem;">
-                <div style="background: rgba(12, 30, 80, 0.85); border: 1px solid rgba(59, 130, 246, 0.35); border-radius: 30px; padding: 10px 22px; font-weight: 700; color: #FFFFFF; font-size: 0.95rem; display: flex; align-items: center; gap: 8px;">
+                <div class="audience-pill" style="background: rgba(12, 30, 80, 0.85); border: 1px solid rgba(59, 130, 246, 0.35); border-radius: 30px; padding: 10px 22px; font-weight: 700; color: #FFFFFF; font-size: 0.95rem; display: flex; align-items: center; gap: 8px;">
                     <span>🧑‍💻</span><span>Freelancers</span>
                 </div>
-                <div style="background: rgba(12, 30, 80, 0.85); border: 1px solid rgba(59, 130, 246, 0.35); border-radius: 30px; padding: 10px 22px; font-weight: 700; color: #FFFFFF; font-size: 0.95rem; display: flex; align-items: center; gap: 8px;">
+                <div class="audience-pill" style="background: rgba(12, 30, 80, 0.85); border: 1px solid rgba(59, 130, 246, 0.35); border-radius: 30px; padding: 10px 22px; font-weight: 700; color: #FFFFFF; font-size: 0.95rem; display: flex; align-items: center; gap: 8px;">
                     <span>🤖</span><span>Automation Consultants</span>
                 </div>
-                <div style="background: rgba(12, 30, 80, 0.85); border: 1px solid rgba(59, 130, 246, 0.35); border-radius: 30px; padding: 10px 22px; font-weight: 700; color: #FFFFFF; font-size: 0.95rem; display: flex; align-items: center; gap: 8px;">
+                <div class="audience-pill" style="background: rgba(12, 30, 80, 0.85); border: 1px solid rgba(59, 130, 246, 0.35); border-radius: 30px; padding: 10px 22px; font-weight: 700; color: #FFFFFF; font-size: 0.95rem; display: flex; align-items: center; gap: 8px;">
                     <span>🏢</span><span>AI Agencies</span>
                 </div>
-                <div style="background: rgba(12, 30, 80, 0.85); border: 1px solid rgba(59, 130, 246, 0.35); border-radius: 30px; padding: 10px 22px; font-weight: 700; color: #FFFFFF; font-size: 0.95rem; display: flex; align-items: center; gap: 8px;">
+                <div class="audience-pill" style="background: rgba(12, 30, 80, 0.85); border: 1px solid rgba(59, 130, 246, 0.35); border-radius: 30px; padding: 10px 22px; font-weight: 700; color: #FFFFFF; font-size: 0.95rem; display: flex; align-items: center; gap: 8px;">
                     <span>📈</span><span>Marketing Agencies</span>
                 </div>
-                <div style="background: rgba(12, 30, 80, 0.85); border: 1px solid rgba(59, 130, 246, 0.35); border-radius: 30px; padding: 10px 22px; font-weight: 700; color: #FFFFFF; font-size: 0.95rem; display: flex; align-items: center; gap: 8px;">
+                <div class="audience-pill" style="background: rgba(12, 30, 80, 0.85); border: 1px solid rgba(59, 130, 246, 0.35); border-radius: 30px; padding: 10px 22px; font-weight: 700; color: #FFFFFF; font-size: 0.95rem; display: flex; align-items: center; gap: 8px;">
                     <span>💡</span><span>SaaS Founders</span>
                 </div>
-                <div style="background: rgba(12, 30, 80, 0.85); border: 1px solid rgba(59, 130, 246, 0.35); border-radius: 30px; padding: 10px 22px; font-weight: 700; color: #FFFFFF; font-size: 0.95rem; display: flex; align-items: center; gap: 8px;">
+                <div class="audience-pill" style="background: rgba(12, 30, 80, 0.85); border: 1px solid rgba(59, 130, 246, 0.35); border-radius: 30px; padding: 10px 22px; font-weight: 700; color: #FFFFFF; font-size: 0.95rem; display: flex; align-items: center; gap: 8px;">
                     <span>🛒</span><span>E-commerce Businesses</span>
                 </div>
-                <div style="background: rgba(12, 30, 80, 0.85); border: 1px solid rgba(59, 130, 246, 0.35); border-radius: 30px; padding: 10px 22px; font-weight: 700; color: #FFFFFF; font-size: 0.95rem; display: flex; align-items: center; gap: 8px;">
+                <div class="audience-pill" style="background: rgba(12, 30, 80, 0.85); border: 1px solid rgba(59, 130, 246, 0.35); border-radius: 30px; padding: 10px 22px; font-weight: 700; color: #FFFFFF; font-size: 0.95rem; display: flex; align-items: center; gap: 8px;">
                     <span>👨‍💻</span><span>Developers</span>
                 </div>
-                <div style="background: rgba(12, 30, 80, 0.85); border: 1px solid rgba(59, 130, 246, 0.35); border-radius: 30px; padding: 10px 22px; font-weight: 700; color: #FFFFFF; font-size: 0.95rem; display: flex; align-items: center; gap: 8px;">
+                <div class="audience-pill" style="background: rgba(12, 30, 80, 0.85); border: 1px solid rgba(59, 130, 246, 0.35); border-radius: 30px; padding: 10px 22px; font-weight: 700; color: #FFFFFF; font-size: 0.95rem; display: flex; align-items: center; gap: 8px;">
                     <span>🚀</span><span>Startup Teams</span>
                 </div>
-                <div style="background: rgba(12, 30, 80, 0.85); border: 1px solid rgba(59, 130, 246, 0.35); border-radius: 30px; padding: 10px 22px; font-weight: 700; color: #FFFFFF; font-size: 0.95rem; display: flex; align-items: center; gap: 8px;">
+                <div class="audience-pill" style="background: rgba(12, 30, 80, 0.85); border: 1px solid rgba(59, 130, 246, 0.35); border-radius: 30px; padding: 10px 22px; font-weight: 700; color: #FFFFFF; font-size: 0.95rem; display: flex; align-items: center; gap: 8px;">
                     <span>💼</span><span>Business Owners</span>
                 </div>
-                <div style="background: rgba(12, 30, 80, 0.85); border: 1px solid rgba(59, 130, 246, 0.35); border-radius: 30px; padding: 10px 22px; font-weight: 700; color: #FFFFFF; font-size: 0.95rem; display: flex; align-items: center; gap: 8px;">
+                <div class="audience-pill" style="background: rgba(12, 30, 80, 0.85); border: 1px solid rgba(59, 130, 246, 0.35); border-radius: 30px; padding: 10px 22px; font-weight: 700; color: #FFFFFF; font-size: 0.95rem; display: flex; align-items: center; gap: 8px;">
                     <span>🔧</span><span>Anyone Using n8n / Automations</span>
                 </div>
-                <div style="background: rgba(12, 30, 80, 0.85); border: 1px solid rgba(59, 130, 246, 0.35); border-radius: 30px; padding: 10px 22px; font-weight: 700; color: #FFFFFF; font-size: 0.95rem; display: flex; align-items: center; gap: 8px;">
+                <div class="audience-pill" style="background: rgba(12, 30, 80, 0.85); border: 1px solid rgba(59, 130, 246, 0.35); border-radius: 30px; padding: 10px 22px; font-weight: 700; color: #FFFFFF; font-size: 0.95rem; display: flex; align-items: center; gap: 8px;">
                     <span>🌟</span><span>Anyone Who Wants to Automate Their Work</span>
                 </div>
             </div>
@@ -1720,6 +2014,9 @@
                             <span>1 workflow = only 1 specific use case solved</span>
                         </li>
                     </ul>
+                    <div style="margin-top: 1.5rem; border-radius: 10px; overflow: hidden; border: 1px solid rgba(255, 46, 77, 0.35); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);">
+                        <img src="assets/before.png" alt="Before - Doing Everything Manually" style="width: 100%; height: auto; display: block; border-radius: 8px;" loading="lazy">
+                    </div>
                 </div>
 
                 <!-- New Way -->
@@ -1754,31 +2051,11 @@
                             <span><strong>4,000+ ready use cases covered</strong> across CRM, AI, social &amp; lead gen</span>
                         </li>
                     </ul>
-                </div>
-
-            </div>
-
-            <!-- Before & After Visual Comic Comparison -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 1040px; margin: 1.5rem auto 0;">
-                <div style="background: rgba(255, 46, 77, 0.05); border: 1px solid rgba(255, 46, 77, 0.3); border-radius: var(--radius-md); padding: 1.2rem; text-align: center; box-shadow: 0 8px 25px rgba(2, 6, 24, 0.4);">
-                    <div style="display: inline-flex; align-items: center; gap: 6px; background: rgba(255, 46, 77, 0.15); border: 1px solid rgba(255, 46, 77, 0.35); color: #FF5E7E; font-weight: 800; font-size: 0.92rem; padding: 4px 14px; border-radius: 20px; margin-bottom: 0.9rem;">
-                        <span>❌</span>
-                        <span>BEFORE: Manual Setup &amp; Frustration</span>
-                    </div>
-                    <div style="border-radius: 10px; overflow: hidden; border: 1px solid rgba(255, 46, 77, 0.25); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);">
-                        <img src="assets/before.png" alt="Before - Doing Everything Manually" style="width: 100%; height: auto; display: block; border-radius: 8px;" loading="lazy">
-                    </div>
-                </div>
-
-                <div style="background: rgba(0, 229, 117, 0.05); border: 1px solid rgba(0, 229, 117, 0.3); border-radius: var(--radius-md); padding: 1.2rem; text-align: center; box-shadow: 0 8px 25px rgba(2, 6, 24, 0.4);">
-                    <div style="display: inline-flex; align-items: center; gap: 6px; background: rgba(0, 229, 117, 0.15); border: 1px solid rgba(0, 229, 117, 0.35); color: var(--emerald); font-weight: 800; font-size: 0.92rem; padding: 4px 14px; border-radius: 20px; margin-bottom: 0.9rem;">
-                        <span>✅</span>
-                        <span>AFTER: Instant Automation with 4000+ Bundle</span>
-                    </div>
-                    <div style="border-radius: 10px; overflow: hidden; border: 1px solid rgba(0, 229, 117, 0.25); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);">
+                    <div style="margin-top: 1.5rem; border-radius: 10px; overflow: hidden; border: 1px solid rgba(0, 229, 117, 0.35); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);">
                         <img src="assets/after.png" alt="After - Instant Automation with 4000+ Workflows" style="width: 100%; height: auto; display: block; border-radius: 8px;" loading="lazy">
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -1827,7 +2104,7 @@
             </p>
 
             <!-- Price Anchoring Box -->
-            <div style="background: linear-gradient(180deg, rgba(16, 185, 129, 0.12) 0%, rgba(10, 26, 74, 0.95) 100%); border: 1px solid var(--emerald-border); border-radius: var(--radius-md); padding: 1.5rem 1rem; max-width: 600px; margin: 0 auto; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 229, 117, 0.1);">
+            <div style="background: linear-gradient(180deg, rgba(16, 185, 129, 0.12) 0%, rgba(10, 26, 74, 0.95) 100%); border: 1px solid var(--emerald-border); border-radius: var(--radius-md); padding: 1.5rem 1.2rem; max-width: 600px; margin: 0 auto; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 229, 117, 0.1);">
                 <div style="font-size: 1.15rem; font-weight: 700; color: #CBD5E1; margin-bottom: 0.6rem;">
                     Your Investment Today: <span style="color: #FFE600; font-size: 1.4rem;">₹47</span>
                 </div>
@@ -1842,13 +2119,7 @@
                     Just ₹47/-
                 </div>
 
-                <div class="cta-down-indicator">
-                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="12" y1="3" x2="12" y2="19"></line>
-                        <polyline points="19 12 12 19 5 12"></polyline>
-                    </svg>
-                </div>
-                <a href="n8n-checkout.html" class="cta-btn-main" style="max-width: 480px; width: 100%; margin: 0 auto; padding: 0.95rem 1.4rem; font-size: clamp(0.92rem, 3.4vw, 1.25rem); display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; white-space: nowrap;">
+                <a href="n8n-checkout.html" class="cta-btn-main" style="max-width: 420px; margin: 0 auto;">
                     <span>👉 GET OFFER FOR — ₹47</span>
                     <span class="cta-strikethrough">₹499</span>
                     <span class="arrow-icon">→</span>
@@ -2048,13 +2319,7 @@
             </div>
 
             <div style="margin-top: 2.5rem;">
-                <div class="cta-down-indicator">
-                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="12" y1="3" x2="12" y2="19"></line>
-                        <polyline points="19 12 12 19 5 12"></polyline>
-                    </svg>
-                </div>
-                <a href="n8n-checkout.html" class="cta-btn-main" style="max-width: 540px; width: 100%; margin: 0 auto; padding: 1.15rem 2rem; font-size: clamp(1rem, 2.8vw, 1.4rem); display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; white-space: nowrap;">
+                <a href="n8n-checkout.html" class="cta-btn-main" style="padding: 1.3rem 3.5rem; font-size: clamp(1.2rem, 3vw, 1.6rem);">
                     <span>👉 CLAIM COMPLETE BUNDLE — ₹47</span>
                     <span class="arrow-icon">→</span>
                 </a>
@@ -2090,12 +2355,6 @@
             <p style="font-size: 1.05rem; color: var(--text-silver); margin-bottom: 1.8rem; line-height: 1.55;">
                 You are 1 click away from owning <strong>4000+ ready n8n workflows</strong> for just ₹47. After the next few sales, the price jumps to ₹75!
             </p>
-            <div class="cta-down-indicator">
-                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="12" y1="3" x2="12" y2="19"></line>
-                    <polyline points="19 12 12 19 5 12"></polyline>
-                </svg>
-            </div>
             <a href="n8n-checkout.html" class="cta-btn-main" style="width: 100%; justify-content: center;">
                 <span>👉 CLAIM OFFER FOR ₹47 NOW</span>
                 <span class="arrow-icon">→</span>
@@ -2174,11 +2433,98 @@
             }
         });
 
-        // Detect if opened as local file:/// and show preview helper
-        if (window.location.protocol === 'file:') {
-            const fileAlert = document.getElementById('file-protocol-alert');
-            if (fileAlert) fileAlert.style.display = 'block';
-        }
+        // Premium scroll reveal: auto-tag structural blocks & stagger grids
+        (function initScrollReveal() {
+            const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (reduce || !('IntersectionObserver' in window)) return;
+
+            const targets = document.querySelectorAll(
+                '.section-header-block, .stat-card-item, .vault-card, .step-module-card, ' +
+                '.testi-card-monetise, .faq-card-item, .comp-column-card, .timeline-node, ' +
+                '.video-showcase-frame, .bonus-tile, .audience-pill'
+            );
+
+            targets.forEach((el, i) => {
+                el.classList.add('reveal');
+                el.style.transitionDelay = Math.min(i % 6, 5) * 70 + 'ms';
+            });
+
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        io.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+            targets.forEach(el => io.observe(el));
+        })();
+
+        // Count-up animation for statistics
+        (function initCountUp() {
+            const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            const nums = document.querySelectorAll('.stat-number');
+            if (!nums.length) return;
+
+            const parseTarget = (text) => {
+                const match = text.match(/[\d,]+(\.\d+)?/);
+                if (!match) return null;
+                const raw = match[0].replace(/,/g, '');
+                return { value: parseFloat(raw), decimals: (raw.split('.')[1] || '').length, hasComma: text.includes(',') };
+            };
+
+            const animate = (el, target) => {
+                const duration = 1400;
+                const start = performance.now();
+                const step = (now) => {
+                    const p = Math.min((now - start) / duration, 1);
+                    const eased = 1 - Math.pow(1 - p, 3);
+                    let val = target.value * eased;
+                    let out = val.toFixed(target.decimals);
+                    if (target.hasComma) out = Number(out).toLocaleString('en-IN');
+                    el.textContent = el.textContent.replace(/[\d,]+(\.\d+)?/, out);
+                    if (p < 1) requestAnimationFrame(step);
+                };
+                requestAnimationFrame(step);
+            };
+
+            if (reduce) return;
+
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        const finalText = el.textContent;
+                        const target = parseTarget(finalText);
+                        if (target) {
+                            el.textContent = finalText.replace(/[\d,]+(\.\d+)?/, '0');
+                            animate(el, target);
+                        }
+                        io.unobserve(el);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            nums.forEach(n => io.observe(n));
+        })();
+
+        // Header background intensifies on scroll
+        (function initHeaderScroll() {
+            const header = document.querySelector('header.site-header');
+            if (!header) return;
+            const onScroll = () => {
+                if (window.scrollY > 30) {
+                    header.style.background = 'rgba(6, 18, 52, 0.94)';
+                    header.style.boxShadow = '0 10px 30px rgba(2, 6, 24, 0.6)';
+                } else {
+                    header.style.background = 'rgba(7, 21, 62, 0.72)';
+                    header.style.boxShadow = 'none';
+                }
+            };
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
+        })();
 
     </script>
 </body>

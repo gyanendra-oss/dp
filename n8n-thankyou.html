@@ -5,7 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thank You - N8N Workflows</title>
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Google Analytics (GA4) & Meta Pixel Tracking Base Code -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DUMMYXYZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-DUMMYXYZ');
+
+        // Meta Pixel Base Code (Dummy ID: 123456789012345)
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=this;n.ready=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '123456789012345');
+        fbq('track', 'PageView');
+        fbq('track', 'Purchase', { value: 47, currency: 'INR' });
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=123456789012345&ev=Purchase&noscript=1"/></noscript>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
     
@@ -24,6 +45,8 @@
             --glass-border: rgba(59, 130, 246, 0.32);
             --font-heading: 'Outfit', sans-serif;
             --font-body: 'Inter', sans-serif;
+            --glass-sheen: linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0) 45%);
+            --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         * {
@@ -32,7 +55,6 @@
             box-sizing: border-box;
         }
 
-        
         body {
             overflow-x: hidden;
             line-height: 1.6;
@@ -45,6 +67,120 @@
                 linear-gradient(180deg, #0A1C52 0%, #081745 25%, #07143E 50%, #081745 75%, #0A1C52 100%);
             background-color: #07143E;
             color: #FFFFFF;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Ambient aurora glow */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: -20% -10%;
+            background:
+                radial-gradient(45% 35% at 20% 15%, rgba(0, 229, 117, 0.10) 0%, transparent 60%),
+                radial-gradient(40% 30% at 82% 30%, rgba(37, 99, 245, 0.16) 0%, transparent 65%),
+                radial-gradient(35% 30% at 60% 80%, rgba(212, 255, 0, 0.06) 0%, transparent 60%);
+            filter: blur(20px);
+            pointer-events: none;
+            z-index: 0;
+            animation: aurora-drift 22s ease-in-out infinite alternate;
+        }
+
+        @keyframes aurora-drift {
+            0%   { transform: translate3d(0, 0, 0) scale(1); }
+            100% { transform: translate3d(-3%, 2%, 0) scale(1.08); }
+        }
+
+        /* Animated CTA Button Design System */
+        .cta-btn-main, .share-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: clamp(0.4rem, 1.2vw, 0.8rem);
+            background: linear-gradient(180deg, #E4FF2E 0%, #B7E600 50%, #8CBF00 100%);
+            color: #04122E !important;
+            font-family: var(--font-heading);
+            font-weight: 900;
+            font-size: clamp(0.95rem, 2.1vw, 1.35rem);
+            letter-spacing: 0.01em;
+            text-transform: uppercase;
+            padding: 1.05rem clamp(1.1rem, 3vw, 2.5rem);
+            border-radius: 999px;
+            text-decoration: none;
+            max-width: 100%;
+            box-sizing: border-box;
+            white-space: nowrap;
+            box-shadow: 0 10px 30px rgba(212, 255, 0, 0.3), 0 0 35px rgba(212, 255, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.55);
+            transition: transform 0.35s var(--ease-premium), filter 0.35s var(--ease-premium);
+            position: relative;
+            overflow: hidden;
+            border: none;
+            cursor: pointer;
+            isolation: isolate;
+            animation: cta-gradient-glow 3.2s ease-in-out infinite;
+        }
+
+        /* Continuous gradient glow */
+        @keyframes cta-gradient-glow {
+            0%, 100% {
+                box-shadow: 0 10px 30px rgba(212, 255, 0, 0.3),
+                            0 0 38px rgba(212, 255, 0, 0.55),
+                            0 0 70px rgba(212, 255, 0, 0.22),
+                            inset 0 1px 0 rgba(255, 255, 255, 0.55);
+            }
+            50% {
+                box-shadow: 0 10px 30px rgba(0, 229, 117, 0.35),
+                            0 0 48px rgba(0, 229, 117, 0.6),
+                            0 0 90px rgba(20, 224, 201, 0.3),
+                            inset 0 1px 0 rgba(255, 255, 255, 0.55);
+            }
+        }
+
+        /* Continuous light-shine / beam sweep */
+        .cta-btn-main::after, .share-btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            bottom: -50%;
+            left: -40%;
+            width: 60%;
+            background: linear-gradient(100deg,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.35) 34%,
+                rgba(255, 255, 255, 1) 50%,
+                rgba(255, 255, 255, 0.35) 66%,
+                rgba(255, 255, 255, 0) 100%);
+            transform: skewX(-22deg);
+            z-index: 3;
+            box-shadow: 0 0 30px 8px rgba(255, 255, 255, 0.85);
+            animation: cta-beam-sweep 2.8s cubic-bezier(0.45, 0, 0.35, 1) infinite;
+            pointer-events: none;
+        }
+
+        .cta-btn-main::before, .share-btn::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            bottom: -50%;
+            left: -40%;
+            width: 24%;
+            background: linear-gradient(100deg, rgba(255, 255, 255, 0) 0%, rgba(220, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
+            transform: skewX(-22deg);
+            z-index: 3;
+            animation: cta-beam-sweep 2.8s cubic-bezier(0.45, 0, 0.35, 1) 0.16s infinite;
+            pointer-events: none;
+        }
+
+        .cta-btn-main > *, .share-btn > * {
+            position: relative;
+            z-index: 4;
+        }
+
+        @keyframes cta-beam-sweep {
+            0%   { left: -60%; opacity: 0; }
+            6%   { opacity: 1; }
+            78%  { left: 120%; opacity: 1; }
+            90%  { opacity: 0; }
+            100% { left: 120%; opacity: 0; }
         }
 
         .grid-bg-overlay {
@@ -340,8 +476,8 @@
             opacity: 0.9;
         }
 
-        .btn-twitter { background-color: #1DA1F2; }
-        .btn-linkedin { background-color: #0A66C2; }
+        .btn-twitter { background: linear-gradient(135deg, #1DA1F2 0%, #0C85D0 100%) !important; color: #FFFFFF !important; }
+        .btn-linkedin { background: linear-gradient(135deg, #0A66C2 0%, #004182 100%) !important; color: #FFFFFF !important; }
 
         /* BONUS TEASER */
         .bonus-teaser {
@@ -509,7 +645,7 @@
         <section class="glass-card">
             <h2 class="card-title">📌 Important Links & Resources</h2>
             <div class="resource-links">
-                <a href="#" class="resource-link">
+                <a href="index.html#steps-section" class="resource-link">
                     <span class="icon">📖</span>
                     <div>
                         <div style="font-weight: 600; font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 2px;">How to Import N8N Workflows</div>
